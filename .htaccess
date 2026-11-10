@@ -1,0 +1,9 @@
+DirectoryIndex index.html index.php
+
+# Los sitios WordPress de subdirectorios conservan sus propias reglas.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule (^|/)\. - [F,L]
+RewriteRule (^|/)(?:wp-config\.php|error_log)(?:$|/) - [F,L,NC]
+RewriteRule \.(?:sql|bak|bk|log)$ - [F,L,NC]
+</IfModule>

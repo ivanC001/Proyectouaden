@@ -1,0 +1,1376 @@
+@font-face {
+  font-family: 'Waltograph';
+  src: url('assets/fonts/waltographUI.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+html {
+    scroll-behavior: smooth; /* Esto hace que el viaje sea un deslizamiento suave */
+    scroll-padding-top: 80px; /* Si tienes un menú fijo arriba, esto evita que tape el título al llegar */
+}
+
+/* ── Poppins: cargada vía Google Fonts en <head> ─────────── */
+
+/* ── Paleta oficial Disney / Mágica ─────────────────────── */
+:root {
+  --powder-blue: #F2F2F2;
+  /* Fondo base */
+  --disney-gold: #D4AF37;
+  /* Dorado prestigio */
+  --magic-purple: #A569BD;
+  /* Morado mágico */
+  --pixie-pink: #FF69B4;
+  /* Rosado vibrante */
+  --disney-red: #D9232A;
+  /* Rojo Mickey */
+  --hero-overlay: rgba(10, 31, 68, 0.6);
+  /* Capa azul marino/morado para video hero */
+  --disney-green: #98FB98;
+
+  /* ── Nuevos resplandores mágicos ── */
+  --magic-glow-gold: rgba(255, 215, 0, 0.4);
+  /* Resplandor dorado suave   */
+  --magic-glow-pink: rgba(255, 105, 180, 0.5);
+  /* Resplandor rosa hover     */
+  --magic-glow-purple: rgba(165, 105, 189, 0.5);
+  /* Resplandor morado profund.*/
+  --powder-blue-base: #B0E0E6;
+  /* Fondo PowderBlue canónico */
+  --isla-glass: rgba(255, 255, 255, 0.2);
+  /* Opacidad base cristal     */
+
+
+  
+  /* Variables exclusivas: Tonos de prestigio y luz */
+
+
+}
+
+/* ── Base ───────────────────────────────────────────────── */
+body {
+  background-color: var(--powder-blue);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+
+/* ============================================================
+   HEADER: Barra de Navegación Principal
+   ============================================================ */
+
+/* ── Sticky glassmorphism nav ───────────────────────────── */
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow: 0 2px 24px rgba(10, 31, 68, 0.08);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Darker on scroll (class added by JS) */
+.main-nav.scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 4px 32px rgba(10, 31, 68, 0.14);
+}
+
+/* ── Inner layout ────────────────────────────────────────── */
+.nav-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* ── Logo ────────────────────────────────────────────────── */
+.logo-container {
+  flex: 0 0 auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--university-navy, #0a1f44);
+  letter-spacing: 0.08em;
+}
+
+/* ── Nav links ───────────────────────────────────────────── */
+.nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: #0a1f44;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.25s ease;
+}
+
+/* Animated gold underline on hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--disney-gold);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--disney-gold);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ── Botón de acción de navegación ────────────────────────── */
+.btn-nav-primary {
+  flex: 0 0 auto;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0a1f44 0%, #1a3a6a 100%);
+  border-radius: 50px;
+  padding: 0.65rem 1.5rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(10, 31, 68, 0.25);
+}
+
+.btn-nav-primary:hover {
+  background: linear-gradient(135deg, var(--disney-gold) 0%, #e8c547 100%);
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.45);
+  transform: translateY(-1px);
+  color: #0a1f44;
+}
+
+/* ── .disney — Waltograph inline span ────────────────────── */
+/* Used in nav button and any future titles */
+.disney {
+  font-family: 'Waltograph', cursive;
+  font-weight: normal;
+  font-size: 1.05em;
+  /* slightly larger to account for font's x-height */
+  letter-spacing: 0.01em;
+}
+
+/* ── Responsive: colapsa nav en mobile ────────────────────── */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    /* burger menu to be added later */
+  }
+
+  .nav-inner {
+    height: 60px;
+    padding: 0 1.25rem;
+  }
+
+  .btn-nav-primary {
+    font-size: 0.75rem;
+    padding: 0.55rem 1.1rem;
+  }
+
+  .logo-img {
+    height: 36px;
+  }
+}
+
+/* ============================================================
+   TITULO 
+   ============================================================ */
+
+/* --- TÚ ATRIBUTOS BASE (Inamovibles) --- */
+.main-title-walt {
+    font-family: 'Waltograph', cursive;
+    color: white; /* Color base sólido */
+    font-size: 4rem;      /* Tamaño del texto principal */
+    text-align: center;     /* Centrado horizontal */
+    margin-bottom: 60px;    /* Espacio con el contenido de abajo */
+
+    /* NECESARIO: Base para el posicionamiento y limitación de pseudo-elementos */
+    position: relative;
+    display: block;         /* Ocupa todo el ancho */
+    
+    /* --- INGENIERÍA DEL NUEVO EFECTO DISNEY: "El Velo de la Galaxia Mágica" --- */
+
+    /* 1. El truco maestro: El texto se vuelve transparente para dejar ver el fondo de abajo */
+    color: transparent !important; 
+
+    /* 2. Creamos un fondo con un degradado lineal complejo y colorido de Disney */
+    background-image: linear-gradient(
+        to right,
+        #FFFFFF 0%,             /* Comienza en Blanco Brillante (Destello) */
+        var(--pixie-purple, #A569BD) 15%,  /* Púrpura Mágico */
+        var(--disney-gold, #D4AF37) 30%,  /* Dorado Disney */
+        var(--magic-cyan, #50C0CF) 45%,   /* Cyan Mágico */
+        #FFFFFF 60%,             /* Blanco Brillante (Destello) */
+        var(--pixie-purple, #A569BD) 75%,  /* Púrpura Mágico */
+        var(--disney-gold, #D4AF37) 90%  /* Vuelve al Dorado para bucle sin fin */
+    );
+    
+    /* 3. Hacemos que el fondo sea mucho más ancho que el texto para que pueda fluir */
+    background-size: 200% auto;
+    
+    /* 4. Aplicamos el fondo *SÓLO* dentro de las letras (máscara de texto) */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* 5. Aseguramos compatibilidad con navegadores antiguos */
+    -webkit-text-fill-color: transparent;
+    -text-fill-color: transparent;
+
+    /* 6. Un resplandor exterior suave de Campanilla (campanita) */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4))
+            drop-shadow(0 0 20px rgba(165, 105, 189, 0.3));
+
+    /* 7. ANIMACIONES: Una para el flujo de la galaxia y otra para la "respiración" del resplandor */
+    animation: 
+        walt-cosmos-flow 10s linear infinite, /* Flujo de colores lento y constante */
+        walt-glow-breath 3s ease-in-out infinite alternate; /* Respiración del aura */
+}
+
+/* Manejamos el span 'disney' class if it interferes. We can make it stand out more within the effect. */
+.main-title-walt .disney {
+    font-weight: 800; /* keep bold */
+    /* Make 'disney' word have slightly higher brightness within the effect */
+    filter: brightness(1.2); 
+}
+
+/* --- Lógica de las Animaciones --- */
+
+/* 1. Mueve el gradiente de fondo de izquierda a derecha de forma infinita */
+@keyframes walt-cosmos-flow {
+    0% {
+        background-position: 0% center; /* Comienza en el extremo izquierdo */
+    }
+    100% {
+        background-position: 200% center; /* Cruza todo el texto y vuelve a empezar */
+    }
+}
+
+/* 2. Hace que el resplandor exterior "respire" (crezca y decrezca) */
+@keyframes walt-glow-breath {
+    0% {
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4))
+                drop-shadow(0 0 10px rgba(165, 105, 189, 0.2));
+        transform: scale(1); /* Escala normal */
+    }
+    100% {
+        /* En el punto máximo, el brillo se expande y cambia sutilmente a dorado */
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7))
+                drop-shadow(0 0 30px rgba(212, 175, 55, 0.6)); /* Cycles to Gold */
+        transform: scale(1.02); /* Crece un 2% para dar sensación de vida */
+    }
+}
+
+/* --- Ajuste Mobile --- */
+@media (max-width: 768px) {
+    .main-title-walt {
+        font-size: 2.2rem;   /* Reducimos fuente para móviles */
+        background-size: 150% auto; /* Menor movimiento para rendimiento en móvil */
+    }
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+#quienes-somos-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('assets/img/quienes-somos/This-is-my-family-and-I.webp'); /* Tu imagen Pixar */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* OVERLAY: Usando tu variable --hero-overlay */
+.hero-overlay-magic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hero-overlay); /* rgba(10, 31, 68, 0.6) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+}
+
+/* --- LAYOUT SPLIT (Izquierda | Divisor | Derecha) --- */
+.split-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px; /* Espacio entre columnas */
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Columna Título */
+.side-title {
+    flex: 1;
+    text-align: right; /* Alineado hacia el divisor */
+}
+
+/* Tu título Waltograph con el efecto de resplandor */
+.main-title-walt {
+    font-family: 'Waltograph', cursive;
+    color: white;
+    font-size: 6.5rem;
+    line-height: 1;
+    text-shadow: 0 0 15px var(--magic-glow-purple);
+    margin: 0;
+}
+
+/* --- DIVISOR VERTICAL MÁGICO --- */
+.magic-vertical-divider {
+    width: 2px;
+    height: 150px; /* Altura fija o relativa al texto */
+    background: linear-gradient(to bottom, transparent, var(--disney-gold), transparent);
+    box-shadow: 0 0 10px var(--magic-glow-gold);
+    position: relative;
+}
+
+/* Pequeña estrella en el centro del divisor */
+.magic-vertical-divider::after {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--disney-gold);
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px white;
+}
+
+/* Columna Texto */
+.side-text {
+    flex: 1.5; /* Le damos un poco más de ancho al texto */
+    text-align: left;
+}
+
+.hero-description {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* --- FLECHA ANIMADA --- */
+.scroll-arrow-container {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-arrow {
+    text-decoration: none;
+    color: white;
+    font-size: 3.5rem;
+    cursor: pointer;
+}
+
+.arrow-icon {
+    display: block;
+    animation: bounce-arrow 2s infinite;
+}
+
+@keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-7px); }
+}
+
+/* --- RESPONSIVE (Móvil) --- */
+@media (max-width: 900px) {
+    .split-container {
+        flex-direction: column; /* En móvil se ponen uno sobre otro */
+        text-align: center;
+        gap: 20px;
+    }
+    .side-title, .side-text { text-align: center; }
+    .magic-vertical-divider {
+        width: 100px;
+        height: 2px;
+        background: linear-gradient(to right, transparent, var(--disney-gold), transparent);
+    }
+    .main-title-walt { font-size: 3rem; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- SECCIÓN ZIGZAG (Mural Integrado) --- */
+.zigzag-section {
+    padding: 80px 10%;
+    background-color: var(--powder-blue); /* Tu fondo oficial */
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.zigzag-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    position: relative;
+    
+    /* --- INGENIERÍA DE SCROLL SIN JS --- */
+    /* Esta línea hace que la animación progrese según el scroll del usuario */
+    view-timeline-name: --revealing-item;
+    view-timeline-axis: block;
+    
+    animation: linear reveal-scroll both;
+    animation-timeline: --revealing-item;
+    animation-range: entry 10% cover 40%;
+}
+
+.zigzag-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* --- EFECTO DE APARICIÓN --- */
+@keyframes reveal-scroll {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.9);
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* --- TEXTO (Sin Cards) --- */
+.zigzag-text {
+    flex: 1;
+}
+
+.zigzag-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.45rem;
+    line-height: 1.8;
+    color: #333;
+    margin: 0;
+    text-align: left;
+}
+
+/* --- IMÁGENES MÁGICAS --- */
+.zigzag-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.zigzag-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    /* Sombras usando tus resplandores mágicos */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--isla-glass);
+    transition: transform 0.5s ease;
+}
+
+/* Efecto hover sutil para la imagen */
+.zigzag-image:hover img {
+    transform: scale(1.03) rotate(1deg);
+}
+
+/* --- RESALTADOS OFICIALES --- */
+.highlight-univ { color: var(--magic-purple); font-weight: 700; }
+.highlight-waden { color: var(--disney-gold); font-weight: 700; }
+
+/* Ajuste Mobile */
+@media (max-width: 900px) {
+    .zigzag-row, .zigzag-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .zigzag-text p { text-align: center; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================ */
+/* ESTILOS: GALERÍA ENCANTADA (Modelo Mosaico) 
+   Basado en estructura de referencia: Asimétrico y Anidado
+/* ============================================ */
+
+.gallery-section {
+    padding: 100px 0;
+    background-color: var(--powder-blue); /* Fondo base sutil */
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-title {
+    margin-bottom: 80px; /* Espacio extra bajo el título Waltograph */
+}
+
+/* --- CONTENEDOR PRINCIPAL DEL MOSAICO (Grid) --- */
+.mosaico-magico {
+    display: grid;
+    /* Definimos 3 columnas para lograr la asimetría de la referencia */
+    grid-template-columns: 1.5fr 1fr 1fr; 
+    gap: 30px; /* Espacio de separación entre "cajas" */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos base para los ítems del Grid (Contenedores Integrados) */
+.grid-item {
+    position: relative;
+    border-radius: 10px; /* Esquinas suavizadas de 10px solicitiadas */
+    overflow: hidden; /* Mantiene la imagen dentro */
+    
+    /* Borde mágico sutil por defecto (Glow Purple) */
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom right, var(--magic-glow-purple), transparent) 1;
+    
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+}
+
+/* Efecto hover: El contenedor levita y brilla (Glow Gold) */
+.grid-item:hover {
+    transform: translateY(-10px) scale(1.02); /* Levitación Disney */
+    border-image: linear-gradient(to bottom right, var(--disney-gold), transparent) 1;
+    box-shadow: 0 20px 40px rgba(165, 105, 189, 0.3); /* Aura mágica púrpura */
+    z-index: 10; /* Se superpone a los demás */
+}
+
+/* --- POSICIONAMIENTO ESPECÍFICO (Rigor Ingenieril) --- */
+
+/* Bloque Grande Izquierdo (Ocupa 2 filas de alto) */
+.item-grande-izq {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+/* Bloque Largo Inferior (Ocupa las 3 columnas de ancho al final) */
+.item-largo-inferior {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+}
+
+/* --- CONTENEDOR ANIDADO DERECHO (Sub-Grid) --- */
+.item-anidado-der {
+    grid-column: 2 / 4; /* Toma las columnas 2 y 3 */
+    grid-row: 1 / 3;    /* Toma las filas 1 y 2 */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas iguales internas */
+    grid-template-rows: 1fr auto;   /* Fila superior flexible, inferior auto */
+    gap: 20px; /* Espacio interno entre sub-ítems */
+    
+    /* Quitamos borde/fondo al contenedor padre anidado para que fluyan los hijos */
+    border: none;
+    border-image: none;
+    background: transparent;
+}
+
+/* Estilos para los sub-ítems internos */
+.sub-item {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    
+    /* Mismo borde mágico sutil (Glow Púrpura) */
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom right, var(--magic-glow-purple), transparent) 1;
+    transition: transform 0.4s ease, border-image 0.4s ease;
+}
+
+/* Sub-ítem Largo (Abajo en el sub-grid, ocupa 2 columnas) */
+.sub-item.item-largo {
+    grid-column: 1 / 3;
+}
+
+/* Hover específico para sub-ítems (Brillo Dorado) */
+.sub-item:hover {
+    transform: scale(1.05);
+    border-image: linear-gradient(to bottom right, var(--disney-gold), transparent) 1;
+    z-index: 5;
+}
+
+/* --- INGENIERÍA DE IMÁGENES (Ajuste Perfecto) --- */
+.img-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para llenar el contenedor sin deformar */
+    display: block;
+    transition: transform 0.8s ease; /* Transición suave para zoom al hover */
+}
+
+/* Hover en la imagen: Zoom sutil */
+.grid-item:hover .img-container img,
+.sub-item:hover .img-container img {
+    transform: scale(1.1); /* Zoom del 10% */
+}
+
+/* Efecto Split (2 imágenes en el bloque inferior largo) */
+.split-img img {
+    width: 50%; /* Cada imagen toma la mitad */
+}
+
+/* --- EFECTO MÁGICO: Polvo de Hada Overlay --- */
+.pixie-dust-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Gradiente sutil que simula brillo de polvo de hada */
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 50%
+    );
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* No interfiere con el clic */
+}
+
+/* Mostrar polvo de hada en el contenedor grande al hacer hover */
+.item-grande-izq:hover .pixie-dust-overlay {
+    opacity: 1;
+}
+
+/* --- ANIMACIONES DE APARICIÓN (Scroll Reveal) --- */
+/* (Reutilizamos la lógica que definimos anteriormente para mantener consistencia) */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays para la aparición secuencial en el sub-grid */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+/* ============================================ */
+/* AJUSTES RESPONSIVE (Celulares) 
+   (Rigor Ingenieril: El mosaico se convierte en columna)
+/* ============================================ */
+
+@media (max-width: 900px) {
+    .mosaico-magico {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 20px;
+        padding: 0 20px; /* Padding lateral */
+    }
+    
+    /* Reseteamos el posicionamiento asimétrico para móvil */
+    .item-grande-izq,
+    .item-anidado-der,
+    .item-largo-inferior {
+        grid-column: 1 / 2;
+        grid-row: auto; /* Altura automática */
+    }
+    
+    /* Ajuste específico para el contenedor anidado en móvil */
+    .item-anidado-der {
+        display: flex; /* Flexbox para apilar sub-ítems */
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* Reseteamos el ancho de las imágenes divididas en móvil */
+    .split-img img {
+        width: 100%;
+        margin-bottom: 10px; /* Espacio entre imágenes apiladas */
+    }
+    .split-img {
+        flex-direction: column; /* Apilar imágenes verticalmente */
+    }
+}
+
+
+
+
+.gallery-section {
+    padding: 80px 5%;
+    background-color: var(--powder-blue);
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* --- ESTRUCTURA DE MOSAICO (Grid Avanzado) --- */
+.mosaico-magico {
+    display: grid;
+    /* Creamos 3 columnas y 3 filas */
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 250px 250px 200px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo de los contenedores de imagen */
+.grid-item {
+    position: relative;
+    border-radius: 10px; /* Tus esquinas de 10px */
+    overflow: hidden;
+    border: 1px solid var(--isla-glass);
+    background-color: #ddd; /* Color de carga por si la imagen tarda */
+
+    /* --- ANIMACIÓN DE SCROLL SIN JS --- */
+    view-timeline-name: --gallery-reveal;
+    view-timeline-axis: block;
+    animation: linear reveal-gallery both;
+    animation-timeline: --gallery-reveal;
+    animation-range: entry 5% cover 30%;
+}
+
+/* --- POSICIONAMIENTO DEL MOSAICO --- */
+.item-1 { grid-row: span 2; } /* Grande izquierda */
+.item-6 { grid-column: span 3; } /* Larga abajo */
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+/* Efecto al pasar el mouse */
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+/* --- KEYFRAMES PARA LA ANIMACIÓN --- */
+@keyframes reveal-gallery {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Responsive para que en celular no se vea roto */
+@media (max-width: 768px) {
+    .mosaico-magico {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .item-1, .item-6 { grid-column: span 1; grid-row: auto; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- SECCIÓN CIERRE NOSOTROS --- */
+.final-mural {
+    padding: 100px 10%;
+    background: radial-gradient(circle at top, #FFFFFF 0%, var(--powder-blue) 100%);
+    text-align: center;
+    overflow: hidden;
+}
+
+.mural-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- TEXTOS POPPINS --- */
+.text-platform {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    line-height: 2;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.text-bridge {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--hero-overlay); /* Azul profundo */
+    font-style: italic;
+    margin: 40px 0;
+}
+
+/* --- ELEMENTO: EL PUENTE MÁGICO --- */
+.magic-bridge-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.bridge-line {
+    height: 2px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, var(--disney-gold), transparent);
+    box-shadow: 0 0 10px var(--magic-glow-gold);
+}
+
+.bridge-spark {
+    color: var(--disney-gold);
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px var(--magic-glow-gold);
+    animation: pulse-spark 2s infinite;
+}
+
+/* --- BOTÓN FINAL PREMIUN --- */
+.btn-magic-action {
+    background-color: var(--magic-purple);
+    color: white;
+    padding: 20px 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 2px solid var(--disney-gold);
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px var(--magic-glow-purple);
+}
+
+.btn-magic-action:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 30px var(--magic-glow-purple);
+    background-color: #8e44ad;
+}
+
+/* --- ANIMACIÓN DE SCROLL (Solo CSS) --- */
+.reveal-scroll {
+    view-timeline-name: --final-reveal;
+    view-timeline-axis: block;
+    animation: linear fade-up-final both;
+    animation-timeline: --final-reveal;
+    animation-range: entry 10% cover 40%;
+}
+
+@keyframes fade-up-final {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-spark {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.3); opacity: 1; }
+}
+
+/* --- RESALTADOS --- */
+.highlight-purple { color: var(--magic-purple); font-weight: 700; }
+.highlight-waden { color: var(--disney-gold); font-weight: 800; text-shadow: 0 0 5px var(--magic-glow-gold); }
+
+.finale-section {
+    padding: 120px 10%;
+    background-color: var(--powder-blue);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.finale-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- TEXTOS CON ESTILO PREMIUM --- */
+.text-platform {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.65rem;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 50px;
+}
+
+.glossy-purple {
+    color: var(--magic-purple);
+    font-weight: 700;
+    position: relative;
+    /* Brillo interno en el texto */
+    background: linear-gradient(120deg, var(--magic-purple) 30%, #fff 50%, var(--magic-purple) 70%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine-text 4s infinite linear;
+}
+
+.text-bridge-quote {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--hero-overlay);
+    margin: 50px 0;
+}
+
+.sparkle-text {
+    color: var(--disney-gold);
+    text-shadow: 0 0 10px var(--magic-glow-gold);
+}
+
+/* --- EL DIVISOR (SVG con Glow) --- */
+.golden-bridge-divider {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 5px var(--magic-glow-gold));
+}
+
+/* --- BOTÓN PREMIUM (The Ticket) --- */
+.btn-finale {
+    background-color: var(--disney-red);
+    color: white;
+    border: 2px solid var(--university-navy);
+    padding: 22px 60px;
+    border-radius: 60px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--magic-glow-purple);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-finale:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px var(--magic-glow-purple);
+    border-color: #fff;
+}
+
+.btn-reflection {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-25deg);
+    transition: 0.75s;
+}
+
+.btn-finale:hover .btn-reflection {
+    left: 150%;
+}
+
+/* --- PARTÍCULAS DE FONDO (Animación) --- */
+.magic-particles .particle {
+    position: absolute;
+    color: var(--disney-gold);
+    opacity: 0.3;
+    font-size: 1.2rem;
+    animation: float-particles 6s infinite ease-in-out;
+}
+
+.particle:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 50%; right: 10%; animation-delay: 2s; }
+.particle:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+
+/* --- ANIMACIONES --- */
+@keyframes shine-text {
+    to { background-position: 200% center; }
+}
+
+@keyframes float-particles {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
+    50% { transform: translateY(-40px) rotate(180deg); opacity: 0.5; }
+}
+
+/* Animación de entrada al scrollear (Solo CSS) */
+.reveal-effect {
+    view-timeline-name: --section-reveal;
+    view-timeline-axis: block;
+    animation: linear fade-in-up both;
+    animation-timeline: --section-reveal;
+    animation-range: entry 10% cover 30%;
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+
+
+
+
+
+.magic-dust {
+  position: absolute;
+  background: radial-gradient(circle, #D4AF37, #FFF5A5); /* Dorado a Blanco */
+  border-radius: 50%;
+  pointer-events: none; /* Para que no interfiera con botones o links */
+  box-shadow: 0 0 8px #D4AF37;
+  z-index: 9999;
+  animation: sparkle-fade 1s linear forwards;
+}
+
+@keyframes sparkle-fade {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    /* El polvo cae un poco y se encoge hasta desaparecer */
+    transform: translateY(20px) scale(0);
+    opacity: 0;
+  }
+}
+
+
+
+.jiji{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   FIX: SECCIÓN QUIÉNES SOMOS - MÓVIL
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    /* 1. Bajamos toda la sección para que no choque con el logo */
+    #quienes-somos-hero {
+        height: auto !important;
+        min-height: 100vh !important;
+        padding-top: 150px !important; /* EMPUJÓN HACIA ABAJO: Aquí es donde baja */
+        padding-bottom: 60px !important;
+        display: block !important;
+    }
+
+    /* 2. Apilamos el contenido (Título arriba, Texto abajo) */
+    #quienes-somos-hero .split-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* 3. EL TÍTULO: Bajamos el tamaño y separamos las líneas */
+    #quienes-somos-hero .main-title-walt {
+        font-size: 2.2rem !important; 
+        line-height: 1.4 !important; /* SEPARACIÓN: Evita que "QUIÉNES" y "SOMOS" se monten */
+        margin-bottom: 20px !important;
+        display: block !important;
+    }
+
+    /* 4. El texto descriptivo */
+    #quienes-somos-hero .side-text {
+        padding: 0 10px !important;
+    }
+
+    .hero-description {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+    }
+
+    /* 5. Ocultamos el divisor vertical en móvil (no tiene sentido si es columna) */
+    .magic-vertical-divider {
+        display: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   FIX: VISIBILIDAD ZIGZAG (OBLIGAR APARICIÓN EN MÓVIL)
+   ============================================================ */
+
+@media (max-width: 900px) {
+    /* 1. Forzamos que la animación se complete o se anule para que sea visible */
+    .zigzag-row {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        animation: none !important; /* Matamos la animación de scroll si da problemas */
+        
+        /* Ajuste de estructura */
+        display: flex !important;
+        flex-direction: column !important; 
+        gap: 40px !important;
+        padding: 40px 15px !important; /* Bajamos de 10% a 15px para que no se corte el texto */
+    }
+
+    .zigzag-section {
+        padding: 40px 0 !important; /* Quitamos el 10% lateral que roba espacio */
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .zigzag-row.reverse {
+        flex-direction: column !important; /* Aseguramos el orden en todas */
+    }
+
+    /* 2. Ajuste de imagen para que no se salga */
+    .zigzag-image {
+        width: 100% !important;
+        order: 2; /* Texto arriba, Imagen abajo */
+    }
+
+    .zigzag-image img {
+        width: 90% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    /* 3. Ajuste de texto */
+    .zigzag-text {
+        width: 100% !important;
+        order: 1;
+        padding: 0 10px !important;
+    }
+
+    .zigzag-text p {
+        font-size: 1.15rem !important; /* Un poco más pequeño para que no ocupe 20 líneas */
+        line-height: 1.6 !important;
+        text-align: center !important;
+    }
+}
+
+/* 4. OPCIONAL: Si quieres que la animación SOLO funcione si el navegador la soporta */
+@supports not (animation-timeline: view()) {
+    .zigzag-row {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+}
+
+
+
+
+

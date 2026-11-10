@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<!-- Title -->
+	<title>Uaden Global | Registro de sucursal</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="Uaden Global">
+	<meta name="robots" content="index, follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+
+	<meta name="keywords" content="Uaden Global, registro de sucursal, franquicia educativa, formulario, modo oscuro, modo claro">
+	<meta name="description" content="Formulario limpio y responsivo para registrar una sucursal con modo claro y oscuro, validacion y respaldo local.">
+
+	<meta property="og:title" content="Uaden Global | Registro de sucursal">
+	<meta property="og:description" content="Formulario limpio y responsivo para registrar una sucursal con modo claro y oscuro, validacion y respaldo local.">
+	<meta property="og:image" content="https://eduzone.dexignzone.com/xhtml/social-image.png">
+	<meta name="twitter:title" content="Uaden Global | Registro de sucursal">
+	<meta name="twitter:description" content="Formulario limpio y responsivo para registrar una sucursal con modo claro y oscuro, validacion y respaldo local.">
+	<meta name="twitter:image" content="https://eduzone.dexignzone.com/xhtml/social-image.png">
+	<meta name="twitter:card" content="summary_large_image">
+
+	<!-- FAVICONS ICON -->
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+
+	<!-- STYLESHEETS -->
+	<link rel="stylesheet" type="text/css" href="css/plugins.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link class="skin" rel="stylesheet" type="text/css" href="css/skin/skin-7.css">
+	<link rel="stylesheet" type="text/css" href="css/templete.css">
+
+	<style>
+		:root {
+			--branch-bg: #eef4ff;
+			--branch-bg-alt: #ffffff;
+			--branch-surface: rgba(255, 255, 255, 0.88);
+			--branch-surface-solid: #ffffff;
+			--branch-text: #0f172a;
+			--branch-muted: #5b6475;
+			--branch-border: rgba(15, 23, 42, 0.10);
+			--branch-shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
+			--branch-accent: #0f766e;
+			--branch-accent-2: #2563eb;
+			--branch-accent-soft: rgba(15, 118, 110, 0.12);
+		}
+
+		body.branch-page {
+			background:
+				radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.12), transparent 28%),
+				radial-gradient(circle at 90% 15%, rgba(15, 118, 110, 0.16), transparent 25%),
+				linear-gradient(180deg, var(--branch-bg) 0%, var(--branch-bg-alt) 100%);
+			color: var(--branch-text);
+			min-height: 100vh;
+		}
+
+		body.branch-page[data-theme="dark"] {
+			--branch-bg: #07111f;
+			--branch-bg-alt: #0b1628;
+			--branch-surface: rgba(11, 18, 33, 0.82);
+			--branch-surface-solid: #0f1b2f;
+			--branch-text: #e7eefb;
+			--branch-muted: #a9b4c7;
+			--branch-border: rgba(148, 163, 184, 0.18);
+			--branch-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+			--branch-accent: #38bdf8;
+			--branch-accent-2: #8b5cf6;
+			--branch-accent-soft: rgba(56, 189, 248, 0.14);
+		}
+
+		.branch-shell {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.branch-shell::before,
+		.branch-shell::after {
+			content: "";
+			position: fixed;
+			z-index: 0;
+			pointer-events: none;
+			border-radius: 999px;
+			filter: blur(20px);
+			opacity: 0.75;
+		}
+
+		.branch-shell::before {
+			top: 90px;
+			right: -120px;
+			width: 280px;
+			height: 280px;
+			background: rgba(37, 99, 235, 0.16);
+		}
+
+		.branch-shell::after {
+			left: -90px;
+			bottom: 120px;
+			width: 220px;
+			height: 220px;
+			background: rgba(15, 118, 110, 0.18);
+		}
+
+		.branch-header {
+			position: sticky;
+			top: 0;
+			z-index: 20;
+			backdrop-filter: blur(18px);
+			background: var(--branch-surface);
+			border-bottom: 1px solid var(--branch-border);
+		}
+
+		.branch-header-inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+			padding: 1rem 0;
+		}
+
+		.branch-brand {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.85rem;
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.branch-brand img {
+			width: 180px;
+			height: 54px;
+			object-fit: contain;
+			filter: drop-shadow(0 12px 24px rgba(15, 23, 42, 0.18));
+		}
+
+		.branch-brand .branch-logo-white {
+			display: none;
+		}
+
+		body.branch-page[data-theme="dark"] .branch-brand .branch-logo-color {
+			display: none;
+		}
+
+		body.branch-page[data-theme="dark"] .branch-brand .branch-logo-white {
+			display: block;
+		}
+
+		.branch-brand strong {
+			display: block;
+			font-size: 1rem;
+			line-height: 1.1;
+			letter-spacing: 0.02em;
+		}
+
+		.branch-brand small {
+			display: block;
+			font-size: 0.82rem;
+			color: var(--branch-muted);
+		}
+
+		.branch-header-actions {
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
+
+		.branch-toggle {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.6rem;
+			padding: 0.8rem 1rem;
+			border-radius: 999px;
+			border: 1px solid var(--branch-border);
+			background: var(--branch-surface);
+			color: var(--branch-text);
+			box-shadow: var(--branch-shadow);
+			transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+		}
+
+		.branch-toggle:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+		}
+
+		.branch-toggle i {
+			font-size: 0.95rem;
+		}
+
+		.branch-toggle span {
+			font-weight: 600;
+			font-size: 0.92rem;
+		}
+
+		.branch-btn {
+			border-radius: 999px;
+			padding: 0.95rem 1.35rem;
+			font-weight: 700;
+			border: 1px solid transparent;
+		}
+
+		.branch-btn-primary {
+			background: linear-gradient(135deg, var(--branch-accent), var(--branch-accent-2));
+			color: #fff;
+			box-shadow: 0 18px 35px rgba(37, 99, 235, 0.22);
+		}
+
+		.branch-btn-primary:hover {
+			color: #fff;
+			transform: translateY(-1px);
+		}
+
+		.branch-btn-secondary {
+			background: transparent;
+			border-color: var(--branch-border);
+			color: var(--branch-text);
+		}
+
+		.branch-btn-secondary:hover {
+			color: var(--branch-text);
+			border-color: rgba(37, 99, 235, 0.35);
+			background: var(--branch-accent-soft);
+		}
+
+		.branch-hero {
+			position: relative;
+			z-index: 1;
+			padding: 4rem 0 1.75rem;
+		}
+
+		.branch-hero-grid {
+			display: grid;
+			grid-template-columns: 1.3fr 0.9fr;
+			gap: 1.25rem;
+			align-items: stretch;
+		}
+
+		.branch-panel {
+			background: var(--branch-surface);
+			border: 1px solid var(--branch-border);
+			box-shadow: var(--branch-shadow);
+			backdrop-filter: blur(18px);
+			border-radius: 30px;
+		}
+
+		.branch-hero-copy {
+			padding: clamp(1.6rem, 3vw, 3rem);
+		}
+
+		.branch-pill {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.45rem;
+			padding: 0.45rem 0.8rem;
+			border-radius: 999px;
+			background: var(--branch-accent-soft);
+			color: var(--branch-accent);
+			font-size: 0.82rem;
+			font-weight: 700;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+		}
+
+		.branch-hero h1 {
+			font-size: clamp(2.3rem, 4.8vw, 4.7rem);
+			line-height: 0.98;
+			margin: 1rem 0 1rem;
+			max-width: 11ch;
+			letter-spacing: -0.04em;
+			color: var(--branch-text);
+		}
+
+		.branch-hero p {
+			font-size: 1.04rem;
+			line-height: 1.75;
+			color: var(--branch-muted);
+			max-width: 56ch;
+		}
+
+		.branch-hero-actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.85rem;
+			margin-top: 1.5rem;
+		}
+
+		.branch-metric-row {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 0.95rem;
+			margin-top: 1.7rem;
+		}
+
+		.branch-metric {
+			padding: 1rem;
+			border-radius: 20px;
+			background: var(--branch-surface-solid);
+			border: 1px solid var(--branch-border);
+		}
+
+		.branch-metric strong {
+			display: block;
+			font-size: 1.35rem;
+			line-height: 1;
+			margin-bottom: 0.45rem;
+		}
+
+		.branch-metric span {
+			color: var(--branch-muted);
+			font-size: 0.92rem;
+		}
+
+		.branch-side {
+			padding: 1.35rem;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.branch-side-visual {
+			min-height: 210px;
+			border-radius: 24px;
+			padding: 1.25rem;
+			background:
+				radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 28%),
+				linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(15, 118, 110, 0.88));
+			color: #fff;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			box-shadow: 0 18px 50px rgba(15, 23, 42, 0.22);
+		}
+
+		.branch-side-visual h3,
+		.branch-side-visual strong,
+		.branch-side-visual p,
+		.branch-side-visual span {
+			color: rgba(255, 255, 255, 0.9);
+		}
+
+		.branch-status-list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: grid;
+			gap: 0.8rem;
+		}
+
+		.branch-status-list li {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.75rem;
+			padding: 0.95rem 1rem;
+			border-radius: 18px;
+			background: var(--branch-surface-solid);
+			border: 1px solid var(--branch-border);
+		}
+
+		.branch-status-list i {
+			margin-top: 0.12rem;
+			color: var(--branch-accent);
+		}
+
+		.branch-section {
+			position: relative;
+			z-index: 1;
+			padding: 1.35rem 0 1.75rem;
+		}
+
+		.branch-card {
+			background: var(--branch-surface);
+			border: 1px solid var(--branch-border);
+			border-radius: 28px;
+			box-shadow: var(--branch-shadow);
+			backdrop-filter: blur(18px);
+		}
+
+		.branch-card-head {
+			padding: 1.35rem 1.4rem 0.25rem;
+		}
+
+		.branch-card-head h2,
+		.branch-card-head h3,
+		.branch-mini strong,
+		.branch-status-list strong,
+		.branch-help-list strong {
+			color: var(--branch-text);
+			margin-bottom: 0.35rem;
+		}
+
+		.branch-card-head p {
+			margin-bottom: 0;
+			color: var(--branch-muted);
+		}
+
+		.branch-form {
+			padding: 0 1.4rem 1.4rem;
+		}
+
+		.branch-form .form-label {
+			font-weight: 700;
+			color: var(--branch-text);
+			margin-bottom: 0.45rem;
+		}
+
+		.branch-form .form-control,
+		.branch-form .form-select {
+			min-height: 54px;
+			border-radius: 16px;
+			border: 1px solid var(--branch-border);
+			background: var(--branch-surface-solid);
+			color: var(--branch-text);
+			box-shadow: none;
+		}
+
+		.branch-form .form-control:focus,
+		.branch-form .form-select:focus {
+			border-color: var(--branch-accent);
+			box-shadow: 0 0 0 0.22rem rgba(37, 99, 235, 0.12);
+		}
+
+		.branch-form textarea.form-control {
+			min-height: 150px;
+			resize: vertical;
+		}
+
+		body.branch-page[data-theme="dark"] .branch-form .form-control,
+		body.branch-page[data-theme="dark"] .branch-form .form-select {
+			background: rgba(2, 6, 23, 0.58);
+		}
+
+		.branch-form-msg .alert {
+			border-radius: 18px;
+			border-width: 1px;
+		}
+
+		.branch-help {
+			padding: 1.4rem;
+		}
+
+		.branch-help-list {
+			list-style: none;
+			padding: 0;
+			margin: 1rem 0 0;
+			display: grid;
+			gap: 0.75rem;
+		}
+
+		.branch-help-list li {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.75rem;
+			padding: 0.95rem 1rem;
+			border-radius: 18px;
+			background: var(--branch-surface-solid);
+			border: 1px solid var(--branch-border);
+		}
+
+		.branch-help-list i {
+			margin-top: 0.15rem;
+			color: var(--branch-accent);
+		}
+
+		.branch-split {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 1rem;
+		}
+
+		.branch-mini {
+			padding: 1.1rem;
+			border-radius: 20px;
+			background: var(--branch-surface);
+			border: 1px solid var(--branch-border);
+			box-shadow: var(--branch-shadow);
+		}
+
+		.branch-mini strong {
+			display: block;
+			margin-bottom: 0.35rem;
+		}
+
+		.branch-mini p {
+			margin: 0;
+			color: var(--branch-muted);
+		}
+
+		.branch-footer {
+			position: relative;
+			z-index: 1;
+			padding: 1rem 0 2.5rem;
+			color: var(--branch-muted);
+		}
+
+		.branch-footer-inner {
+			display: flex;
+			justify-content: space-between;
+			gap: 1rem;
+			flex-wrap: wrap;
+			padding-top: 1rem;
+			border-top: 1px solid var(--branch-border);
+		}
+
+		@media (max-width: 991.98px) {
+			.branch-hero-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.branch-metric-row,
+			.branch-split {
+				grid-template-columns: 1fr;
+			}
+
+			.branch-hero h1 {
+				max-width: none;
+			}
+		}
+
+		@media (max-width: 575.98px) {
+			.branch-header-inner {
+				align-items: flex-start;
+				flex-direction: column;
+			}
+
+			.branch-header-actions {
+				width: 100%;
+				justify-content: space-between;
+			}
+
+			.branch-toggle {
+				width: 100%;
+				justify-content: center;
+			}
+
+			.branch-brand img {
+				width: 150px;
+				height: 46px;
+			}
+
+			.branch-hero {
+				padding-top: 2.2rem;
+			}
+
+			.branch-hero-copy,
+			.branch-side,
+			.branch-form,
+			.branch-help {
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		}
+	</style>
+</head>
+<body class="branch-page">
+<div class="branch-shell">
+	<header class="branch-header">
+		<div class="container">
+			<div class="branch-header-inner">
+				<a href="index.html" class="branch-brand">
+					<img class="branch-logo-color" src="images/uaden-global-logo-color.png" alt="Uaden Global">
+					<img class="branch-logo-white" src="images/uaden-global-logo-white.png" alt="">
+					<span>
+						<strong>Uaden Global</strong>
+						<small>Registro de sucursal</small>
+					</span>
+				</a>
+
+				<div class="branch-header-actions">
+					<a href="index.html" class="btn branch-btn branch-btn-secondary">Volver al inicio</a>
+					<button id="themeToggle" class="branch-toggle" type="button" aria-pressed="false">
+						<i class="fas fa-moon" aria-hidden="true"></i>
+						<span data-theme-label>Modo oscuro</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="branch-hero">
+			<div class="container">
+				<div class="branch-hero-grid">
+					<div class="branch-panel branch-hero-copy">
+						<span class="branch-pill">Alta de sucursal</span>
+						<h1>Una vista limpia para registrar tu sucursal sin descuadres</h1>
+						<p>
+							Ordenamos el formulario para escritorio y mobile, con tarjetas claras, validacion integrada y un tema
+							que puedes alternar entre claro y oscuro sin recargar la pagina.
+						</p>
+						<div class="branch-hero-actions">
+							<a href="#formulario" class="btn branch-btn branch-btn-primary">Completar registro</a>
+							<a href="#beneficios" class="btn branch-btn branch-btn-secondary">Ver beneficios</a>
+						</div>
+						<div class="branch-metric-row">
+							<div class="branch-metric">
+								<strong>Responsive</strong>
+								<span>Acomodo en una y dos columnas segun pantalla.</span>
+							</div>
+							<div class="branch-metric">
+								<strong>Dual theme</strong>
+								<span>Modo claro y oscuro con preferencia guardada.</span>
+							</div>
+							<div class="branch-metric">
+								<strong>Seguro</strong>
+								<span>Valida campos y conserva la solicitud si no hay backend.</span>
+							</div>
+						</div>
+					</div>
+
+					<aside class="branch-panel branch-side">
+						<div class="branch-side-visual">
+							<div>
+								<span class="branch-pill" style="background: rgba(255,255,255,0.16); color: #fff;">Proceso guiado</span>
+								<h3 class="mt-3 mb-2">Todo en un solo flujo</h3>
+								<p class="mb-0">La solicitud queda lista para enviar, revisar o guardar localmente si el entorno no tiene servidor.</p>
+							</div>
+							<div class="d-flex justify-content-between gap-3">
+								<div>
+									<strong class="d-block fs-3">3</strong>
+									<span>pasos principales</span>
+								</div>
+								<div class="text-end">
+									<strong class="d-block fs-3">24/7</strong>
+									<span>registro disponible</span>
+								</div>
+							</div>
+						</div>
+
+						<ul class="branch-status-list">
+							<li>
+								<i class="fas fa-circle-check" aria-hidden="true"></i>
+								<div>
+									<strong class="d-block">Campos separados con claridad</strong>
+									<span>La informacion principal queda en bloques faciles de leer.</span>
+								</div>
+							</li>
+							<li>
+								<i class="fas fa-circle-check" aria-hidden="true"></i>
+								<div>
+									<strong class="d-block">Tema persistente</strong>
+									<span>El modo elegido se guarda para la siguiente visita.</span>
+								</div>
+							</li>
+							<li>
+								<i class="fas fa-circle-check" aria-hidden="true"></i>
+								<div>
+									<strong class="d-block">Vista pensada para operar</strong>
+									<span>Diseño mas limpio, tipografia grande y mejor jerarquia.</span>
+								</div>
+							</li>
+						</ul>
+					</aside>
+				</div>
+			</div>
+		</section>
+
+		<section class="branch-section" id="formulario">
+			<div class="container">
+				<div class="row g-4 align-items-start">
+					<div class="col-lg-8">
+						<div class="branch-card">
+							<div class="branch-card-head">
+								<h2>Datos de la sucursal</h2>
+								<p>Completa la informacion base. Si hay servidor, se envia por AJAX; si no, se guarda localmente como respaldo.</p>
+							</div>
+
+							<div class="branch-form-msg px-3 px-md-4 pt-3" id="formMessage" role="status" aria-live="polite"></div>
+
+							<form id="branchRegistrationForm" class="branch-form needs-validation" novalidate action="script/contact.php" method="post" data-branch-form>
+								<input type="hidden" name="dzToDo" value="Contact">
+								<input type="hidden" name="reCaptchaEnable" value="0">
+
+								<div class="row g-3">
+									<div class="col-md-6">
+										<label class="form-label" for="branchName">Nombre de la sucursal *</label>
+										<input id="branchName" name="dzOther[branch_name]" type="text" class="form-control" placeholder="Sucursal Lima Centro" required>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="branchCode">Codigo interno *</label>
+										<input id="branchCode" name="dzOther[branch_code]" type="text" class="form-control" placeholder="SUC-001" required>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="responsibleName">Responsable *</label>
+										<input id="responsibleName" name="dzName" type="text" class="form-control" placeholder="Nombre y apellido" required>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="responsibleEmail">Correo de contacto *</label>
+										<input id="responsibleEmail" name="dzEmail" type="email" class="form-control" placeholder="correo@ejemplo.com" required>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="responsiblePhone">Telefono *</label>
+										<input id="responsiblePhone" name="dzOther[phone]" type="tel" class="form-control" placeholder="+51 999 999 999" inputmode="tel" required>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="branchCity">Ciudad *</label>
+										<input id="branchCity" name="dzOther[city]" type="text" class="form-control" placeholder="Lima" required>
+									</div>
+									<div class="col-md-12">
+										<label class="form-label" for="branchAddress">Direccion *</label>
+										<textarea id="branchAddress" name="dzOther[address]" class="form-control" placeholder="Direccion completa de la sucursal" required></textarea>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="openingHours">Horario estimado *</label>
+										<input id="openingHours" name="dzOther[opening_hours]" type="text" class="form-control" placeholder="Lun a sab, 9:00 a 18:00" required>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label" for="targetAudience">Enfoque principal</label>
+										<select id="targetAudience" name="dzOther[target_audience]" class="form-select">
+											<option value="Empresarial">Empresarial</option>
+											<option value="Academico">Academico</option>
+											<option value="Mixto" selected>Mixto</option>
+											<option value="Corporativo">Corporativo</option>
+										</select>
+									</div>
+									<div class="col-md-12">
+										<label class="form-label" for="branchMessage">Observaciones *</label>
+										<textarea id="branchMessage" name="dzMessage" class="form-control" placeholder="Describe el alcance de la sucursal, objetivo de apertura o cualquier observacion importante" required></textarea>
+									</div>
+								</div>
+
+								<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mt-4">
+									<p class="mb-0 branch-note">
+										Al enviar, se crea una solicitud limpia y legible para el equipo comercial.
+									</p>
+									<button type="submit" class="btn branch-btn branch-btn-primary px-4" id="submitBranchForm">
+										Enviar solicitud
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="col-lg-4" id="beneficios">
+						<div class="branch-card branch-help mb-4">
+							<div class="branch-card-head px-0 pt-0">
+								<h3>Lo que mejoramos</h3>
+								<p>Se corrigen descuadres y se suma una lectura mas clara.</p>
+							</div>
+							<ul class="branch-help-list">
+								<li>
+									<i class="fas fa-th-large" aria-hidden="true"></i>
+									<div>
+										<strong class="d-block">Grilla consistente</strong>
+										<span>Campos alineados en escritorio y apilados en mobile.</span>
+									</div>
+								</li>
+								<li>
+									<i class="fas fa-palette" aria-hidden="true"></i>
+									<div>
+										<strong class="d-block">Color claro u oscuro</strong>
+										<span>El usuario cambia el aspecto sin perder contexto.</span>
+									</div>
+								</li>
+								<li>
+									<i class="fas fa-shield-halved" aria-hidden="true"></i>
+									<div>
+										<strong class="d-block">Respaldo local</strong>
+										<span>Si el servidor no responde, la solicitud no se pierde.</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="branch-card branch-help">
+							<div class="branch-card-head px-0 pt-0">
+								<h3>Contacto rapido</h3>
+								<p>Acceso inmediato si quieres ajustar campos o enviar a otra ruta.</p>
+							</div>
+							<div class="d-grid gap-2">
+								<a href="contact-1.html" class="btn branch-btn branch-btn-secondary">Ir a contacto</a>
+								<a href="index.html" class="btn branch-btn branch-btn-primary">Volver al inicio</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="branch-section">
+			<div class="container">
+				<div class="branch-split">
+					<div class="branch-mini">
+						<strong>Territorio</strong>
+						<p>La informacion queda centralizada y mas facil de procesar.</p>
+					</div>
+					<div class="branch-mini">
+						<strong>Capacitacion</strong>
+						<p>La jerarquia visual ayuda a que el usuario complete menos pasos.</p>
+					</div>
+					<div class="branch-mini">
+						<strong>Soporte</strong>
+						<p>El cambio de tema y la persistencia mejoran la experiencia de uso.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="branch-footer">
+		<div class="container">
+			<div class="branch-footer-inner">
+				<div>
+					<strong class="d-block text-reset">Uaden Global</strong>
+					<span>Registro de sucursal con visual limpia, responsive y lista para crecer.</span>
+				</div>
+				<div class="text-md-end">
+					<span>Claro y oscuro, con respaldo local si hace falta.</span>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<script>
+	(function () {
+		const themeKey = "uaden-global-branch-theme";
+		const storageKey = "uaden-global-branch-requests";
+		const body = document.body;
+		const themeToggle = document.getElementById("themeToggle");
+		const themeIcon = themeToggle.querySelector("i");
+		const themeLabel = themeToggle.querySelector("[data-theme-label]");
+		const form = document.getElementById("branchRegistrationForm");
+		const messageBox = document.getElementById("formMessage");
+		const submitButton = document.getElementById("submitBranchForm");
+		const originalButtonText = submitButton.textContent;
+
+		function escapeHtml(value) {
+			return String(value).replace(/[&<>"']/g, function (character) {
+				return ({
+					"&": "&amp;",
+					"<": "&lt;",
+					">": "&gt;",
+					'"': "&quot;",
+					"'": "&#39;"
+				})[character];
+			});
+		}
+
+		function setTheme(theme, persist) {
+			const nextTheme = theme === "dark" ? "dark" : "light";
+			body.dataset.theme = nextTheme;
+			themeToggle.setAttribute("aria-pressed", nextTheme === "dark" ? "true" : "false");
+			themeIcon.className = nextTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
+			themeLabel.textContent = nextTheme === "dark" ? "Modo claro" : "Modo oscuro";
+
+			if (persist) {
+				try {
+					localStorage.setItem(themeKey, nextTheme);
+				} catch (error) {
+					/* ignore storage failures */
+				}
+			}
+		}
+
+		function readStoredTheme() {
+			try {
+				return localStorage.getItem(themeKey);
+			} catch (error) {
+				return null;
+			}
+		}
+
+		function showMessage(type, title, detail) {
+			messageBox.innerHTML = `
+				<div class="alert alert-${type} branch-alert mb-0" role="alert">
+					<strong>${escapeHtml(title)}</strong>
+					<div class="mt-1">${escapeHtml(detail)}</div>
+				</div>
+			`;
+			messageBox.scrollIntoView({ behavior: "smooth", block: "center" });
+		}
+
+		function saveOffline(record) {
+			try {
+				const current = JSON.parse(localStorage.getItem(storageKey) || "[]");
+				current.unshift(record);
+				localStorage.setItem(storageKey, JSON.stringify(current.slice(0, 10)));
+				return true;
+			} catch (error) {
+				return false;
+			}
+		}
+
+		const preferredTheme = readStoredTheme() || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+		setTheme(preferredTheme, false);
+
+		themeToggle.addEventListener("click", function () {
+			setTheme(body.dataset.theme === "dark" ? "light" : "dark", true);
+		});
+
+		form.addEventListener("submit", async function (event) {
+			event.preventDefault();
+			messageBox.innerHTML = "";
+
+			if (!form.checkValidity()) {
+				form.classList.add("was-validated");
+				showMessage("warning", "Revisa los campos", "Faltan datos obligatorios o hay algun formato invalido.");
+				return;
+			}
+
+			submitButton.disabled = true;
+			submitButton.textContent = "Procesando...";
+
+			const payload = new FormData(form);
+			const localRecord = {
+				savedAt: new Date().toISOString(),
+				values: Object.fromEntries(payload.entries())
+			};
+
+			try {
+				if (window.location.protocol === "file:") {
+					throw new Error("local-preview");
+				}
+
+				const response = await fetch(form.action, {
+					method: "POST",
+					body: payload,
+					headers: {
+						"X-Requested-With": "XMLHttpRequest",
+						"Accept": "application/json"
+					}
+				});
+
+				const text = await response.text();
+				let serverResponse = null;
+
+				try {
+					serverResponse = JSON.parse(text);
+				} catch (error) {
+					serverResponse = null;
+				}
+
+				if (response.ok && serverResponse && typeof serverResponse.status !== "undefined") {
+					if (String(serverResponse.status) === "1") {
+						showMessage("success", "Solicitud enviada", serverResponse.msg || "La solicitud fue enviada correctamente.");
+						form.reset();
+						form.classList.remove("was-validated");
+						return;
+					}
+
+					throw new Error(serverResponse.msg || "El servidor no pudo procesar la solicitud.");
+				}
+
+				throw new Error("Respuesta inesperada del servidor.");
+			} catch (error) {
+				const saved = saveOffline(localRecord);
+				form.reset();
+				form.classList.remove("was-validated");
+
+				if (saved) {
+					showMessage("info", "Guardado localmente", "No hubo servidor disponible, pero la solicitud quedo guardada en este navegador.");
+				} else {
+					showMessage("danger", "No se pudo guardar", "Intenta nuevamente o usa la ruta de contacto.");
+				}
+			} finally {
+				submitButton.disabled = false;
+				submitButton.textContent = originalButtonText;
+			}
+		});
+	})();
+</script>
+</body>
+</html>

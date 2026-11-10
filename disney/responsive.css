@@ -1,0 +1,55 @@
+/* --- RESPONSIVE HEADER (< 1024px) --- */
+@media (max-width: 1024px) {
+    
+    /* 1. Ajustamos el nav-inner para móvil */
+    .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    /* 2. OCULTAMOS el menú original (Lo sacamos de la pantalla a la derecha) */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Totalmente escondido a la derecha */
+        width: 280px; /* Ancho del menú móvil */
+        height: 100vh;
+        background-color: white;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        padding: 80px 30px;
+        transition: all 0.4s cubic-bezier(0.77,0.2,0.05,1.0); /* Animación suave */
+        z-index: 1000;
+    }
+
+    /* 3. Cuando el menú está ABIERTO (activado por JS) */
+    .main-nav.mobile-open .nav-links {
+        right: 0; /* Entra de derecha a izquierda */
+    }
+
+    /* 4. Estilos de la lista dentro del menú móvil */
+    .nav-links ul {
+        flex-direction: column; /* Lista vertical */
+        gap: 25px;
+        align-items: flex-start;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        color: #0a1f44; /* Tu azul oscuro */
+        font-weight: 600;
+    }
+
+    /* 5. Mostramos las 3 rayitas */
+    .mobile-nav-toggle {
+        display: flex;
+    }
+
+    /* 6. Ocultamos el botón azul en el header móvil para que no estorbe */
+    .btn-nav-primary {
+        display: none; 
+    }
+}

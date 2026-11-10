@@ -1,0 +1,1279 @@
+/* ==========================================================================
+   COMPONENTES INTERACTIVOS Y TARJETAS 3D (LUXURY EXECUTIVE)
+   ========================================================================== */
+
+/* 1. Countdown Timer */
+.countdown-wrapper {
+  background: rgba(12, 28, 56, 0.75);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), var(--shadow-gold);
+  margin-top: 1rem;
+}
+
+.countdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.countdown-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.countdown-badge {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--gold-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gold-primary);
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.countdown-item {
+  background: rgba(4, 9, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xs);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold-gradient);
+}
+
+.countdown-val {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  font-feature-settings: 'tnum';
+}
+
+.countdown-lbl {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.35rem;
+}
+
+/* 2. Tarjetas y Grids 3D */
+.card-3d {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-3d:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-highlight);
+  background: var(--bg-card-hover);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), var(--shadow-glow);
+}
+
+.card-glow-gold:hover {
+  border-color: var(--border-gold);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), var(--shadow-gold);
+}
+
+/* 3. Comparativo: Capacitador vs Instructor Certificado */
+.comparison-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.comparison-card {
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  position: relative;
+}
+
+.comparison-card-traditional {
+  background: #f8fafc;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+}
+
+.comparison-card-certified {
+  background: linear-gradient(145deg, #0b192c 0%, #1e3a66 100%);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 20px 45px rgba(11, 25, 44, 0.25), 0 0 35px rgba(212, 175, 55, 0.15);
+  color: #ffffff;
+}
+
+.comparison-card-certified .comparison-title,
+.comparison-card-certified .comparison-item {
+  color: #f8fafc;
+}
+
+.comparison-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem;
+}
+
+.comparison-badge-muted {
+  background: #e2e8f0;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.comparison-badge-gold {
+  background: var(--gold-gradient);
+  color: #0b1528;
+}
+
+.comparison-list {
+  list-style: none;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.comparison-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.comparison-item i {
+  margin-top: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.comparison-item.negative i {
+  color: #ef4444;
+}
+
+.comparison-item.positive i {
+  color: var(--cyan-accent);
+}
+
+/* 4. Carrusel 3D de Casos de Estudio de Clase Mundial */
+.cases-carousel-wrapper {
+  position: relative;
+  margin-top: 3rem;
+  overflow: hidden;
+  padding: 1rem 0 2.5rem;
+}
+
+.cases-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.case-card {
+  flex: 0 0 calc(33.333% - 1rem);
+  min-width: 320px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: var(--transition-smooth);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.case-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0284c7 0%, #b8860b 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.case-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(2, 132, 199, 0.45);
+  background: #ffffff;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.09), 0 0 25px rgba(2, 132, 199, 0.12);
+}
+
+.case-card:hover::before {
+  opacity: 1;
+}
+
+.case-brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.case-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #0284c7;
+}
+
+.case-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #996515;
+  background: rgba(184, 134, 11, 0.12);
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.case-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0b192c;
+}
+
+.case-pillar {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--cyan-accent);
+  margin-bottom: 1rem;
+}
+
+.case-desc {
+  font-size: 0.925rem;
+  color: #334155;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.case-features {
+  list-style: none;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.case-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.case-features li i {
+  color: var(--teal-primary);
+  font-size: 0.8rem;
+}
+
+.carousel-nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  border: 1px solid rgba(203, 213, 225, 0.95);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.carousel-btn:hover {
+  background: var(--teal-primary);
+  color: #ffffff;
+  border-color: var(--cyan-accent);
+  box-shadow: 0 4px 15px var(--teal-glow);
+}
+
+/* Indicadores de Puntos del Carrusel (Dots) */
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: var(--radius-xs);
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  width: 26px;
+  background: var(--teal-primary);
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.4);
+}
+
+/* 5. Toolkit & Recursos Descargables (115+ Horas) */
+.toolkit-tabs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.toolkit-tab-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toolkit-tab-btn:hover,
+.toolkit-tab-btn.active {
+  background: #0284c7;
+  border-color: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+}
+
+.toolkit-tab-pane {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.toolkit-tab-pane.active {
+  display: block;
+}
+
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.toolkit-item-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: var(--transition-smooth);
+}
+
+.toolkit-item-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-highlight);
+  background: var(--bg-card-hover);
+}
+
+.toolkit-item-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--gold-primary);
+  margin-bottom: 1rem;
+}
+
+.toolkit-item-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0b192c;
+  margin-bottom: 0.5rem;
+}
+
+.toolkit-item-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* 6. Licencia Institucional & Acreditación 5 Años */
+.license-banner {
+  background: linear-gradient(135deg, rgba(12, 28, 56, 0.95) 0%, rgba(8, 20, 42, 0.95) 100%);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  margin-top: 3.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), var(--shadow-gold);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.license-content h3 {
+  font-size: 1.75rem;
+  color: #ffd700;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.license-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.license-badge-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.license-badge-item i {
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.license-badge-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.license-media {
+  text-align: center;
+}
+
+.license-cert-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+/* 7. Grid de Competencias (100 Horas) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.skill-pill {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  transition: var(--transition-fast);
+}
+
+.skill-pill:hover {
+  background: #ffffff;
+  border-color: var(--teal-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 180, 216, 0.15);
+}
+
+.skill-pill i {
+  color: var(--teal-primary);
+  font-size: 1.25rem;
+}
+
+.skill-pill span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0b192c;
+}
+
+/* 8. Carrusel Interactivo de 15 Razones */
+.reasons-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 0 2rem;
+  margin-top: 2rem;
+}
+
+.reasons-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.reason-card {
+  flex: 0 0 calc(33.333% - 1rem);
+  min-width: 310px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.reason-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #b8860b 0%, #0284c7 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.reason-card:hover {
+  border-color: rgba(2, 132, 199, 0.45);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.reason-card:hover::before {
+  opacity: 1;
+}
+
+.reason-number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0284c7;
+  opacity: 0.45;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  font-feature-settings: 'tnum';
+}
+
+.reason-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0b192c;
+  margin-bottom: 0.5rem;
+}
+
+.reason-desc {
+  font-size: 0.875rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* 9. Perfil del Director: Juan Renedo */
+.director-wrapper {
+  background: linear-gradient(135deg, rgba(12, 28, 56, 0.95) 0%, rgba(8, 20, 42, 0.95) 100%);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), var(--shadow-gold);
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.director-img-box {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+.director-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.director-badge-over {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  background: rgba(4, 9, 20, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.director-badge-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffd700;
+}
+
+.director-badge-title {
+  font-size: 0.75rem;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.director-bio-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffd700 !important;
+  margin-bottom: 0.75rem;
+}
+
+.director-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #ffffff !important;
+}
+
+.director-p {
+  font-size: 0.95rem;
+  color: #cbd5e1 !important;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.director-p strong {
+  color: #ffffff !important;
+}
+
+.director-p em {
+  color: #ffd700 !important;
+  font-style: normal;
+}
+
+.director-credentials-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.director-cred-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.director-cred-item i {
+  color: #ffd700 !important;
+  font-size: 1.15rem;
+}
+
+/* 10. Pricing & Inversión Cards */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+  margin-top: 3rem;
+}
+
+.pricing-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: var(--radius-lg);
+  padding: 2.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(2, 132, 199, 0.45);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.09);
+}
+
+.pricing-card-featured {
+  background: linear-gradient(145deg, #0b192c 0%, #172a45 100%);
+  border: 2px solid var(--gold-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px rgba(11, 25, 44, 0.25), var(--shadow-gold);
+  transform: scale(1.04);
+  z-index: 5;
+  color: #ffffff;
+}
+
+.pricing-card-featured:hover {
+  transform: scale(1.06) translateY(-6px);
+}
+
+.pricing-badge-popular {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-gradient);
+  color: #0b1528;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 1.15rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 15px var(--gold-glow);
+}
+
+.pricing-plan-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0b192c;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card-featured .pricing-plan-name {
+  color: #ffd700 !important;
+  font-weight: 800;
+}
+
+.pricing-plan-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card-featured .pricing-plan-sub {
+  color: #cbd5e1;
+}
+
+.pricing-amount-wrapper {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.pricing-card-featured .pricing-amount-wrapper {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.pricing-currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--teal-primary);
+}
+
+.pricing-card-featured .pricing-currency {
+  color: var(--cyan-bright);
+}
+
+.pricing-amount {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0b192c;
+  line-height: 1;
+}
+
+.pricing-card-featured .pricing-amount {
+  color: #ffffff;
+}
+
+.pricing-savings {
+  font-size: 0.85rem;
+  color: var(--gold-primary);
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.pricing-card-featured .pricing-savings {
+  color: #ffd700 !important;
+  font-weight: 800;
+}
+
+.pricing-card-featured .text-gold {
+  color: #ffd700 !important;
+}
+
+.pricing-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.pricing-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.pricing-features-list li i {
+  color: var(--teal-primary);
+  margin-top: 0.2rem;
+}
+
+.pricing-card-featured .pricing-features-list {
+  color: #e2e8f0;
+}
+
+.pricing-card-featured .pricing-features-list li strong {
+  color: #ffffff;
+}
+
+.pricing-card-featured .pricing-features-list li i {
+  color: #38bdf8;
+}
+
+/* 11. Calculadora Corporativa Interactiva */
+.calculator-box {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-top: 3.5rem;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.06);
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.calculator-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.calc-control-group label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.calc-range-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.calc-range {
+  flex: 1;
+  accent-color: var(--teal-primary);
+  height: 8px;
+  border-radius: var(--radius-xs);
+}
+
+.calc-number-display {
+  width: 50px;
+  height: 50px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--teal-primary);
+}
+
+.calc-results-card {
+  background: linear-gradient(145deg, #0b192c 0%, #1e3a66 100%);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(11, 25, 44, 0.25);
+  color: #ffffff;
+}
+
+.calc-discount-badge {
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid #ffd700;
+  color: #ffd700;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.25rem 0.85rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.calc-final-price {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.calc-savings-note {
+  font-size: 0.95rem;
+  color: #ffd700;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* 12. FAQ Accordion */
+.faq-search-box {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+}
+
+.faq-search-input {
+  width: 100%;
+  padding: 0.85rem 1.25rem 0.85rem 3rem;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  color: #0b192c;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  transition: var(--transition-fast);
+}
+
+.faq-search-input:focus {
+  border-color: var(--cyan-accent);
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.2);
+}
+
+.faq-search-icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+  transition: var(--transition-fast);
+}
+
+.faq-item.active {
+  border-color: rgba(2, 132, 199, 0.45);
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+.faq-question {
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0b192c;
+  user-select: none;
+}
+
+.faq-icon {
+  font-size: 1.25rem;
+  color: var(--cyan-accent);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.75rem;
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 1.75rem 1.5rem;
+}
+
+/* 13. Modal Lead Capture */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(2, 5, 11, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #0a192f 0%, #040914 100%);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 550px;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), var(--shadow-gold);
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.modal-content .form-label {
+  color: #e2e8f0;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+  transition: var(--transition-fast);
+}
+
+.form-select option {
+  background: #0b192c;
+  color: #ffffff;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--cyan-accent);
+  box-shadow: 0 0 15px rgba(0, 180, 216, 0.3);
+}
+
+/* Responsividad para Componentes */
+@media (max-width: 1024px) {
+  .comparison-container {
+    grid-template-columns: 1fr;
+  }
+  .case-card {
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+  .toolkit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .director-wrapper {
+    grid-template-columns: 1fr;
+    padding: 2.5rem;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-card-featured {
+    transform: none;
+  }
+  .pricing-card-featured:hover {
+    transform: translateY(-6px);
+  }
+  .license-banner {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-card {
+    flex: 0 0 100%;
+  }
+  .toolkit-grid {
+    grid-template-columns: 1fr;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+  .director-credentials-list {
+    grid-template-columns: 1fr;
+  }
+  .license-badges-grid {
+    grid-template-columns: 1fr;
+  }
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   COORDINADOR DEL PROGRAMA (bloque Rodrigo Quintanilla)
+   ========================================================================== */
+.coordinator-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.85fr) 2fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .coordinator-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}

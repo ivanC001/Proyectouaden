@@ -1,0 +1,146 @@
+/* ── Waltograph ─────────────────────────────────────────────
+   Coloca los archivos en assets/fonts/
+   Descarga: https://www.dafont.com/waltograph.font
+   ─────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Waltograph';
+  src: url('assets/fonts/waltographUI.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Paleta oficial Disney / Mágica ─────────────────────── */
+:root {
+  --powder-blue: #F2F2F2;
+  /* Fondo base */
+  --disney-gold: #D4AF37;
+  /* Dorado prestigio */
+  --magic-purple: #A569BD;
+  /* Morado mágico */
+  --pixie-pink: #FF69B4;
+  /* Rosado vibrante */
+  --disney-red: #D9232A;
+  /* Rojo Mickey */
+  --hero-overlay: rgba(10, 31, 68, 0.6);
+  /* Capa azul marino/morado para video hero */
+  --disney-green: #98FB98;
+
+  /* ── Nuevos resplandores mágicos ── */
+  --magic-glow-gold: rgba(255, 215, 0, 0.4);
+  /* Resplandor dorado suave   */
+  --magic-glow-pink: rgba(255, 105, 180, 0.5);
+  /* Resplandor rosa hover     */
+  --magic-glow-purple: rgba(165, 105, 189, 0.5);
+  /* Resplandor morado profund.*/
+  --powder-blue-base: #B0E0E6;
+  /* Fondo PowderBlue canónico */
+  --isla-glass: rgba(255, 255, 255, 0.2);
+  /* Opacidad base cristal     */
+}
+
+/* ============================================================
+   3. RESET GLOBAL Y NAVEGACIÓN (Base)
+   ============================================================ */
+
+html, body {
+    /* Tu código de scroll */
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; 
+    
+    /* El reset de seguridad para que nada se salga */
+    overflow-x: hidden !important;
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box; /* Para que los paddings no sumen ancho */
+}
+
+body {
+    background-color: var(--powder-blue);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    /* Mantengo estos para asegurar que el contenido no "baile" */
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* ============================================================
+   4. BOTONES Y LLAMADOS A LA ACCIÓN (CTAs)
+   ============================================================ */
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px; /* Un padding estándar para que se vean bien */
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-smooth); /* Usando la transición que sugerí en el root */
+    text-align: center;
+}
+
+/* CTA Principal — Hero (Rojo Mickey) */
+.btn-primary {
+    background-color: var(--disney-red);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--disney-gold);
+    color: #ffffff;
+    box-shadow: 0 4px 20px var(--magic-glow-gold); /* Usando tu variable de resplandor */
+}
+
+/* CTA Secundario — Resto de secciones (Dorado) */
+.btn-secondary {
+    background-color: var(--disney-gold);
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: var(--magic-purple);
+    color: #ffffff;
+    box-shadow: 0 4px 15px var(--magic-glow-purple);
+}
+
+/* ============================================================
+   5. VARIABLE GLOBAL
+   ============================================================ */
+
+.disney {
+  font-family: 'Waltograph', cursive;
+  font-weight: normal;
+  font-size: 1.05em;
+  /* slightly larger to account for font's x-height */
+  letter-spacing: 0.01em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

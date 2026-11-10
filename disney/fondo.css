@@ -1,0 +1,26 @@
+/* --- AÑADIR AL FINAL DE TU CSS SIN CAMBIAR LO ANTERIOR --- */
+
+/* Clase base para los GIFs/Imágenes flotantes */
+.floating-watermark {
+    position: absolute;
+    z-index: 0; /* stack: DETRÁS del texto (z-index 1 o superior) */
+    pointer-events: none; /* No intercepta clics, el usuario sigue seleccionando texto */
+    opacity: 0.15; /* Sutil marca de agua */
+    transform: translate(-50%, -50%); /* Centra el elemento en sus coordenadas top/left */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Requisito técnico para el contenedor principal de la sección */
+#programa-completo {
+    position: relative; /* Asegura que 'absolute' se posicione dentro de este contenedor */
+    z-index: 1; /* Establece la base del stack */
+    overflow: hidden; /* Corta cualquier parte del GIF que se salga de la sección */
+}
+
+/* Requisito técnico para el contenido principal (texto, imágenes) */
+#programa-completo .disney-container {
+    position: relative;
+    z-index: 2; /* Pone el contenido REAL por delante de las marcas de agua */
+}

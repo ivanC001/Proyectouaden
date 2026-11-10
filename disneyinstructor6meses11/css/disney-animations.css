@@ -1,0 +1,476 @@
+/* ==========================================================================
+   DISNEY MAGICAL ANIMATIONS - MICKEY, MINNIE, PATO DONALD & STARDUST
+   ========================================================================== */
+
+/* 1. Contenedor de Mascotas Flotantes Disney */
+.disney-floating-mascots {
+  position: fixed;
+  bottom: 105px;
+  right: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  z-index: 998;
+  pointer-events: auto;
+}
+
+.disney-mascot-trigger {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #111d33 0%, #1e3a66 50%, #d4af37 100%);
+  border: 2px solid #ffd700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 215, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: visible;
+}
+
+.disney-mascot-trigger:hover {
+  transform: scale(1.12) rotate(6deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 215, 0, 0.7);
+}
+
+.disney-mascot-trigger .magic-wand-icon {
+  font-size: 1.65rem;
+  color: #ffd700;
+  animation: magic-spin 4s ease-in-out infinite alternate;
+}
+
+.disney-badge-ping {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 14px;
+  height: 14px;
+  background: #ff0055;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: pulse-dot 1.8s infinite;
+}
+
+.disney-mascots-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.disney-mascots-menu.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.disney-mascot-bubble {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(8, 19, 37, 0.94);
+  border: 1px solid rgba(255, 215, 0, 0.45);
+  border-radius: 8px;
+  padding: 0.4rem 1.15rem 0.4rem 0.45rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 180, 216, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.disney-mascot-bubble:hover {
+  transform: translateX(-8px) scale(1.04);
+  border-color: #ffd700;
+  background: rgba(14, 32, 64, 0.98);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85), 0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+.disney-avatar-wrap {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: #040914;
+  border: 2px solid #ffd700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.disney-avatar-svg {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s ease;
+}
+
+.disney-mascot-bubble:hover .disney-avatar-svg {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.disney-bubble-info {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.disney-bubble-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: block;
+  line-height: 1.2;
+}
+
+.disney-bubble-role {
+  font-size: 0.725rem;
+  color: var(--cyan-accent);
+  font-weight: 600;
+  display: block;
+}
+
+/* 2. Sección Interactiva: Los 3 Pilares del Elenco Disney */
+.disney-cast-section {
+  position: relative;
+  padding: 5.5rem 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f8fafc 100%);
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  overflow: hidden;
+}
+
+.disney-cast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.disney-character-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 1.75rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.disney-character-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0284c7 0%, #ffd700 100%);
+  opacity: 0.85;
+}
+
+.disney-character-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: #ffd700;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1), 0 0 25px rgba(255, 215, 0, 0.2);
+}
+
+/* Ilustraciones Vectoriales Grandes con Animación */
+.disney-hero-art {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disney-art-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.35) 0%, transparent 70%);
+  animation: pulse-glow 3s infinite alternate;
+}
+
+.disney-character-svg {
+  width: 95px;
+  height: 95px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Animaciones exclusivas de cada personaje */
+.card-mickey:hover .disney-character-svg {
+  animation: mickey-float 1.8s ease-in-out infinite alternate;
+}
+
+.card-minnie:hover .disney-character-svg {
+  animation: minnie-sparkle 1.8s ease-in-out infinite alternate;
+}
+
+.card-donald:hover .disney-character-svg {
+  animation: donald-bounce 1.6s ease-in-out infinite;
+}
+
+.disney-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.85rem;
+}
+
+.badge-mickey {
+  background: rgba(184, 134, 11, 0.12);
+  color: #996515;
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  font-weight: 800;
+}
+
+.badge-minnie {
+  background: rgba(190, 24, 93, 0.12);
+  color: #be185d;
+  border: 1px solid rgba(190, 24, 93, 0.35);
+  font-weight: 800;
+}
+
+.badge-donald {
+  background: rgba(2, 132, 199, 0.12);
+  color: #0369a1;
+  border: 1px solid rgba(2, 132, 199, 0.35);
+  font-weight: 800;
+}
+
+.disney-card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0b192c;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-sans);
+}
+
+.disney-card-subtitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #996515;
+  margin-bottom: 1rem;
+}
+
+.disney-card-desc {
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.disney-card-quote {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #334155;
+  background: #f1f5f9;
+  border-left: 3px solid #b8860b;
+  padding: 0.6rem 0.85rem;
+  border-radius: 6px;
+  text-align: left;
+}
+
+/* 3. Animación de Polvo de Hadas / Stardust en Cursor */
+.magic-sparkle-particle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.2rem;
+  user-select: none;
+  z-index: 99999;
+  animation: float-and-fade 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: transform, opacity;
+}
+
+/* Keyframes */
+@keyframes mickey-float {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-8px) rotate(-4deg) scale(1.06); }
+  100% { transform: translateY(-12px) rotate(4deg) scale(1.08); }
+}
+
+@keyframes minnie-sparkle {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-6px) rotate(3deg) scale(1.05); }
+  100% { transform: translateY(-10px) rotate(-3deg) scale(1.08); }
+}
+
+@keyframes donald-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-12px) rotate(-6deg) scale(1.08); }
+  60% { transform: translateY(-4px) rotate(4deg) scale(1.04); }
+}
+
+@keyframes magic-spin {
+  0% { transform: rotate(-15deg) scale(1); }
+  100% { transform: rotate(15deg) scale(1.15); }
+}
+
+@keyframes float-and-fade {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(var(--dx, 0px), var(--dy, -20px)) scale(1.2) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx, 0px), var(--dy, -45px)) scale(0.2) rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  100% { transform: scale(1.25); opacity: 0.9; }
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .disney-cast-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .disney-floating-mascots {
+    bottom: 95px;
+    right: 20px;
+  }
+}
+
+/* ==========================================================================
+   PATRONES DE FONDO DEL CASTILLO DISNEY & ANIMACIONES MÁGICAS (LIGHT LUXURY)
+   ========================================================================== */
+
+/* 1. Fondo de Marca de Agua: Silueta del Castillo Disney */
+.bg-castle-watermark {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-castle-watermark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' fill='none'%3E%3Cg opacity='0.045'%3E%3C!-- Castillo Disney Silueta Central --%3E%3Cpath d='M600 120 L607 150 L593 150 Z' fill='%230284c7'/%3E%3Crect x='596' y='150' width='8' height='90' fill='%230b192c'/%3E%3Cpath d='M585 240 L600 190 L615 240 Z' fill='%23b8860b'/%3E%3Crect x='580' y='240' width='40' height='160' fill='%230b192c'/%3E%3C!-- Torre Izquierda --%3E%3Cpath d='M530 200 L540 230 L520 230 Z' fill='%230284c7'/%3E%3Crect x='525' y='230' width='10' height='170' fill='%230b192c'/%3E%3Cpath d='M500 270 L515 220 L530 270 Z' fill='%23b8860b'/%3E%3Crect x='495' y='270' width='40' height='130' fill='%230b192c'/%3E%3C!-- Torre Derecha --%3E%3Cpath d='M670 200 L680 230 L660 230 Z' fill='%230284c7'/%3E%3Crect x='665' y='230' width='10' height='170' fill='%230b192c'/%3E%3Cpath d='M670 270 L685 220 L700 270 Z' fill='%23b8860b'/%3E%3Crect x='665' y='270' width='40' height='130' fill='%230b192c'/%3E%3C!-- Murallas y Almenas --%3E%3Crect x='460' y='360' width='280' height='180' fill='%230b192c'/%3E%3C!-- Torres Exteriores --%3E%3Cpath d='M440 260 L455 190 L470 260 Z' fill='%230284c7'/%3E%3Crect x='440' y='260' width='30' height='280' fill='%230b192c'/%3E%3Cpath d='M730 260 L745 190 L760 260 Z' fill='%230284c7'/%3E%3Crect x='730' y='260' width='30' height='280' fill='%230b192c'/%3E%3C!-- Portal Mágico Central --%3E%3Cpath d='M570 540 C570 470 630 470 630 540 Z' fill='%23ffffff'/%3E%3C!-- Estrellas Mágicas --%3E%3Ccircle cx='400' cy='180' r='3' fill='%23b8860b'/%3E%3Ccircle cx='780' cy='160' r='4' fill='%230284c7'/%3E%3Ccircle cx='600' cy='80' r='5' fill='%23b8860b'/%3E%3Ccircle cx='320' cy='250' r='2' fill='%230284c7'/%3E%3Ccircle cx='880' cy='230' r='3' fill='%23b8860b'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 850px auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 2. Fondo de Castillo Real Panorámico */
+.bg-castle-royal {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-castle-royal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600' fill='none'%3E%3Cg opacity='0.038'%3E%3Cpath d='M0 500 Q360 460 720 490 T1440 480 L1440 600 L0 600 Z' fill='%230b192c'/%3E%3Cpath d='M720 180 L730 210 L710 210 Z' fill='%230284c7'/%3E%3Crect x='716' y='210' width='8' height='120' fill='%230b192c'/%3E%3Cpath d='M705 300 L720 250 L735 300 Z' fill='%23b8860b'/%3E%3Crect x='690' y='300' width='60' height='200' fill='%230b192c'/%3E%3Cpath d='M650 330 L665 270 L680 330 Z' fill='%230284c7'/%3E%3Crect x='650' y='330' width='30' height='170' fill='%230b192c'/%3E%3Cpath d='M760 330 L775 270 L790 330 Z' fill='%230284c7'/%3E%3Crect x='760' y='330' width='30' height='170' fill='%230b192c'/%3E%3Ccircle cx='720' cy='120' r='5' fill='%23b8860b'/%3E%3Cpath d='M720 100 L723 115 L738 118 L723 121 L720 136 L717 121 L702 118 L717 115 Z' fill='%23b8860b'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 3. Arco de la Estrella Fugaz Disney (When You Wish Upon A Star) */
+.disney-star-arc {
+  position: relative;
+  display: inline-block;
+}
+
+.disney-star-arc::after {
+  content: '✨';
+  position: absolute;
+  top: -12px;
+  right: -24px;
+  font-size: 1.15rem;
+  animation: star-shimmer 2.2s infinite ease-in-out alternate;
+}
+
+@keyframes star-shimmer {
+  0% { transform: scale(0.8) rotate(-10deg); opacity: 0.6; filter: drop-shadow(0 0 4px #ffd700); }
+  100% { transform: scale(1.25) rotate(15deg); opacity: 1; filter: drop-shadow(0 0 14px #ffd700); }
+}
+
+/* 4. Tarjetas con Marco de Estilo Real Disney */
+.castle-gate-card {
+  position: relative;
+  background: #ffffff !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.castle-gate-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0284c7 0%, #b8860b 50%, #0284c7 100%);
+  opacity: 0.85;
+}
+
+.castle-gate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1), 0 0 30px rgba(212, 175, 55, 0.18);
+  border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+/* 5. Insignia Flotante del Castillo */
+.castle-badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(212, 175, 55, 0.15) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: #b8860b;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.12);
+  transition: all 0.3s ease;
+}
+
+.castle-badge-icon:hover {
+  transform: translateY(-3px) rotate(6deg);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+  border-color: #b8860b;
+}

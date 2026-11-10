@@ -1,0 +1,990 @@
+@font-face {
+  font-family: 'Waltograph';
+  src: url('assets/fonts/waltographUI.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+.disney {
+  font-family: 'Waltograph', cursive;
+}
+
+html {
+    scroll-behavior: smooth; /* Esto hace que el viaje sea un deslizamiento suave */
+    scroll-padding-top: 80px; /* Si tienes un menú fijo arriba, esto evita que tape el título al llegar */
+}
+
+
+
+/* ── Poppins: cargada vía Google Fonts en <head> ─────────── */
+
+/* ── Paleta oficial Disney / Mágica ─────────────────────── */
+:root {
+  --powder-blue: #F2F2F2;
+  /* Fondo base */
+  --disney-gold: #D4AF37;
+  /* Dorado prestigio */
+  --magic-purple: #A569BD;
+  /* Morado mágico */
+  --pixie-pink: #FF69B4;
+  /* Rosado vibrante */
+  --disney-red: #D9232A;
+  /* Rojo Mickey */
+  --hero-overlay: rgba(10, 31, 68, 0.6);
+  /* Capa azul marino/morado para video hero */
+  --disney-green: #98FB98;
+
+
+}
+
+/* ── Base ───────────────────────────────────────────────── */
+body {
+  background-color: var(--powder-blue);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+
+/* ============================================================
+   HEADER: Barra de Navegación Principal
+   ============================================================ */
+
+/* ── Sticky glassmorphism nav ───────────────────────────── */
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow: 0 2px 24px rgba(10, 31, 68, 0.08);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Darker on scroll (class added by JS) */
+.main-nav.scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 4px 32px rgba(10, 31, 68, 0.14);
+}
+
+/* ── Inner layout ────────────────────────────────────────── */
+.nav-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* ── Logo ────────────────────────────────────────────────── */
+.logo-container {
+  flex: 0 0 auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--university-navy, #0a1f44);
+  letter-spacing: 0.08em;
+}
+
+/* ── Nav links ───────────────────────────────────────────── */
+.nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: #0a1f44;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.25s ease;
+}
+
+/* Animated gold underline on hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--disney-gold);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--disney-gold);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ── Botón de acción de navegación ────────────────────────── */
+.btn-nav-primary {
+  flex: 0 0 auto;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0a1f44 0%, #1a3a6a 100%);
+  border-radius: 50px;
+  padding: 0.65rem 1.5rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(10, 31, 68, 0.25);
+}
+
+.btn-nav-primary:hover {
+  background: linear-gradient(135deg, var(--disney-gold) 0%, #e8c547 100%);
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.45);
+  transform: translateY(-1px);
+  color: #0a1f44;
+}
+
+/* ── .disney — Waltograph inline span ────────────────────── */
+/* Used in nav button and any future titles */
+.disney {
+  font-family: 'Waltograph', cursive;
+  font-weight: normal;
+  font-size: 1.05em;
+  /* slightly larger to account for font's x-height */
+  letter-spacing: 0.01em;
+}
+
+/* ── Responsive: colapsa nav en mobile ────────────────────── */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    /* burger menu to be added later */
+  }
+
+  .nav-inner {
+    height: 60px;
+    padding: 0 1.25rem;
+  }
+
+  .btn-nav-primary {
+    font-size: 0.75rem;
+    padding: 0.55rem 1.1rem;
+  }
+
+  .logo-img {
+    height: 36px;
+  }
+}
+
+.magic-dust {
+  position: absolute;
+  background: radial-gradient(circle, #D4AF37, #FFF5A5); /* Dorado a Blanco */
+  border-radius: 50%;
+  pointer-events: none; /* Para que no interfiera con botones o links */
+  box-shadow: 0 0 8px #D4AF37;
+  z-index: 9999;
+  animation: sparkle-fade 1s linear forwards;
+}
+
+@keyframes sparkle-fade {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    /* El polvo cae un poco y se encoge hasta desaparecer */
+    transform: translateY(20px) scale(0);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --- Estilos Base del Título (Limpios de animaciones anteriores) --- */
+.pricing-header {
+  text-align: center;
+  padding: 80px 20px 40px;
+  font-family: 'Poppins', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative; /* Importante para posicionar las partículas */
+}
+
+.pricing-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0a1f44;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  display: inline-block; /* Para que el JS calcule bien el ancho */
+  position: relative;
+  z-index: 2; /* Por encima del polvo */
+}
+
+.pricing-title .disney {
+  color: var(--disney-gold);
+  font-family: 'Waltograph', cursive;
+  font-size: 1.3em;
+  text-transform: none;
+}
+
+.pricing-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+
+/* --- ESTILOS PARA LAS PARTÍCULAS DE POLVO MÁGICO --- */
+.magic-dust-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* No interfiere con clics */
+  z-index: 1; /* Por debajo del título */
+  overflow: visible; /* Para que el polvo caiga fuera del contenedor */
+}
+
+.magic-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: white; /* Color base */
+  pointer-events: none;
+  opacity: 0;
+  /* Animación base de caída */
+  animation: fall-and-fade var(--fall-duration) linear forwards;
+}
+
+/* La nota manuscrita al lado (como la flecha de la imagen) */
+.handdrawn-note {
+  position: absolute;
+  right: -50px;
+  top: 150px;
+  font-family: 'poppins', sans-serif; /* Algo que parezca escrito a mano */
+  font-style: italic;
+  font-size: 14px;
+  color: #888;
+  width: 150px;
+  transform: rotate(5deg);
+}
+
+.arrow-svg {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin-left: 20px;
+}
+
+/* Animación de Cascada y Desvanecimiento */
+@keyframes fall-and-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1) translateX(0);
+    /* El brillo inicial depende del color */
+    box-shadow: 0 0 5px currentColor;
+  }
+  10% {
+    opacity: 1; /* Aparece rápido */
+    transform: translateY(10px) scale(1.2) translateX(var(--drift));
+  }
+  100% {
+    opacity: 0; /* Se desvanece al caer */
+    /* Cae la distancia definida por JS */
+    transform: translateY(var(--fall-distance)) scale(0.2) translateX(calc(var(--drift) * 2));
+    box-shadow: 0 0 2px currentColor;
+  }
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+  .pricing-title {
+    font-size: 32px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Estilos Generales Precios --- */
+.pricing-section {
+  padding: 60px 20px;
+  background-color: var(--powder-blue);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+/* Toggle Switch */
+.pricing-toggle-wrapper {
+  margin-bottom: 50px;
+}
+
+.pricing-toggle {
+  display: inline-flex;
+  background: #e0e0e0;
+  padding: 5px;
+  border-radius: 50px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.toggle-btn {
+  border: none;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.toggle-btn.active {
+  background: white;
+  color: #0a1f44;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Grid de Tarjetas */
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.price-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  flex: 1;
+  position: relative;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.price-card.featured {
+  border: 2px solid var(--disney-gold);
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* El pajarito asomándose */
+.early-bird-badge {
+  position: absolute;
+  top: -65px; /* Lo subimos para que "asome" */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+}
+
+.bird-peeking {
+  width: 100%;
+  height: auto;
+}
+
+.promo-badge {
+  background: var(--disney-gold);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.price-block .amount {
+  font-size: 54px;
+  font-weight: 700;
+  color: #0a1f44;
+}
+
+.deadline {
+  color: var(--disney-red);
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 30px 0;
+}
+
+.card-features li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+.btn-enroll {
+  display: block;
+  padding: 15px;
+  background: #0a1f44;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.btn-orange {
+  background: var(--disney-red); /* El naranja de tu referencia */
+}
+
+/* Vista de Grupos */
+.group-discount-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.group-content-left, .group-content-right {
+  flex: 1;
+  padding: 40px;
+}
+
+.group-content-left {
+  background: #fcfcfc;
+  border-right: 1px solid #eee;
+  text-align: left;
+}
+
+.discount-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.discount-pill {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.discount-pill.gold {
+  background: var(--disney-gold);
+  color: white;
+}
+
+.payment-methods {
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+.hidden { display: none; }
+
+@media (max-width: 768px) {
+  .pricing-grid, .group-discount-card { flex-direction: column; }
+  .price-card.featured { transform: scale(1); margin-top: 60px; }
+}
+
+
+/* --- Ajuste para el efecto de abrazo --- */
+
+.price-card.featured {
+  position: relative;
+  background: transparent; /* El fondo real lo daremos con el ::before */
+  border: 2px solid var(--disney-gold);
+  z-index: 10;
+  overflow: visible; /* Importante para que el pájaro no se corte */
+}
+
+/* Capa 1: El fondo blanco de la tarjeta */
+.price-card.featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: white;
+  border-radius: 18px;
+  z-index: 1; /* Fondo atrás */
+}
+
+/* Capa 2: El pajarito (entre el fondo y el texto) */
+.early-bird-badge {
+  position: absolute;
+  top: -100px; /* Ajusta esto para que la cabeza asome lo justo */
+  left: 50%;
+  transform: translateX(-40%); /* Lo movemos un poco para que el ala abrace */
+  width: 220px; /* Tamaño para que el ala cubra parte de la card */
+  z-index: 1; /* Encima del fondo blanco, debajo del texto */
+  pointer-events: none;
+}
+
+.bird-peeking {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Capa 3: El texto y botones (al frente) */
+.card-content {
+  position: relative;
+  z-index: 3; /* El texto queda siempre al frente para que sea legible */
+}
+
+/* Si quieres que el ala pase POR ENCIMA de un texto específico (ej. el badge dorado),
+   ese elemento no debe tener z-index o debe ser menor a 2. */
+.price-card.featured .promo-badge {
+  position: relative;
+  z-index: 1; /* Esto hace que el ala del pájaro lo tape un poco */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------- DISCLAIMER ----------------------- */
+.disclaimer-section {
+  /* Gradiente solicitado con la opacidad del 75% */
+  background: linear-gradient(rgba(10, 31, 68, 0.75), rgba(147, 164, 167, 0.75));
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disclaimer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.disclaimer-section p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem; /* Tamaño muy pequeño, ideal para avisos legales */
+  color: #e0e0e0; /* Gris claro para que sea legible sobre el fondo oscuro */
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  text-transform: none; /* Asegura que no se aplique uppercase por herencia */
+  letter-spacing: 0.03em;
+}
+
+/* Ajuste para que en móviles no sea "invisible" por lo pequeño */
+@media (max-width: 600px) {
+  .disclaimer-section p {
+    font-size: 0.6rem;
+    padding: 0 10px;
+  }
+}
+
+
+
+
+
+
+
+
+/* ============================================================
+   HOTFIX DE ÚLTIMA HORA - PRIORIDAD MÁXIMA
+   ============================================================ */
+
+/* 1. MATAR EL SCROLL HORIZONTAL (Adiós al espacio blanco) */
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+/* 2. REPARAR EL HEADER EN MÓVIL (< 1024px) */
+@media (max-width: 1024px) {
+    /* Forzamos que el header no se rompa */
+    #main-nav {
+        position: fixed !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: 70px !important;
+        background: #fff !important;
+        z-index: 99999 !important;
+    }
+
+    .nav-inner {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 15px !important;
+        height: 100% !important;
+    }
+
+    /* DOMAR EL LOGO: Que no mida media pantalla */
+    .logo-container {
+        max-width: 140px !important;
+        flex: 0 0 auto !important;
+    }
+    .logo-img {
+        max-height: 40px !important;
+        width: auto !important;
+        display: block !important;
+    }
+
+    /* OCULTAR EL BOTÓN AZUL: No cabe en la barra de arriba */
+    .btn-nav-primary {
+        display: none !important;
+    }
+
+    /* TRANSFORMAR EL MENÚ EN SIDEBAR */
+    .nav-links {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important; /* Escondido */
+        width: 280px !important;
+        height: 100vh !important;
+        background: #ffffff !important;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3) !important;
+        padding: 80px 20px !important;
+        transition: right 0.4s ease-in-out !important;
+        z-index: 99998 !important;
+    }
+
+    /* Clase para abrir el menú (Activada por JS) */
+    .mobile-open .nav-links {
+        right: 0 !important;
+    }
+
+    .nav-links ul {
+        flex-direction: column !important;
+        display: flex !important;
+        gap: 20px !important;
+        list-style: none !important;
+    }
+
+    /* 3. DIBUJAR LAS 3 RAYITAS (Hamburguesa) */
+    .mobile-nav-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 30px !important;
+        height: 20px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        z-index: 100000 !important;
+    }
+
+    .mobile-nav-toggle span {
+        width: 100% !important;
+        height: 3px !important;
+        background-color: #0a1f44 !important; /* Azul oscuro */
+        border-radius: 5px !important;
+    }
+}
+
+/* 4. FIX PARA EL HERO (Título amontonado) */
+@media (max-width: 768px) {
+    #hero {
+        padding-top: 100px !important;
+        text-align: center !important;
+    }
+    #hero h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+    /* Cortar cualquier dibujo de fondo que empuje la web */
+    .hero-content, section {
+        overflow: hidden !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   FUERZA BRUTA FINAL - DESPLIEGUE DEL MENÚ
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    /* 1. Reset completo del contenedor de links cuando está abierto */
+    #main-nav.mobile-open .nav-links {
+        display: flex !important; /* Lo obligamos a existir */
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important; /* Entra a la pantalla */
+        width: 80% !important;
+        max-width: 300px !important;
+        height: 100vh !important;
+        background: #ffffff !important;
+        z-index: 9999999 !important; /* Por encima de todo */
+        flex-direction: column !important;
+        padding: 100px 20px 20px 20px !important;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5) !important;
+        transform: none !important; /* Por si algún otro CSS lo está rotando o escalando */
+    }
+
+    /* 2. Asegurar que la lista de links se vea */
+    #main-nav.mobile-open .nav-links ul {
+        display: flex !important;
+        flex-direction: column !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        gap: 20px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* 3. Estilo de los textos (Azul oscuro para que se lean sobre el blanco) */
+    #main-nav.mobile-open .nav-links ul li a {
+        color: #0a1f44 !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        display: block !important;
+    }
+}
+
+
+
+
+/* ============================================================
+   ATAQUE FINAL: FORZAR BOTÓN DE CIERRE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    /* Sacamos el botón del flujo normal y lo ponemos por encima de TODO */
+    button#menu-toggle.mobile-nav-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important; /* Lo fijamos a la pantalla */
+        top: 15px !important;       /* Lo movemos arriba */
+        right: 15px !important;     /* Lo pegamos a la derecha */
+        z-index: 999999999 !important; /* El z-index más alto posible */
+        width: 45px !important;     /* Un poco más grande para poder tocarlo bien */
+        height: 45px !important;
+        background: #0a1f44 !important; /* Le ponemos un fondo azul oscuro para que se vea */
+        border-radius: 5px !important;
+        padding: 10px !important;
+        flex-direction: column !important;
+        justify-content: space-around !important;
+    }
+
+    /* Forzamos que las barritas sean blancas para que contrasten con el fondo azul del botón */
+    button#menu-toggle.mobile-nav-toggle span {
+        display: block !important;
+        width: 100% !important;
+        height: 3px !important;
+        background-color: #ffffff !important; 
+        border-radius: 2px !important;
+        transition: 0.3s !important;
+    }
+
+    /* Transformación a X cuando esté abierto */
+    #main-nav.mobile-open button#menu-toggle.mobile-nav-toggle span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg) !important;
+    }
+    #main-nav.mobile-open button#menu-toggle.mobile-nav-toggle span:nth-child(2) {
+        opacity: 0 !important;
+    }
+    #main-nav.mobile-open button#menu-toggle.mobile-nav-toggle span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg) !important;
+    }
+}
+
+
+/* ============================================================
+   FIX FINAL: BOTÓN "X" FLOTANTE PARA CIERRE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    /* Cuando el menú está abierto, forzamos al botón a flotar arriba */
+    #main-nav.mobile-open #menu-toggle {
+        position: fixed !important;
+        top: 15px !important;
+        right: 15px !important;
+        z-index: 999999999 !important; /* Z-index estratosférico */
+        background-color: #0a1f44 !important; /* Círculo azul oscuro */
+        width: 45px !important;
+        height: 45px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+        border: none !important;
+    }
+
+    /* Forzamos que las 3 barritas se conviertan en una X BLANCA */
+    #main-nav.mobile-open #menu-toggle span {
+        background-color: #ffffff !important; /* X Blanca */
+        width: 25px !important;
+        height: 3px !important;
+        position: absolute !important;
+        display: block !important;
+        transition: 0.3s !important;
+    }
+
+    /* Formamos la X */
+    #main-nav.mobile-open #menu-toggle span:nth-child(1) {
+        transform: rotate(45deg) !important;
+    }
+    #main-nav.mobile-open #menu-toggle span:nth-child(2) {
+        opacity: 0 !important; /* Desaparece la del medio */
+    }
+    #main-nav.mobile-open #menu-toggle span:nth-child(3) {
+        transform: rotate(-45deg) !important;
+    }
+}
+
+/* ============================================================
+   FIX UNIVERSAL: BOTÓN DE CIERRE (FORZADO)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    /* Forzamos que el ID gane por especificidad */
+    body #menu-toggle.mobile-nav-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important; /* FIJO A LA PANTALLA, NO AL NAV */
+        top: 20px !important;
+        right: 20px !important;
+        z-index: 2147483647 !important; /* EL MÁXIMO Z-INDEX POSIBLE EN NAVEGADORES */
+        background-color: #0a1f44 !important; /* Azul Marino Disney */
+        width: 48px !important;
+        height: 48px !important;
+        border-radius: 50% !important;
+        border: 2px solid #ffffff !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+        cursor: pointer !important;
+    }
+
+    /* Dibujamos la X blanca gruesa */
+    body.mobile-open #menu-toggle span {
+        background-color: #ffffff !important;
+        height: 4px !important;
+        width: 25px !important;
+    }
+}

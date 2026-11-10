@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seminario de Alta Dirección en Gestión Integral de Crisis, Emergencias y Catástrofes desde los Municipios | UADEN Global</title>
+  <meta name="description" content="Programa Ejecutivo Internacional de UADEN Global. Liderar cuando cada decisión puede salvar vidas, proteger la ciudad y garantizar la continuidad del gobierno. 2da Edición - 28 y 29 de Septiembre.">
+  
+  <!-- Open Graph / Meta Tags -->
+  <meta property="og:title" content="Gestión Integral de Crisis, Emergencias y Catástrofes desde los Municipios - 2da Edición | UADEN Global">
+  <meta property="og:description" content="Seminario de Alta Dirección para Alcaldes, Intendentes, Directores de Protección Civil y Líderes de Gobierno. 12 horas ejecutivas internacionales en vivo online.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- UADEN browser icons -->
+  <link rel="icon" type="image/png" href="assets/images/logos/logo_u_icon_color.png">
+  <link rel="shortcut icon" type="image/png" href="assets/images/logos/logo_u_icon_color.png">
+  <link rel="apple-touch-icon" href="assets/images/logos/logo_u_icon_color.png">
+  <meta name="theme-color" content="#040d1a">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. TOP ANNOUNCEMENT BAR
+       ========================================================================= -->
+  <aside class="announcement-bar" aria-label="Aviso de disponibilidad de cupos">
+    <span class="announcement-pulse" aria-hidden="true"></span>
+    <span><strong>2DA EDICIÓN CONFIRMADA:</strong> Por agotamiento de cupos en la 1ra edición | 28 y 29 de Septiembre | Cupos con Descuento Early Bird Disponibles</span>
+  </aside>
+
+  <!-- =========================================================================
+       2. HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#hero" class="header-logo-link" aria-label="Ir al inicio de UADEN Global">
+          <img src="assets/images/logos/logo_uaden_global_white.png" alt="UADEN Global" class="header-logo-img">
+        </a>
+
+        <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+          <a href="#programa" class="nav-link">El Escenario</a>
+          <a href="#dirigido" class="nav-link">¿A Quién Dirigido?</a>
+          <a href="#modulos" class="nav-link">Módulos</a>
+          <a href="#metodologia" class="nav-link">Metodología</a>
+          <a href="#director" class="nav-link">Director</a>
+          <a href="#inversion" class="nav-link">Inversión</a>
+          <a href="#faq" class="nav-link">Preguntas</a>
+        </nav>
+
+        <div class="header-actions">
+
+          <a href="#inversion" class="btn btn-gold btn-sm d-none-mobile">
+            <i class="bi bi-ticket-perforated"></i> Reservar Cupo
+          </a>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú de navegación" aria-controls="navMenu" aria-expanded="false">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. HERO SECTION WITH ATMOSPHERIC CRISIS FX (RAIN, SMOKE, PARTICLES)
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="hero-cinematic-bg-wrap">
+      <img src="assets/images/crisis_disaster_flood.jpg" alt="Centro de Comando y Rescate en Inundaciones y Crisis Municipal" class="hero-bg-image hero-bg-cinematic">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-emergency-flash emergency-flash-red" aria-hidden="true"></div>
+      <div class="hero-emergency-flash emergency-flash-blue" aria-hidden="true"></div>
+    </div>
+    
+    <!-- Atmospheric Crisis FX Canvas (Torrential Rain, Water Ripples, Smoke, Embers) -->
+    <canvas id="crisisFxCanvas" class="crisis-fx-canvas" aria-hidden="true"></canvas>
+    <div class="crisis-smoke-overlay" aria-hidden="true">
+      <div class="smoke-layer smoke-layer-1"></div>
+      <div class="smoke-layer smoke-layer-2"></div>
+      <div class="smoke-layer smoke-layer-3"></div>
+    </div>
+    <div class="crisis-water-surface" aria-hidden="true"></div>
+    <div class="crisis-radar-grid" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <!-- Left Column: Key Copy & CTAs -->
+      <div class="hero-text-col">
+        <!-- Live Crisis Tactical Status Badge -->
+        <div class="crisis-status-badge" aria-label="Estado operativo">
+          <span class="beacon-pulse" aria-hidden="true"></span>
+          <span>SALA DE CRISIS & COMANDO MUNICIPAL • 2DA EDICIÓN CONFIRMADA</span>
+        </div>
+
+        <div class="hero-edition-pill">
+          <span class="highlight">2DA EDICIÓN</span>
+          <span>PROGRAMA EJECUTIVO INTERNACIONAL</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-title-prefix">Seminario de Alta Dirección en</span>
+          <span class="title-accent">Gestión Integral de Crisis, Emergencias y Catástrofes</span>
+          <span class="hero-title-suffix">desde los municipios</span>
+        </h1>
+
+        <p class="hero-tagline">
+          "Liderar cuando cada decisión puede salvar vidas, proteger la ciudad y garantizar la continuidad del gobierno."
+        </p>
+
+        <!-- Highlights Grid -->
+        <div class="hero-highlights-grid">
+          <div class="hero-highlight-item">
+            <i class="bi bi-calendar-check"></i>
+            <div>
+              <span class="label">Fechas del Evento</span>
+              <span class="val">28 y 29 de Septiembre</span>
+            </div>
+          </div>
+
+          <div class="hero-highlight-item">
+            <i class="bi bi-clock-history"></i>
+            <div>
+              <span class="label">Intensidad</span>
+              <span class="val">12 Horas Ejecutivas (En Vivo)</span>
+            </div>
+          </div>
+
+          <div class="hero-highlight-item">
+            <i class="bi bi-award"></i>
+            <div>
+              <span class="label">Certificación Oficial</span>
+              <span class="val">Emitido por UADEN (EE. UU.)</span>
+            </div>
+          </div>
+
+          <div class="hero-highlight-item">
+            <i class="bi bi-people-fill"></i>
+            <div>
+              <span class="label">Acceso Institucional</span>
+              <span class="val">Asistentes Ilimitados / 1 Conexión</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="hero-cta-group">
+          <a href="#inversion" class="btn btn-gold btn-lg">
+            <i class="bi bi-lightning-charge-fill"></i> Inscribirse con Early Bird
+          </a>
+          <a href="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" download="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" target="_blank" class="btn btn-outline-white btn-lg hero-download-btn" title="Descargar Folleto Oficial de Gestión de Crisis en PDF">
+            <i class="bi bi-file-earmark-pdf-fill" style="color: var(--accent-gold-light);"></i> Descargar Folleto Oficial (PDF)
+          </a>
+          <button type="button" class="btn btn-translucent btn-sm" data-open-modal="registerModal">
+            <i class="bi bi-headset"></i> Solicitar Asesoría
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Emergency response editorial visual -->
+      <div class="hero-form-col">
+        <figure class="hero-response-visual">
+
+
+          <div class="hero-response-image-wrap">
+            <div class="hero-response-halo" aria-hidden="true"></div>
+            <img src="assets/images/emergency_response_team.webp" alt="Equipo multidisciplinario de bomberos, paramédicos y seguridad preparado para responder ante una crisis">
+          </div>
+
+          <figcaption class="hero-response-caption">
+            <span>Formación para quienes lideran la respuesta</span>
+            <strong>Decisión. Coordinación. Protección.</strong>
+          </figcaption>
+
+          <div class="hero-response-data" aria-label="Información del programa">
+            <div><strong>12 H</strong><span>Formación ejecutiva</span></div>
+            <div><strong>EN VIVO</strong><span>Modalidad online</span></div>
+            <div><strong>28–29 SEP</strong><span>Segunda edición</span></div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. CONTEXT & REALITY: EL NUEVO ESCENARIO DEL SIGLO XXI
+       ========================================================================= -->
+  <section class="section section-dark section-with-disaster-fx" id="programa">
+    <div class="section-crisis-backdrop" aria-hidden="true">
+      <img src="assets/images/crisis_wildfire_smoke.jpg" alt="Operaciones de respuesta ante incendios y desastres naturales" class="section-bg-disaster">
+      <div class="section-disaster-overlay"></div>
+      <canvas class="section-fx-canvas" id="programaFxCanvas"></canvas>
+      <div class="smoke-drift-layer"></div>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-title-wrap">
+        <span class="section-badge badge-emergency">
+          <i class="bi bi-exclamation-triangle-fill"></i> El Nuevo Escenario Mundial de Riesgos
+        </span>
+        <h2 class="section-title section-title-dark">
+          Las crisis ya no son excepciones: forman parte del día a día de las ciudades del siglo XXI.
+        </h2>
+        <p class="section-subtitle section-subtitle-dark">
+          Un evento imprevisto puede comprometer en pocas horas la estabilidad institucional de un gobierno local.
+        </p>
+      </div>
+
+      <div class="reality-grid">
+        <div class="reality-text-col">
+          <h3 style="color: var(--white); font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">
+            En estos escenarios no solamente se administra una emergencia:
+          </h3>
+
+          <div class="impact-list">
+            <div class="impact-item">
+              <div class="impact-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+              <span>Se protege la vida de miles de personas.</span>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon"><i class="bi bi-bank2"></i></div>
+              <span>Se preserva la gobernabilidad.</span>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon"><i class="bi bi-shield-shaded"></i></div>
+              <span>Se mantiene la continuidad del Estado.</span>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon"><i class="bi bi-graph-up-arrow"></i></div>
+              <span>Se protege la economía local.</span>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon"><i class="bi bi-people"></i></div>
+              <span>Se sostiene la confianza pública y la cohesión comunitaria.</span>
+            </div>
+          </div>
+
+          <h4 style="color: var(--primary-cyan); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1.5rem;">
+            Riesgos y Amenazas que Aborda el Programa:
+          </h4>
+          <div class="crisis-types-pills">
+            <span class="crisis-pill">Terremotos & Tsunamis</span>
+            <span class="crisis-pill">Inundaciones & Huracanes</span>
+            <span class="crisis-pill">Incendios Forestales</span>
+            <span class="crisis-pill">Sequías Extremas</span>
+            <span class="crisis-pill">Epidemias & Pandemias</span>
+            <span class="crisis-pill">Accidentes Químicos e Industriales</span>
+            <span class="crisis-pill">Ciberataques Municipales</span>
+            <span class="crisis-pill">Colapsos de Infraestructura</span>
+            <span class="crisis-pill">Violencia Urbana & Disturbios</span>
+            <span class="crisis-pill">Crisis Políticas y Vocería</span>
+            <span class="crisis-pill">Falla de Servicios Esenciales</span>
+            <span class="crisis-pill">Cambio Climático</span>
+          </div>
+        </div>
+
+        <div class="reality-image-wrap reality-crisis-poster content-photo-frame">
+          <img src="assets/images/crisis_operations_collage.webp" alt="Crisis urbana compleja con respuesta de bomberos, rescate y comunicación ciudadana" class="reality-image" loading="lazy">
+          <div class="reality-image-overlay">
+            <p class="reality-quote">
+              "Gobernar también significa estar preparado para el peor día de la ciudad."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Pillars of Municipal Resilience -->
+      <div class="core-pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="bi bi-person-fill-gear"></i></div>
+          <h4>Depende del Liderazgo</h4>
+          <p>Capacidad de conducción firme, serena y estratégica bajo presión extrema.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="bi bi-diagram-3-fill"></i></div>
+          <h4>Depende de la Planificación</h4>
+          <p>Planes de continuidad institucional elaborados antes de que ocurra el desastre.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+          <h4>Depende de la Coordinación</h4>
+          <p>Articulación impecable entre gobierno, fuerzas de seguridad, salud y empresas.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="bi bi-shield-check"></i></div>
+          <h4>Depende de la Preparación</h4>
+          <p>Protocolos probados en simulacros y toma de decisiones con información en tiempo real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. TARGET AUDIENCE: ¿A QUIÉN ESTÁ DIRIGIDO?
+       ========================================================================= -->
+  <section class="section section-light" id="dirigido">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge badge-blue">
+          <i class="bi bi-person-badge"></i> Perfil de Asistentes
+        </span>
+        <h2 class="section-title section-title-light">
+          ¿A Quién Está Dirigido Este Seminario Internacional?
+        </h2>
+        <p class="section-subtitle">
+          Diseñado para los tomadores de decisiones que tienen bajo su responsabilidad la protección ciudadana y la continuidad gubernamental.
+        </p>
+      </div>
+
+      <div class="audience-grid">
+        <!-- Card 1: Autoridades Políticas y Ejecutivas -->
+        <div class="audience-card">
+          <div class="audience-card-header">
+            <div class="audience-card-icon icon-gov">
+              <i class="bi bi-building"></i>
+            </div>
+            <h3 class="audience-card-title">Autoridades Políticas y de Gobierno</h3>
+          </div>
+          <p style="color: var(--slate-600); font-size: 0.9rem; margin-bottom: 1.25rem;">
+            Líderes con la máxima responsabilidad política, institucional y legal frente a situaciones de conmoción o desastre.
+          </p>
+          <div class="audience-tags-list">
+            <span class="audience-tag">Alcaldes e Intendentes</span>
+            <span class="audience-tag">Vicealcaldes</span>
+            <span class="audience-tag">Gobernadores</span>
+            <span class="audience-tag">Ministros de Estado</span>
+            <span class="audience-tag">Concejales y Legisladores</span>
+            <span class="audience-tag">Autoridades Metropolitanas</span>
+            <span class="audience-tag">Aspirantes a Cargos Ejecutivos</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Secretarías y Fuerzas de Emergencia -->
+        <div class="audience-card">
+          <div class="audience-card-header">
+            <div class="audience-card-icon icon-sec">
+              <i class="bi bi-shield-fill-check"></i>
+            </div>
+            <h3 class="audience-card-title">Emergencias, Seguridad y Defensa</h3>
+          </div>
+          <p style="color: var(--slate-600); font-size: 0.9rem; margin-bottom: 1.25rem;">
+            Comandantes y directores operativos encargados de la respuesta táctica y la protección de vidas e infraestructura.
+          </p>
+          <div class="audience-tags-list">
+            <span class="audience-tag">Protección y Defensa Civil</span>
+            <span class="audience-tag">Cuerpos de Bomberos</span>
+            <span class="audience-tag">Policías y Fuerzas de Seguridad</span>
+            <span class="audience-tag">Fuerzas Armadas (Apoyo Civil)</span>
+            <span class="audience-tag">Emergencias Médicas / SAME</span>
+            <span class="audience-tag">Cruz Roja y Voluntariado</span>
+            <span class="audience-tag">Secretarías de Seguridad y Salud</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Sector Estratégico, Servicios y Consultores -->
+        <div class="audience-card">
+          <div class="audience-card-header">
+            <div class="audience-card-icon icon-tech">
+              <i class="bi bi-globe-americas"></i>
+            </div>
+            <h3 class="audience-card-title">Infraestructura, ONG y Asesores</h3>
+          </div>
+          <p style="color: var(--slate-600); font-size: 0.9rem; margin-bottom: 1.25rem;">
+            Organizaciones que sostienen los servicios esenciales y brindan asesoramiento técnico y humanitario.
+          </p>
+          <div class="audience-tags-list">
+            <span class="audience-tag">Empresas de Servicios Públicos (Agua, Energía, Gas)</span>
+            <span class="audience-tag">Directores de Obras Públicas</span>
+            <span class="audience-tag">Consultores y Asesores de Crisis</span>
+            <span class="audience-tag">Organismos Internacionales</span>
+            <span class="audience-tag">Universidades y Centros de Estudio</span>
+            <span class="audience-tag">Especialistas en Gestión del Riesgo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Crisis leadership: copy left, complete image right -->
+      <div class="crisis-feature-split">
+        <div class="crisis-feature-copy">
+            <span class="section-badge badge-gold"><i class="bi bi-lightbulb-fill"></i> Liderazgo de Alto Impacto</span>
+            <h3>
+              "Los grandes líderes no se conocen en tiempos de calma, sino en medio de la crisis."
+            </h3>
+            <p>
+              Aprenda a tomar decisiones acertadas en los primeros minutos críticos cuando la incertidumbre es máxima y la presión es abrumadora.
+            </p>
+            <div class="crisis-feature-actions">
+              <a href="#modulos" class="btn btn-primary btn-sm">
+                <i class="bi bi-arrow-down-circle"></i> Explorar los 4 Módulos Académicos
+              </a>
+              <a href="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" download="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" target="_blank" class="btn btn-gold btn-sm">
+                <i class="bi bi-file-earmark-pdf-fill"></i> Descargar Folleto Oficial (PDF)
+              </a>
+            </div>
+        </div>
+        <div class="content-photo-frame crisis-feature-media">
+          <img src="assets/images/crisis_cabinet.jpg" alt="Mesa de decisiones y gabinete de crisis municipal" class="content-photo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. 15 REASONS TO PARTICIPATE: ¿POR QUÉ PARTICIPAR?
+       ========================================================================= -->
+  <section class="section section-slate reasons-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge badge-blue">
+          <i class="bi bi-check2-all"></i> Valor Exclusivo
+        </span>
+        <h2 class="section-title section-title-light">
+          15 Razones para Asistir a este Seminario Internacional
+        </h2>
+        <p class="section-subtitle">
+          Herramientas ejecutivas concretas y aplicables de inmediato a la realidad de su municipio o gobierno local.
+        </p>
+      </div>
+
+      <div class="crisis-roles-showcase" aria-label="Roles estratégicos durante una crisis">
+        <figure class="crisis-role-figure">
+          <img src="assets/images/crisis_communicator.webp" alt="Especialista realizando vocería y comunicación pública de crisis" loading="lazy">
+          <figcaption>Vocería estratégica</figcaption>
+        </figure>
+        <div class="crisis-roles-message">
+          <span>CAPACIDADES EN ACCIÓN</span>
+          <strong>Liderar, comunicar y documentar bajo presión</strong>
+          <p>La preparación conecta decisión política, coordinación operativa y confianza ciudadana.</p>
+        </div>
+        <figure class="crisis-role-figure">
+          <img src="assets/images/emergency_photographer.webp" alt="Especialista documentando operaciones durante una emergencia" loading="lazy">
+          <figcaption>Información desde el terreno</figcaption>
+        </figure>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <span class="reason-num">1</span>
+          <p class="reason-text">Comprender las nuevas amenazas que enfrentan las ciudades modernas.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">2</span>
+          <p class="reason-text">Aprender a liderar durante situaciones de alta presión e incertidumbre.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">3</span>
+          <p class="reason-text">Diseñar municipios resilientes antes de que ocurra la emergencia.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">4</span>
+          <p class="reason-text">Incorporar metodologías y protocolos internacionales de gestión de crisis.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">5</span>
+          <p class="reason-text">Fortalecer la coordinación entre todas las instituciones del Estado.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">6</span>
+          <p class="reason-text">Elaborar planes de continuidad institucional para el gobierno municipal.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">7</span>
+          <p class="reason-text">Mejorar la comunicación pública y vocería institucional en catástrofes.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">8</span>
+          <p class="reason-text">Evitar errores críticos que agravan las crisis y destruyen la confianza.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">9</span>
+          <p class="reason-text">Conocer y analizar experiencias exitosas de diferentes países del mundo.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">10</span>
+          <p class="reason-text">Aprender a administrar crisis políticas derivadas de catástrofes.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">11</span>
+          <p class="reason-text">Integrar la gestión prospectiva del riesgo en la planificación municipal.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">12</span>
+          <p class="reason-text">Preparar protocolos de respuesta rápida para las primeras horas críticas.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">13</span>
+          <p class="reason-text">Proteger la infraestructura crítica y la continuidad de servicios públicos.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">14</span>
+          <p class="reason-text">Incrementar la confianza ciudadana mediante una gestión profesional de emergencias.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-num">15</span>
+          <p class="reason-text">Convertirse en un referente institucional en liderazgo para situaciones críticas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. ACADEMIC PROGRAM & 4 MODULES (INTERACTIVE TABS)
+       ========================================================================= -->
+  <section class="section section-gradient-dark section-with-disaster-fx" id="modulos">
+    <div class="section-crisis-backdrop" aria-hidden="true">
+      <canvas class="section-fx-canvas" id="modulosFxCanvas"></canvas>
+      <div class="crisis-radar-grid"></div>
+      <div class="smoke-drift-layer"></div>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-title-wrap">
+        <span class="section-badge badge-cyan">
+          <i class="bi bi-journal-bookmark-fill"></i> Estructura Curricular
+        </span>
+        <h2 class="section-title section-title-dark">
+          Programa Académico Detallado
+        </h2>
+        <p class="section-subtitle section-subtitle-dark">
+          12 horas de formación intensiva divididas en 4 módulos estratégicos con casos reales y simulaciones.
+        </p>
+      </div>
+
+      <div class="modules-container">
+        <!-- Module Tabs Navigation -->
+        <div class="modules-nav-tabs" role="tablist">
+          <button class="module-tab-btn active" data-target="module1" role="tab" aria-selected="true">
+            <span class="tab-day">LUNES 28 SEPT • MAÑANA</span>
+            <span class="tab-title">Módulo 1: Gobernar en Crisis</span>
+          </button>
+
+          <button class="module-tab-btn" data-target="module2" role="tab" aria-selected="false">
+            <span class="tab-day">LUNES 28 SEPT • TARDE</span>
+            <span class="tab-title">Módulo 2: Dirección Estratégica</span>
+          </button>
+
+          <button class="module-tab-btn" data-target="module3" role="tab" aria-selected="false">
+            <span class="tab-day">MARTES 29 SEPT • MAÑANA</span>
+            <span class="tab-title">Módulo 3: Catástrofes Complejas</span>
+          </button>
+
+          <button class="module-tab-btn" data-target="module4" role="tab" aria-selected="false">
+            <span class="tab-day">MARTES 29 SEPT • TARDE</span>
+            <span class="tab-title">Módulo 4: Reconstrucción & IA</span>
+          </button>
+        </div>
+
+        <!-- Tab 1 Content -->
+        <div class="module-content-card active" id="module1" role="tabpanel">
+          <div class="module-card-header">
+            <div>
+              <span class="module-badge-time">
+                <i class="bi bi-clock"></i> 8:00 AM a 11:00 AM (Hora de Chicago)
+              </span>
+              <h3 class="module-card-title">MÓDULO 1: GOBERNAR EN TIEMPOS DE CRISIS</h3>
+              <p class="module-card-subtitle">Fundamentos de gobernanza del riesgo, ciudades resilientes y toma de decisiones políticas.</p>
+            </div>
+            <span class="section-badge badge-blue">Día 1 - Sesión 1</span>
+          </div>
+
+          <div class="module-body-with-image">
+          <div class="module-topics-grid">
+            <div class="module-topics-col">
+              <h5><i class="bi bi-shield-slash"></i> Amenazas y Vulnerabilidades</h5>
+              <ul class="topics-checklist">
+                <li><i class="bi bi-check-circle-fill"></i> El nuevo escenario mundial de riesgos y crisis del siglo XXI.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Gestión Integral del Riesgo municipal.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Amenazas naturales, ambientales y climáticas.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Amenazas tecnológicas, biológicas y sanitarias.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Riesgos químicos, industriales y energéticos.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Riesgos hidrometeorológicos y cambio climático.</li>
+              </ul>
+            </div>
+
+            <div class="module-topics-col">
+              <h5><i class="bi bi-diagram-2"></i> Liderazgo y Gobernanza</h5>
+              <ul class="topics-checklist">
+                <li><i class="bi bi-check-circle-fill"></i> Construcción de ciudades y municipios resilientes.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Gobernanza del riesgo y cultura de prevención.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Sistemas internacionales de protección civil.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Evaluación de vulnerabilidades y mapas de riesgo.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Sistemas de alerta temprana y planificación preventiva.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Toma de decisiones bajo incertidumbre y gestión política.</li>
+              </ul>
+            </div>
+          </div>
+            <figure class="module-context-image module-context-cutout">
+              <img src="assets/images/hero_crisis_center.jpg" alt="Centro de operaciones coordinando una emergencia urbana en tiempo real" loading="lazy">
+              <figcaption><i class="bi bi-people-fill"></i> Liderazgo coordinado desde el centro de operaciones</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Tab 2 Content -->
+        <div class="module-content-card" id="module2" role="tabpanel">
+          <div class="module-card-header">
+            <div>
+              <span class="module-badge-time">
+                <i class="bi bi-clock"></i> 14:00 PM a 17:00 PM (Hora de Chicago)
+              </span>
+              <h3 class="module-card-title">MÓDULO 2: DIRECCIÓN ESTRATÉGICA DURANTE LA EMERGENCIA</h3>
+              <p class="module-card-subtitle">Centros de Operaciones de Emergencia (COE), seguridad, ciberamenazas y comunicación de crisis.</p>
+            </div>
+            <span class="section-badge badge-blue">Día 1 - Sesión 2</span>
+          </div>
+
+          <div class="module-body-with-image">
+          <div class="module-topics-grid">
+            <div class="module-topics-col">
+              <h5><i class="bi bi-cpu"></i> Comando, Logística y Continuidad</h5>
+              <ul class="topics-checklist">
+                <li><i class="bi bi-check-circle-fill"></i> Centros de Operaciones de Emergencia (COE).</li>
+                <li><i class="bi bi-check-circle-fill"></i> Sistemas de Comando de Incidentes (SCI).</li>
+                <li><i class="bi bi-check-circle-fill"></i> Organización de crisis y coordinación interinstitucional.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Gestión de recursos y logística de emergencias.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Gestión de evacuaciones masivas y cordones de seguridad.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Protección de infraestructura crítica y continuidad gubernamental.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Gestión hospitalaria y seguridad ciudadana.</li>
+              </ul>
+            </div>
+
+            <div class="module-topics-col">
+              <h5><i class="bi bi-megaphone-fill"></i> Conflictos, Ciberseguridad y Medios</h5>
+              <ul class="topics-checklist">
+                <li><i class="bi bi-check-circle-fill"></i> Violencia urbana, disturbios sociales y saqueos.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Crisis políticas, terrorismo y amenazas híbridas.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Ciberataques a infraestructuras y gobiernos municipales.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Manejo de información clasificada y crítica.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Comunicación estratégica y relación con medios masivos.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Manejo de fake news, rumores y redes sociales en crisis.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Vocería institucional efectiva y control del mensaje.</li>
+              </ul>
+            </div>
+          </div>
+            <figure class="module-context-image module-context-cutout">
+              <img src="assets/images/field_response_workers.webp" alt="Brigadistas coordinando operaciones de respuesta en terreno">
+              <figcaption><i class="bi bi-person-gear"></i> Comando operativo, logística y respuesta en terreno</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Tab 3 Content -->
+        <div class="module-content-card" id="module3" role="tabpanel">
+          <div class="module-card-header">
+            <div>
+              <span class="module-badge-time">
+                <i class="bi bi-clock"></i> 8:00 AM a 11:00 AM (Hora de Chicago)
+              </span>
+              <h3 class="module-card-title">MÓDULO 3: GESTIÓN INTEGRAL DE CATÁSTROFES COMPLEJAS</h3>
+              <p class="module-card-subtitle">Protocolos frente a eventos multirriesgo de gran escala, crisis sanitarias y cooperación global.</p>
+            </div>
+            <span class="section-badge badge-blue">Día 2 - Sesión 1</span>
+          </div>
+
+          <div class="module-body-with-image">
+          <div class="module-topics-grid">
+            <div class="module-topics-col">
+              <h5><i class="bi bi-tsunami"></i> Desastres Naturales y de Gran Escala</h5>
+              <ul class="topics-checklist">
+                <li><i class="bi bi-check-circle-fill"></i> Terremotos, tsunamis, huracanes y tornados.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Inundaciones severas y sequías prolongadas.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Incendios forestales de interfaz urbana.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Olas extremas de calor y de frío.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Erupciones volcánicas y deslizamientos de tierra.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Colapso de edificios y accidentes ferroviarios masivos.</li>
+              </ul>
+            </div>
+
+            <div class="module-topics-col">
+              <h5><i class="bi bi-biohazard"></i> Eventos Tecnológicos, Sanitarios y Sociales</h5>
+              <ul class="topics-checklist">
+                <li><i class="bi bi-check-circle-fill"></i> Accidentes aéreos y marítimos.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Emergencias químicas y materiales peligrosos (HAZMAT).</li>
+                <li><i class="bi bi-check-circle-fill"></i> Emergencias nucleares y radiológicas.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Pandemias, epidemias y crisis sanitarias globales.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Crisis de agua potable y crisis alimentarias.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Migraciones masivas, gestión de refugios y cooperación internacional.</li>
+              </ul>
+            </div>
+          </div>
+            <figure class="module-context-image">
+              <img src="assets/images/flood_rescue.jpg" alt="Operaciones de rescate durante una inundación urbana">
+              <figcaption><i class="bi bi-water"></i> Operaciones de rescate y respuesta multirriesgo</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Tab 4 Content -->
+        <div class="module-content-card" id="module4" role="tabpanel">
+          <div class="module-card-header">
+            <div>
+              <span class="module-badge-time">
+                <i class="bi bi-clock"></i> 14:00 PM a 17:00 PM (Hora de Chicago)
+              </span>
+              <h3 class="module-card-title">MÓDULO 4: RECUPERACIÓN, RECONSTRUCCIÓN Y MUNICIPIOS RESILIENTES</h3>
+              <p class="module-card-subtitle">Transformación digital, Inteligencia Artificial, Drones, Big Data y resiliencia post-desastre.</p>
+            </div>
+            <span class="section-badge badge-blue">Día 2 - Sesión 2</span>
+          </div>
+
+          <div class="module-body-with-image">
+          <div class="module-topics-grid">
+            <div class="module-topics-col">
+              <h5><i class="bi bi-robot"></i> Tecnología e Inteligencia Artificial</h5>
+              <ul class="topics-checklist">
+                <li><i class="bi bi-check-circle-fill"></i> Inteligencia Artificial aplicada a la gestión de emergencias.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Big Data y analítica predictiva del riesgo.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Flotas de drones para evaluación térmica y rescate.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Sistemas satelitales y monitoreo inteligente en vivo.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Gobierno digital y portales de asistencia de emergencia.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Construcción de municipios inteligentes y resilientes.</li>
+              </ul>
+            </div>
+
+            <div class="module-topics-col">
+              <h5><i class="bi bi-arrow-repeat"></i> Recuperación Post-Desastre y Protocolos</h5>
+              <ul class="topics-checklist">
+                <li><i class="bi bi-check-circle-fill"></i> Recuperación temprana y reconstrucción resiliente.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Recuperación económica, institucional y tejido social.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Acceso a financiamiento internacional y fondos de desastre.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Auditoría de crisis y lecciones aprendidas post-evento.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Elaboración de protocolos y ejercicios de simulación (gabinete).</li>
+                <li><i class="bi bi-check-circle-fill"></i> Hoja de ruta para fortalecer la capacidad institucional municipal.</li>
+              </ul>
+            </div>
+          </div>
+            <figure class="module-context-image">
+              <img src="assets/images/smart_tech.jpg" alt="Tecnología, drones e inteligencia artificial aplicados a emergencias">
+              <figcaption><i class="bi bi-cpu-fill"></i> Inteligencia artificial y monitoreo táctico en tiempo real</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- Callout Box: Descarga de Folleto con Temario Completo -->
+      <div class="brochure-download-banner">
+        <div class="brochure-download-icon">
+          <i class="bi bi-file-earmark-pdf-fill"></i>
+        </div>
+        <div class="brochure-download-text">
+          <h4>¿Desea revisar el cronograma desglosado y el temario completo de los 4 módulos?</h4>
+          <p>Descargue el folleto oficial del Seminario en formato PDF (2da Edición) con el desglose horario, metodologías de simulación, perfil docente y requisitos de certificación.</p>
+        </div>
+        <div class="brochure-download-action">
+          <a href="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" download="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" target="_blank" class="btn btn-gold btn-lg">
+            <i class="bi bi-download"></i> Descargar Folleto del Seminario (PDF • 3.7MB)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. METHODOLOGY & BENEFITS: PARTICIPAR ES FÁCIL
+       ========================================================================= -->
+  <section class="section section-light" id="metodologia">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge badge-blue">
+          <i class="bi bi-mortarboard-fill"></i> Metodología UADEN
+        </span>
+        <h2 class="section-title section-title-light">
+          UADEN Educational Business Excellence™
+        </h2>
+        <p class="section-subtitle">
+          Metodología ejecutiva probada que combina teoría de vanguardia, simulación en tiempo real y aplicación práctica inmediata.
+        </p>
+      </div>
+
+      <div class="methodology-grid">
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--slate-900); margin-bottom: 1rem;">
+            Aprenda a través del Método del Caso y Simulación de Escenarios
+          </h3>
+          <p style="color: var(--slate-600); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            El programa integra las metodologías más reconocidas de la educación ejecutiva mundial: el <strong>Método del Caso de Harvard</strong>, el aprendizaje colaborativo de <strong>Tiimiakatemia (Finlandia)</strong> y modelos de toma de decisiones bajo alta presión.
+          </p>
+
+          <div class="methodology-features-list">
+            <div class="methodology-feature-item">
+              <i class="bi bi-easel-fill"></i>
+              <span>Conferencias Magistrales</span>
+            </div>
+            <div class="methodology-feature-item">
+              <i class="bi bi-search"></i>
+              <span>Estudios de Casos Reales</span>
+            </div>
+            <div class="methodology-feature-item">
+              <i class="bi bi-controller"></i>
+              <span>Simulación de Escenarios</span>
+            </div>
+            <div class="methodology-feature-item">
+              <i class="bi bi-speedometer2"></i>
+              <span>Decisión Bajo Presión</span>
+            </div>
+            <div class="methodology-feature-item">
+              <i class="bi bi-tools"></i>
+              <span>Herramientas Prácticas</span>
+            </div>
+            <div class="methodology-feature-item">
+              <i class="bi bi-chat-left-dots-fill"></i>
+              <span>Debate e Interacción</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-photo-frame methodology-photo-frame">
+          <img src="assets/images/masterclass_simulation.jpg" alt="Simulación interactiva y debate ejecutivo en masterclass online" class="content-photo">
+        </div>
+      </div>
+
+      <!-- Exclusive Participation Benefits Grid (from p. 5 & 7) -->
+      <div class="benefits-box-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap"><i class="bi bi-people"></i></div>
+          <h4>Asistentes Ilimitados</h4>
+          <p>Capacite a todo su gabinete municipal, equipo de defensa civil o directivos con una sola conexión institucional.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap"><i class="bi bi-camera-video"></i></div>
+          <h4>Acceso Asincrónico</h4>
+          <p>Garantía de calidad con grabaciones y backup disponibles si tiene imprevistos o problemas de conexión.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap"><i class="bi bi-question-circle"></i></div>
+          <h4>Envío de Preguntas Previas</h4>
+          <p>Puede enviar hasta 5 preguntas específicas sobre su municipio 72h antes para que el orador las responda en vivo.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap"><i class="bi bi-headset"></i></div>
+          <h4>Llamada de Entrenamiento</h4>
+          <p>72 horas antes del evento nuestro equipo técnico le llamará para entrenar y asegurar su acceso a la plataforma.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap"><i class="bi bi-file-earmark-person"></i></div>
+          <h4>Directorio "Who is Who"</h4>
+          <p>Obsequio exclusivo con el directorio de contactos de autoridades y homólogos participantes para potenciar su red.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap"><i class="bi bi-patch-check-fill"></i></div>
+          <h4>Doble Certificación</h4>
+          <p>Certificado oficial emitido por UADEN (Universidad Americana de Negocios de EE. UU.) y respaldo internacional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. PROGRAM DIRECTOR PROFILE
+       ========================================================================= -->
+  <section class="section section-slate" id="director">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge badge-gold">
+          <i class="bi bi-award-fill"></i> Liderazgo Académico
+        </span>
+        <h2 class="section-title section-title-light">
+          Director del Programa: J. Renedo
+        </h2>
+        <p class="section-subtitle">
+          Referente internacional en gestión de crisis, resiliencia institucional y liderazgo bajo presión.
+        </p>
+      </div>
+
+      <div class="director-card">
+        <div class="director-photo-col content-photo-frame">
+          <img src="assets/images/director_renedo.jpg" alt="Director del Programa J. Renedo" class="director-photo">
+          <div class="director-photo-badge">
+            <h4>J. RENEDO</h4>
+            <p>Director del Programa Ejecutivo Internacional • UADEN Global</p>
+          </div>
+        </div>
+
+        <div class="director-bio-col">
+          <h3>J. RENEDO</h3>
+          <span class="director-title-sub">Experto en Crisis Management & Toma de Decisiones Bajo Presión</span>
+
+          <div class="credentials-timeline">
+            <div class="credential-item">
+              <i class="bi bi-mortarboard-fill"></i>
+              <span><strong>Diplomado</strong> por la University of California, Berkeley y The George Washington University.</span>
+            </div>
+
+            <div class="credential-item">
+              <i class="bi bi-globe2"></i>
+              <span><strong>Investigador, consultor y formador</strong> con amplia trayectoria en organismos de América y Europa.</span>
+            </div>
+
+            <div class="credential-item">
+              <i class="bi bi-building-check"></i>
+              <span><strong>Director Asesor</strong> de SpainCham y asesor principal de HispanoCamara.com.</span>
+            </div>
+
+            <div class="credential-item">
+              <i class="bi bi-flag-fill"></i>
+              <span><strong>Impulsor de CELDEU</strong> (Cámara de Empresas Latinas en Estados Unidos).</span>
+            </div>
+
+            <div class="credential-item">
+              <i class="bi bi-people-fill"></i>
+              <span><strong>Ha capacitado a más de 6.000 organizaciones</strong>, cámaras de comercio y líderes gubernamentales.</span>
+            </div>
+
+            <div class="credential-item">
+              <i class="bi bi-award"></i>
+              <span><strong>Presidente de cuatro Congresos</strong> Latinoamericanos de Cámaras de Comercio.</span>
+            </div>
+
+            <div class="credential-item">
+              <i class="bi bi-shield-check"></i>
+              <span><strong>Diplomado en Crisis Management & Business Continuity</strong> y Executive Crisis Leadership (UC Berkeley).</span>
+            </div>
+
+            <div class="credential-item">
+              <i class="bi bi-mic-fill"></i>
+              <span><strong>Autor del programa</strong> <em>"Communication During High-Impact Events"</em> y profesor de <em>"Executive Decision-Making Under Pressure"</em>.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. CERTIFICATION & INSTITUTIONAL BACKING: ¿QUIÉN ORGANIZA Y AVALA?
+       ========================================================================= -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="cert-grid">
+        <div>
+          <span class="section-badge badge-cyan">
+            <i class="bi bi-shield-check"></i> Certificación y Respaldo
+          </span>
+          <h2 class="section-title section-title-dark" style="font-size: 2rem;">
+            ¿Quién Organiza y Avala Este Programa?
+          </h2>
+          <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+            <strong>UADEN Global</strong> es la red internacional de escuelas de negocios que representa y difunde los programas, metodologías y estándares académicos de la <strong>Universidad Americana de Negocios de los Estados Unidos</strong> (formación continua dependiente de la Cámara de las Empresas Latinas en los Estados Unidos).
+          </p>
+          <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+            Con filiales y aliados estratégicos en múltiples países de América Latina, EE. UU. y Europa, UADEN reúne a más de <strong>350 expertos internacionales</strong>, consultores de empresas Fortune 500 y especialistas en gobernanza para impartir programas de alto impacto.
+          </p>
+
+          <div class="cert-stats-grid">
+            <div class="cert-stat-box">
+              <span class="cert-stat-number">+35.000</span>
+              <span class="cert-stat-label">Graduados desde 2010</span>
+            </div>
+            <div class="cert-stat-box">
+              <span class="cert-stat-number">+350</span>
+              <span class="cert-stat-label">Expertos Globales</span>
+            </div>
+            <div class="cert-stat-box">
+              <span class="cert-stat-number">USA</span>
+              <span class="cert-stat-label">Emisión y Validación</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-image-card">
+          <div class="cert-preview-frame">
+            <a href="assets/images/certificate_preview.png" target="_blank" title="Ver Certificado Oficial en Alta Resolución" class="cert-lightbox-trigger">
+              <img src="assets/images/certificate_preview.png" alt="Muestra de Certificado de Participación y Finalización UADEN Global USA" class="cert-image-preview" loading="lazy">
+              <span class="cert-zoom-pill"><i class="bi bi-zoom-in"></i> Clic para Ampliar en Alta Resolución (HD)</span>
+            </a>
+          </div>
+          <div class="cert-meta-info">
+            <h4 style="color: var(--white); font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 0.35rem;">
+              Certificado Oficial de Participación y Finalización
+            </h4>
+            <p class="cert-badge-note">
+              Emitido por <strong>UADEN Global USA</strong> con 12 horas ejecutivas acreditadas, sello metálico oficial y código QR de verificación institucional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. EXPECTED OUTCOMES: RESULTADOS ESPERADOS
+       ========================================================================= -->
+  <section class="section section-light results-section">
+    <div class="container">
+      <div class="results-split-layout">
+        <div class="results-copy">
+          <div class="section-title-wrap">
+            <span class="section-badge badge-blue">
+              <i class="bi bi-graph-up-arrow"></i> Competencias Adquiridas
+            </span>
+            <h2 class="section-title section-title-light">
+              Resultados Esperados al Finalizar
+            </h2>
+            <p class="section-subtitle">
+              Al completar el seminario, los líderes y participantes estarán plenamente capacitados para:
+            </p>
+          </div>
+
+          <div class="results-grid">
+        <div style="display: flex; gap: 0.85rem; align-items: flex-start; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 1.1rem; border-radius: var(--radius-md);">
+          <i class="bi bi-check2-circle" style="color: var(--primary-blue); font-size: 1.4rem; flex-shrink: 0;"></i>
+          <span style="font-weight: 600; color: var(--slate-800); font-size: 0.95rem;">Diseñar estrategias integrales de gestión del riesgo y resiliencia municipal.</span>
+        </div>
+
+        <div style="display: flex; gap: 0.85rem; align-items: flex-start; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 1.1rem; border-radius: var(--radius-md);">
+          <i class="bi bi-check2-circle" style="color: var(--primary-blue); font-size: 1.4rem; flex-shrink: 0;"></i>
+          <span style="font-weight: 600; color: var(--slate-800); font-size: 0.95rem;">Dirigir equipos multidisciplinarios durante situaciones críticas de alta presión.</span>
+        </div>
+
+        <div style="display: flex; gap: 0.85rem; align-items: flex-start; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 1.1rem; border-radius: var(--radius-md);">
+          <i class="bi bi-check2-circle" style="color: var(--primary-blue); font-size: 1.4rem; flex-shrink: 0;"></i>
+          <span style="font-weight: 600; color: var(--slate-800); font-size: 0.95rem;">Elaborar y auditar planes municipales de emergencia y continuidad de gobierno.</span>
+        </div>
+
+        <div style="display: flex; gap: 0.85rem; align-items: flex-start; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 1.1rem; border-radius: var(--radius-md);">
+          <i class="bi bi-check2-circle" style="color: var(--primary-blue); font-size: 1.4rem; flex-shrink: 0;"></i>
+          <span style="font-weight: 600; color: var(--slate-800); font-size: 0.95rem;">Coordinar eficazmente organismos públicos, fuerzas de seguridad y el sector privado.</span>
+        </div>
+
+        <div style="display: flex; gap: 0.85rem; align-items: flex-start; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 1.1rem; border-radius: var(--radius-md);">
+          <i class="bi bi-check2-circle" style="color: var(--primary-blue); font-size: 1.4rem; flex-shrink: 0;"></i>
+          <span style="font-weight: 600; color: var(--slate-800); font-size: 0.95rem;">Fortalecer la resiliencia institucional frente a eventos imprevistos y desastres.</span>
+        </div>
+
+        <div style="display: flex; gap: 0.85rem; align-items: flex-start; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 1.1rem; border-radius: var(--radius-md);">
+          <i class="bi bi-check2-circle" style="color: var(--primary-blue); font-size: 1.4rem; flex-shrink: 0;"></i>
+          <span style="font-weight: 600; color: var(--slate-800); font-size: 0.95rem;">Gestionar con éxito la comunicación de crisis, vocería institucional y redes sociales.</span>
+        </div>
+
+        <div style="display: flex; gap: 0.85rem; align-items: flex-start; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 1.1rem; border-radius: var(--radius-md);">
+          <i class="bi bi-check2-circle" style="color: var(--primary-blue); font-size: 1.4rem; flex-shrink: 0;"></i>
+          <span style="font-weight: 600; color: var(--slate-800); font-size: 0.95rem;">Reducir vulnerabilidades críticas en la infraestructura y servicios básicos esenciales.</span>
+        </div>
+
+        <div style="display: flex; gap: 0.85rem; align-items: flex-start; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 1.1rem; border-radius: var(--radius-md);">
+          <i class="bi bi-check2-circle" style="color: var(--primary-blue); font-size: 1.4rem; flex-shrink: 0;"></i>
+          <span style="font-weight: 600; color: var(--slate-800); font-size: 0.95rem;">Proteger la gobernabilidad y la continuidad de las funciones del Estado.</span>
+        </div>
+
+        <div style="display: flex; gap: 0.85rem; align-items: flex-start; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 1.1rem; border-radius: var(--radius-md);">
+          <i class="bi bi-check2-circle" style="color: var(--primary-blue); font-size: 1.4rem; flex-shrink: 0;"></i>
+          <span style="font-weight: 600; color: var(--slate-800); font-size: 0.95rem;">Liderar procesos de reconstrucción resiliente y recuperación económica y social.</span>
+        </div>
+
+        <div style="display: flex; gap: 0.85rem; align-items: flex-start; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 1.1rem; border-radius: var(--radius-md);">
+          <i class="bi bi-check2-circle" style="color: var(--primary-blue); font-size: 1.4rem; flex-shrink: 0;"></i>
+          <span style="font-weight: 600; color: var(--slate-800); font-size: 0.95rem;">Impulsar políticas públicas modernas para consolidar ciudades más seguras.</span>
+        </div>
+          </div>
+        </div>
+
+        <!-- Complete image at the right of the results copy -->
+        <div class="content-photo-frame results-photo">
+          <img src="assets/images/resilient_city.jpg" alt="Ciudades resilientes, reconstrucción moderna y futuro seguro" class="content-photo">
+          <div class="results-photo-caption">
+            <span>VISIÓN INSTITUCIONAL</span>
+            <strong>Del riesgo a la resiliencia</strong>
+            <p>Decisiones preparadas para proteger vidas, servicios esenciales y continuidad de gobierno.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       12. GLOBAL TRAINING CATALOG 2027 - UADEN PRIME
+       ========================================================================= -->
+  <section class="section section-dark catalog-section" id="catalogo">
+    <div class="catalog-ambient-glow" aria-hidden="true"></div>
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-title-wrap">
+        <span class="section-badge badge-gold">
+          <i class="bi bi-journal-bookmark-fill"></i> Oferta Académica Integral • UADEN Prime
+        </span>
+        <h2 class="section-title section-title-dark">
+          Catálogo Ejecutivo 2027
+        </h2>
+        <p class="section-subtitle section-subtitle-dark">
+          Más de 40 programas internacionales para fortalecer liderazgo, gobierno, seguridad, tecnología y capacidad institucional.
+        </p>
+      </div>
+
+      <div class="catalog-main-card">
+        <div class="catalog-grid">
+          <!-- Left Column: Compelling Pitch & Program Highlights -->
+          <div class="catalog-info-col">
+            <div class="catalog-tag-pill">
+              <i class="bi bi-patch-check-fill text-gold"></i> FORMACIÓN CONTINUA DE ALTA DIRECCIÓN & GOBIERNO
+            </div>
+            
+            <h3 class="catalog-heading">
+              Formación estratégica para instituciones que lideran
+            </h3>
+            
+            <p class="catalog-desc">
+              <strong>UADEN Global</strong> y <strong>UADEN Prime</strong> integran diplomados ejecutivos, certificaciones de alto impacto y entrenamientos In-Company bajo estándares académicos de Estados Unidos.
+            </p>
+
+            <div class="catalog-features-grid">
+              <div class="catalog-feature-card">
+                <div class="cat-feat-icon"><i class="bi bi-buildings"></i></div>
+                <div>
+                  <strong>Gobernanza & Gestión Pública</strong>
+                  <p>Modernización del Estado, presupuesto por resultados, formulación de políticas y alta dirección municipal.</p>
+                </div>
+              </div>
+
+              <div class="catalog-feature-card">
+                <div class="cat-feat-icon"><i class="bi bi-shield-lock-fill"></i></div>
+                <div>
+                  <strong>Seguridad Ciudadana & Inteligencia</strong>
+                  <p>Prevención comunitaria del delito, inteligencia táctica policial y articulación de fuerzas del orden.</p>
+                </div>
+              </div>
+
+              <div class="catalog-feature-card">
+                <div class="cat-feat-icon"><i class="bi bi-exclamation-octagon-fill"></i></div>
+                <div>
+                  <strong>Gestión del Riesgo & Protección Civil</strong>
+                  <p>Planes de contingencia, continuidad gubernamental, adaptación al cambio climático y resiliencia urbana.</p>
+                </div>
+              </div>
+
+              <div class="catalog-feature-card">
+                <div class="cat-feat-icon"><i class="bi bi-cpu-fill"></i></div>
+                <div>
+                  <strong>Tecnología, Ciberdefensa & IA</strong>
+                  <p>Inteligencia Artificial aplicada a la administración pública, ciudades inteligentes y protección de datos críticos.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog-benefits-strip">
+              <div class="cat-benefit-pill"><i class="bi bi-check-circle-fill text-gold"></i> Modalidades In-Company & Online en Vivo</div>
+              <div class="cat-benefit-pill"><i class="bi bi-check-circle-fill text-gold"></i> Convenios Institucionales Preferenciales</div>
+              <div class="cat-benefit-pill"><i class="bi bi-check-circle-fill text-gold"></i> Doble Certificación Oficial de EE. UU.</div>
+            </div>
+
+            <!-- CTAs for the Catalog -->
+            <div class="catalog-cta-box">
+              <a href="Catalogo de Formaciones y Programas de Training 2027 Uaden Prime (8).pdf" download="Catalogo de Formaciones y Programas de Training 2027 Uaden Prime.pdf" target="_blank" class="btn btn-gold btn-lg catalog-download-btn" title="Descargar Catálogo Completo 2027 en PDF">
+                <i class="bi bi-file-earmark-pdf-fill"></i> Descargar Catálogo Completo 2027 (PDF)
+              </a>
+              <a href="https://wa.me/12232400531?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20convenios%20y%20programas%20del%20Cat%C3%A1logo%20de%20Formaciones%202027%20UADEN%20Prime" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg">
+                <i class="bi bi-whatsapp"></i> Solicitar Convenio Institucional
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Preview & Executive Badge -->
+          <div class="catalog-preview-col">
+            <div class="catalog-book-mockup">
+              <div class="book-badge-edition">EDICIÓN 2027</div>
+              <div class="book-inner-cover">
+                <div class="book-logo-wrap">
+                  <img src="assets/images/logos/logo_uaden_global_white.png" alt="UADEN Prime Global" style="height: 40px; width: auto; margin: 0 auto 1.25rem auto;">
+                </div>
+                <h4>CATÁLOGO EJECUTIVO DE FORMACIONES 2027</h4>
+                <p class="book-sub">Gobierno • Seguridad • Tecnología • Liderazgo</p>
+                
+                <div class="book-stat-grid">
+                  <div class="book-stat">
+                    <span>+40</span>
+                    <label>Programas</label>
+                  </div>
+                  <div class="book-stat">
+                    <span>100%</span>
+                    <label>Acreditado</label>
+                  </div>
+                  <div class="book-stat">
+                    <span>EE.UU.</span>
+                    <label>Validez</label>
+                  </div>
+                </div>
+
+                <div class="book-download-action">
+                  <a href="Catalogo de Formaciones y Programas de Training 2027 Uaden Prime (8).pdf" download="Catalogo de Formaciones y Programas de Training 2027 Uaden Prime.pdf" target="_blank" class="btn btn-gold btn-sm" style="width: 100%;">
+                    <i class="bi bi-download"></i> Descargar Documento (PDF)
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog-guarantee-note">
+              <i class="bi bi-shield-check text-gold"></i>
+              <span>Convenios marco y facturación proforma disponibles para ministerios, alcaldías, gobernaciones y gremios empresariales.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       13. INVESTMENT & INTERACTIVE GROUP DISCOUNT CALCULATOR
+       ========================================================================= -->
+  <section class="section section-slate" id="inversion">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge badge-gold">
+          <i class="bi bi-cash-stack"></i> Tarifas y Descuentos
+        </span>
+        <h2 class="section-title section-title-light">
+          Inversión y Opciones de Pago
+        </h2>
+        <p class="section-subtitle">
+          Aproveche la tarifa promocional de inscripción anticipada o solicite descuentos especiales por grupos y municipios.
+        </p>
+      </div>
+
+      <div class="investment-visual-band">
+        <div>
+          <span>PREPARACIÓN QUE PROTEGE</span>
+          <strong>Una decisión anticipada puede cambiar el resultado de la próxima crisis.</strong>
+          <p>Capacite a su equipo antes de que la presión, la incertidumbre y el tiempo limitado condicionen cada decisión.</p>
+        </div>
+      </div>
+
+      <div class="pricing-wrapper">
+        <!-- Main Pricing Card (Early Bird vs Regular) -->
+        <div class="pricing-main-card">
+          <div class="pricing-ribbon">MATRÍCULA SIN COSTO</div>
+
+          <div>
+            <h3 class="pricing-tag-title">Inscripción Individual / Institucional</h3>
+            <p class="pricing-tag-sub">Acceso completo a las 12 horas en vivo + Diploma oficial</p>
+
+            <div class="price-display-block">
+              <div class="price-early-bird">
+                <span class="price-currency">USD</span>
+                <span class="price-amount">349</span>
+                <span class="price-period">/ Early Bird</span>
+              </div>
+              <div class="price-regular-strike">
+                Valor Regular: <s>USD 449</s> (Ahorre USD 100 con descuento anticipado)
+              </div>
+            </div>
+
+            <div class="pricing-features-list">
+              <div class="pricing-feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Acceso a las 12 horas de clase en vivo (28 y 29 de Septiembre).</span>
+              </div>
+              <div class="pricing-feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span><strong>Asistentes Ilimitados:</strong> Conecte a su equipo directivo con una sola conexión.</span>
+              </div>
+              <div class="pricing-feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Certificado oficial emitido por UADEN de Estados Unidos.</span>
+              </div>
+              <div class="pricing-feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Garantía de acceso asincrónico a grabaciones de backup.</span>
+              </div>
+              <div class="pricing-feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Envío de hasta 5 preguntas previas personalizadas para el instructor.</span>
+              </div>
+              <div class="pricing-feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Directorio "Who is Who" para networking de autoridades.</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+            <button type="button" class="btn btn-gold btn-lg" style="width: 100%;" data-open-modal="registerModal">
+              <i class="bi bi-credit-card"></i> Inscribirme con Tarifa Early Bird ($349 USD)
+            </button>
+            <a href="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" download="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" target="_blank" class="btn btn-outline-navy btn-sm" style="width: 100%; text-align: center;">
+              <i class="bi bi-file-earmark-pdf-fill" style="color: var(--accent-gold);"></i> Descargar Folleto y Ficha de Inscripción (PDF)
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Municipal / Group Calculator -->
+        <div class="pricing-calculator-card">
+          <div>
+            <div class="calculator-header">
+              <h3><i class="bi bi-calculator"></i> Calculadora de Descuento por Equipos</h3>
+              <p>Las organizaciones, municipios e instituciones obtienen descuentos por cantidad de participantes:</p>
+            </div>
+
+            <!-- Stepper -->
+            <div class="calc-stepper-group">
+              <label class="calc-stepper-label" for="calcParticipants">Número de Participantes / Conexiones:</label>
+              <div class="calc-stepper-controls">
+                <button type="button" class="calc-btn-step" id="calcMinus" aria-label="Disminuir participantes">-</button>
+                <input type="number" id="calcParticipants" class="calc-participants-input" value="1" min="1" max="50">
+                <button type="button" class="calc-btn-step" id="calcPlus" aria-label="Aumentar participantes">+</button>
+                <span style="font-size: 0.85rem; color: var(--slate-500);">(Ajuste la cantidad)</span>
+              </div>
+            </div>
+
+            <!-- Discount Tiers Display -->
+            <div class="calc-discount-tiers">
+              <div class="discount-tier-box" data-min="2" data-max="2">
+                <span class="tier-percent">10% OFF</span>
+                <span class="tier-label">2 Participantes</span>
+              </div>
+              <div class="discount-tier-box" data-min="3" data-max="3">
+                <span class="tier-percent">20% OFF</span>
+                <span class="tier-label">3 Participantes</span>
+              </div>
+              <div class="discount-tier-box" data-min="4" data-max="999">
+                <span class="tier-percent">30% OFF</span>
+                <span class="tier-label">4 o más Participantes</span>
+              </div>
+            </div>
+
+            <!-- Summary Breakdown -->
+            <div class="calc-summary-box">
+              <div class="calc-summary-row">
+                <span>Subtotal Base (Tarifa Early Bird):</span>
+                <strong id="calcSubtotal">$349 USD</strong>
+              </div>
+              <div class="calc-summary-row">
+                <span>Descuento Aplicado:</span>
+                <strong id="calcDiscountPercent">0%</strong>
+              </div>
+              <div class="calc-summary-row">
+                <span>Ahorro Total:</span>
+                <strong id="calcDiscountSavings" style="color: #4ade80;">$0 USD</strong>
+              </div>
+              <div class="calc-summary-row">
+                <span>Inversión por Persona:</span>
+                <strong id="calcPricePerPerson">$349 USD</strong>
+              </div>
+              <div class="calc-summary-row total">
+                <span>INVERSIÓN TOTAL:</span>
+                <span id="calcTotal">$349 USD</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button type="button" class="btn btn-primary" id="btnQuoteWhatsApp" style="width: 100%;">
+              <i class="bi bi-file-earmark-spreadsheet"></i> Solicitar Factura / Cotización Formal en WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Methods Accepted Grid (Page 10) -->
+      <div class="payment-methods-grid">
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--slate-600); margin-right: 0.5rem;">Medios de Pago Internacionales:</span>
+        <span class="payment-badge"><i class="bi bi-credit-card-2-front"></i> Tarjetas de Crédito / Débito</span>
+        <span class="payment-badge"><i class="bi bi-paypal"></i> PayPal</span>
+        <span class="payment-badge"><i class="bi bi-lightning-charge"></i> Zelle</span>
+        <span class="payment-badge"><i class="bi bi-bank"></i> Transferencia Bancaria Internacional</span>
+        <span class="payment-badge"><i class="bi bi-wallet2"></i> Mercado Pago</span>
+        <span class="payment-badge"><i class="bi bi-qr-code"></i> PIX (Brasil)</span>
+        <span class="payment-badge"><i class="bi bi-phone"></i> Pago Móvil (Venezuela)</span>
+        <span class="payment-badge"><i class="bi bi-receipt"></i> Invoice / Facturación USA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       13. FREQUENTLY ASKED QUESTIONS (FAQ)
+       ========================================================================= -->
+  <section class="section section-light" id="faq">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge badge-blue">
+          <i class="bi bi-question-circle-fill"></i> Resolución de Dudas
+        </span>
+        <h2 class="section-title section-title-light">
+          Preguntas Frecuentes
+        </h2>
+        <p class="section-subtitle">
+          Información operativa para participantes y organismos inscritos.
+        </p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-trigger" type="button">
+            <span>¿Cuáles son los horarios y fechas exactas de las clases?</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <div class="faq-content">
+            <p>
+              El seminario se dictará el <strong>Lunes 28 y Martes 29 de Septiembre</strong> en dos bloques diarios de 3 horas cada uno (Total: 12 horas ejecutivas):
+              <br><br>
+              • <strong>Bloque de la Mañana:</strong> 8:00 AM a 11:00 AM (Hora de Chicago UTC-5)<br>
+              • <strong>Receso:</strong> 11:00 AM a 14:00 PM (2 Horas de descanso)<br>
+              • <strong>Bloque de la Tarde:</strong> 14:00 PM a 17:00 PM (Hora de Chicago UTC-5)
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button">
+            <span>¿Cómo funciona el beneficio de "Asistentes Ilimitados"?</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <div class="faq-content">
+            <p>
+              A través de una sola conexión o inscripción institucional, su municipio o empresa puede proyectar la transmisión en su sala de crisis, auditorio o sala de juntas para capacitar a todo su equipo de trabajo, directores y personal operativo simultáneamente sin costo adicional.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button">
+            <span>¿Qué requisitos técnicos y de conexión se necesitan?</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <div class="faq-content">
+            <p>
+              • Conexión a Internet de banda ancha en cualquier computadora, laptop o dispositivo móvil (Apple o Android).<br>
+              • Sin restricciones para transmisión de video en vivo.<br>
+              • Bocina/parlantes y micrófono habilitados para interactuar.<br>
+              • <strong>72 horas antes del evento</strong> le llamaremos de forma personalizada para entrenar y asegurar su acceso a la plataforma.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button">
+            <span>¿Cómo se emite la certificación y la factura institucional?</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <div class="faq-content">
+            <p>
+              Cada participante recibirá un <strong>Certificado de Participación emitido por UADEN (Universidad Americana de Negocios de EE. UU.)</strong>. Una vez efectuado el pago, recibirá inmediatamente el <em>Invoice</em> oficial emitido desde Estados Unidos, carta de bienvenida y credenciales de acceso.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button">
+            <span>¿Qué sucede si por una emergencia no puedo asistir a una sesión?</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <div class="faq-content">
+            <p>
+              UADEN Global ofrece <strong>Garantía de Acceso Asincrónico y Backup</strong> en caso de problemas de conexión o emergencias de último momento, permitiéndole revisar las grabaciones completas del programa y acceder a los apuntes y materiales descargables.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button">
+            <span>¿Cómo funciona el envío de preguntas previas al orador?</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <div class="faq-content">
+            <p>
+              Usted y su equipo pueden enviar hasta <strong>5 preguntas específicas</strong> sobre situaciones críticas que enfrente su municipio hasta 72 horas antes del inicio del curso. El claustro docente las incorporará y responderá directamente durante el seminario.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       15. CONTACT & REGISTRATION FORM
+       ========================================================================= -->
+  <section class="section section-gradient-dark section-with-disaster-fx" id="contacto">
+    <div class="section-crisis-backdrop" aria-hidden="true">
+      <canvas class="section-fx-canvas" id="contactoFxCanvas"></canvas>
+      <div class="smoke-drift-layer"></div>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <span class="section-badge badge-gold"><i class="bi bi-chat-dots-fill"></i> Atención Directa</span>
+          <h3>¿Está listo para dar el siguiente paso?</h3>
+          <p>
+            Nuestro equipo de asesores internacionales le brindará atención personalizada para resolver sus dudas, tramitar facturas proforma institucionales para municipios y formalizar su inscripción.
+          </p>
+
+          <div class="contact-channels">
+            <div class="channel-item">
+              <div class="channel-icon"><i class="bi bi-whatsapp"></i></div>
+              <div class="channel-text">
+                <strong>Línea Directa / WhatsApp</strong>
+                <a href="https://wa.me/12232400531?text=Hola%2C%20deseo%20inscribirme%20al%20Seminario%20de%20Crisis%20UADEN" target="_blank" rel="noopener noreferrer">+1 223 240 0531</a>
+              </div>
+            </div>
+
+            <div class="channel-item">
+              <div class="channel-icon"><i class="bi bi-envelope-at-fill"></i></div>
+              <div class="channel-text">
+                <strong>Administración y Admisiones</strong>
+                <a href="mailto:administracion@uaden.com">administracion@uaden.com</a>
+              </div>
+            </div>
+
+            <div class="channel-item">
+              <div class="channel-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div class="channel-text">
+                <strong>Sede Académica</strong>
+                <span>UADEN Global • Estados Unidos</span>
+              </div>
+            </div>
+          </div>
+
+          <figure class="contact-rescue-visual">
+            <img src="assets/images/evacuation_rescue.webp" alt="Bombero evacuando a una persona durante una emergencia" loading="lazy">
+            <figcaption><i class="bi bi-shield-check"></i> Preparación institucional para proteger vidas</figcaption>
+          </figure>
+        </div>
+
+        <!-- Full Form -->
+        <div style="background: rgba(11, 29, 58, 0.85); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-xl); padding: 2.5rem; backdrop-filter: blur(12px);">
+          <h3 style="color: var(--white); font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;">
+            Formulario de Registro y Cotización
+          </h3>
+          <p style="color: var(--slate-300); font-size: 0.875rem; margin-bottom: 1.5rem;">
+            Complete los datos para recibir el Invoice y los accesos de su delegación.
+          </p>
+
+          <form id="contactFullForm" class="quick-form">
+            <div class="form-group">
+              <input type="text" name="name" class="form-input" placeholder="Nombre completo del titular *" required>
+            </div>
+
+            <div class="form-group">
+              <input type="text" name="institution" class="form-input" placeholder="Municipio, Alcaldía o Empresa *" required>
+            </div>
+
+            <div class="form-two-col">
+              <div class="form-group">
+                <input type="text" name="position" class="form-input" placeholder="Cargo / Función *" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="country" class="form-input" placeholder="País / Ciudad *" required>
+              </div>
+            </div>
+
+            <div class="form-two-col">
+              <div class="form-group">
+                <input type="email" name="email" class="form-input" placeholder="Correo Electrónico *" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" name="phone" class="form-input" placeholder="WhatsApp / Teléfono *" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <textarea name="notes" class="form-input" rows="3" placeholder="¿Desea cotizar para varios participantes o requiere factura institucional? Indique detalles aquí..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-lg" style="width: 100%;">
+              <i class="bi bi-send-check-fill"></i> Enviar y Confirmar por WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       15. FOOTER (WITH EXACT SOCIAL LINKS PROVIDED BY USER)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Col -->
+        <div class="footer-brand">
+          <img src="assets/images/logos/logo_uaden_global_white.png" alt="UADEN Global" style="height: 52px; width: auto; margin-bottom: 1rem;">
+          <p>
+            Red internacional de escuelas de negocios dependiente de la Cámara de las Empresas Latinas en los Estados Unidos. Excelencia académica ejecutiva desde 2010.
+          </p>
+          
+          <!-- Social Icons specified exactly by user -->
+          <div class="footer-socials" aria-label="Redes sociales de UADEN Global">
+            <a
+              href="https://www.linkedin.com/company/uaden"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61590587117634"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="bi bi-facebook" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/uadenglobaloficial?igsi=Mnd0aGVvYzZuMWx3"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h5>Navegación</h5>
+          <div class="footer-links-list">
+            <a href="#hero">Inicio</a>
+            <a href="#programa">El Escenario</a>
+            <a href="#dirigido">A Quién Dirigido</a>
+            <a href="#modulos">Módulos Académicos</a>
+            <a href="#metodologia">Metodología</a>
+            <a href="#director">Director del Programa</a>
+            <a href="#catalogo">Catálogo de Cursos 2027</a>
+          </div>
+        </div>
+
+        <!-- Program Summary -->
+        <div class="footer-col">
+          <h5>Documentación & Recursos</h5>
+          <div class="footer-links-list">
+            <a href="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" download="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" target="_blank">
+              <i class="bi bi-file-earmark-pdf-fill" style="color: var(--accent-gold-light);"></i> Descargar Folleto de Crisis (PDF)
+            </a>
+            <a href="Catalogo de Formaciones y Programas de Training 2027 Uaden Prime (8).pdf" download="Catalogo de Formaciones 2027 Uaden Prime.pdf" target="_blank">
+              <i class="bi bi-journal-bookmark-fill" style="color: var(--primary-cyan);"></i> Descargar Catálogo 2027 (PDF)
+            </a>
+            <a href="#inversion">Inversión y Early Bird</a>
+            <a href="#inversion">Descuentos Municipales</a>
+            <a href="#faq">Preguntas Frecuentes</a>
+            <a href="#contacto">Atención por WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Direct Contact -->
+        <div class="footer-col">
+          <h5>Soporte & Asesoría</h5>
+          <p style="font-size: 0.875rem; color: var(--slate-400); margin-bottom: 0.75rem;">
+            Atención personalizada de lunes a viernes:
+          </p>
+          <p style="font-size: 1.1rem; font-weight: 700; color: var(--accent-gold-light); margin-bottom: 0.5rem;">
+            <i class="bi bi-whatsapp"></i> +1 223 240 0531
+          </p>
+          <p style="font-size: 0.85rem; color: var(--slate-400);">
+            Transmisión en vivo desde Estados Unidos.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 UADEN Global - Universidad Americana de Negocios de EE. UU. Todos los derechos reservados.
+        </div>
+        <div>
+          Seminario de Alta Dirección en Gestión Integral de Crisis, Emergencias y Catástrofes desde los Municipios (2da Edición).
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       16. FLOATING WHATSAPP BUTTON
+       ========================================================================= -->
+  <a href="https://wa.me/12232400531?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20el%20Seminario%20de%20Gesti%C3%B3n%20de%20Crisis%20Municipal%20UADEN" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Contactar por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- =========================================================================
+       17. MODAL: REGISTRATION & BROCHURE REQUEST
+       ========================================================================= -->
+  <div class="modal-backdrop" id="registerModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <button class="modal-close-btn" type="button" aria-label="Cerrar ventana emergente">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="modal-header">
+        <span class="section-badge badge-gold"><i class="bi bi-ticket-perforated"></i> Inscripción Rápida</span>
+        <h3 id="modalTitle">Solicitud de Inscripción / Folleto</h3>
+        <p>Complete sus datos para asegurar su cupo con descuento y recibir la documentación oficial.</p>
+      </div>
+
+      <!-- Direct Instant PDF Download Box in Modal -->
+      <div class="modal-quick-download-box">
+        <div class="modal-quick-download-text">
+          <i class="bi bi-file-earmark-pdf-fill" style="color: var(--accent-gold-light); font-size: 1.5rem;"></i>
+          <div>
+            <strong>Descarga Inmediata del Folleto</strong>
+            <p style="margin: 0; font-size: 0.8rem; color: var(--slate-300);">Obtenga el PDF oficial de 2da Edición (3.7 MB)</p>
+          </div>
+        </div>
+        <a href="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" download="FOLLETO GESTION DE CRISIS - 2da edicion.pdf" target="_blank" class="btn btn-gold btn-sm">
+          <i class="bi bi-download"></i> Descargar PDF
+        </a>
+      </div>
+
+      <form id="modalRegisterForm" class="quick-form">
+        <div class="form-group">
+          <input type="text" name="name" class="form-input" placeholder="Nombre completo *" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="institution" class="form-input" placeholder="Municipio / Institución / Empresa *" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="position" class="form-input" placeholder="Cargo o Función *" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="country" class="form-input" placeholder="País de residencia *" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phone" class="form-input" placeholder="WhatsApp / Teléfono *" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" class="form-input" placeholder="Correo Electrónico *" required>
+        </div>
+        <div class="form-group">
+          <textarea name="notes" class="form-input" rows="2" placeholder="Comentarios adicionales o solicitud de Invoice..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold btn-lg" style="width: 100%; margin-top: 0.5rem;">
+          <i class="bi bi-check-circle-fill"></i> Confirmar con Asesor por WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Custom Logic Script -->
+  <script src="script.js"></script>
+</body>
+</html>

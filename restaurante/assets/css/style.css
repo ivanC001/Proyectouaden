@@ -1,0 +1,3881 @@
+/* ==========================================================================
+   UADEN GLOBAL - Landing "Cómo Organizar y Dirigir un Restaurant"
+   Design Theme: Luxury Academic & Executive Restaurant Leadership
+   STRICT RULE: BORDES TOTALMENTE RECTOS (BORDER-RADIUS: 0 EN TODO LUGAR)
+   ========================================================================== */
+
+:root {
+  --bg-primary: #060d17;
+  --bg-secondary: #0b1524;
+  --bg-tertiary: #101e33;
+  --bg-card: #0d1b2e;
+  --bg-card-hover: #13253e;
+  --bg-glass: rgba(13, 27, 46, 0.85);
+
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #8497af;
+  --text-accent: #00c2de;
+
+  --brand-navy: #091e3a;
+  --brand-navy-light: #16365f;
+  --brand-cyan: #00a4bd;
+  --brand-cyan-glow: rgba(0, 164, 189, 0.3);
+  --brand-cyan-bright: #00d2f2;
+  --brand-gold: #c5a059;
+  --brand-gold-glow: rgba(197, 160, 89, 0.25);
+  --brand-gold-light: #dfc285;
+
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-gold: rgba(197, 160, 89, 0.4);
+  --border-cyan: rgba(0, 194, 222, 0.35);
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --container-max: 1240px;
+
+  /* ---- Radios -----------------------------------------------------------
+     La capa interactiva es blanda (se toca); la estructura se queda recta.
+     --------------------------------------------------------------------- */
+  --radius-pill: 999px;   /* botones y chips */
+  --radius-sm: 8px;       /* campos de formulario, etiquetas */
+  --radius-md: 14px;      /* tarjetas */
+  --radius-lg: 20px;      /* paneles grandes */
+
+  /* ---- Tokens de superficie que los temas de sección redefinen ---------- */
+  --wash: rgba(255, 255, 255, 0.04);
+  --wash-strong: rgba(255, 255, 255, 0.08);
+  --gold-wash: rgba(197, 160, 89, 0.08);
+  --cyan-wash: rgba(0, 164, 189, 0.08);
+  --ghost-ink: rgba(255, 255, 255, 0.15);
+  --surface-sunken: #081220;
+  --surface-featured: linear-gradient(145deg, #0d2545 0%, #071526 100%);
+  --tab-active-bg: linear-gradient(135deg, #0e294b 0%, #091728 100%);
+  --tab-active-ink: #ffffff;
+  --shadow-card: 0 14px 34px rgba(0, 0, 0, 0.45);
+  --shadow-frame: 0 20px 50px rgba(0, 0, 0, 0.6);
+
+  /* ---- Botones: iguales en toda la página, pase lo que pase alrededor --- */
+  --gold-btn-from: #c5a059;
+  --gold-btn-to: #a9823a;
+  --gold-btn-edge: #dfc285;
+  --gold-btn-ink: #140d02;
+  --cyan-btn-from: #00a4bd;
+  --cyan-btn-to: #007a8c;
+  --cyan-btn-edge: #00d2f2;
+}
+
+/* --------------------------------------------------------------------------
+   RESET STRICTO: BORDES TOTALMENTE RECTOS (0 BORDER RADIUS)
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   UTILITIES & TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.text-gold {
+  color: var(--brand-gold-light);
+}
+
+.text-cyan {
+  color: var(--brand-cyan-bright);
+}
+
+.eyebrow {
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--brand-gold);
+  margin-bottom: 0.85rem;
+  border: 1px solid var(--border-gold);
+  padding: 0.35rem 0.85rem;
+  background: var(--gold-wash);
+}
+
+.eyebrow-cyan {
+  color: var(--brand-cyan-bright);
+  border-color: var(--border-cyan);
+  background: rgba(0, 164, 189, 0.08);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-header.text-left {
+  text-align: left;
+  margin-left: 0;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   SHARP BUTTONS (Zero border radius)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.85rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold-btn-from) 0%, var(--gold-btn-to) 100%);
+  color: var(--gold-btn-ink);
+  border: 1px solid var(--gold-btn-edge);
+  box-shadow: 0 4px 18px var(--brand-gold-glow);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--gold-btn-edge) 0%, var(--gold-btn-from) 100%);
+  box-shadow: 0 6px 24px rgba(197, 160, 89, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-cyan {
+  background: linear-gradient(135deg, var(--cyan-btn-from) 0%, var(--cyan-btn-to) 100%);
+  color: #ffffff;
+  border: 1px solid var(--cyan-btn-edge);
+  box-shadow: 0 4px 18px var(--brand-cyan-glow);
+}
+
+.btn-cyan:hover {
+  background: linear-gradient(135deg, var(--cyan-btn-edge) 0%, var(--cyan-btn-from) 100%);
+  box-shadow: 0 6px 24px rgba(0, 164, 189, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.btn-outline:hover {
+  background: var(--wash-strong);
+  border-color: var(--brand-gold);
+  color: var(--brand-gold-light);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #071e11;
+  font-weight: 700;
+  border: 1px solid #34e076;
+}
+
+.btn-whatsapp:hover {
+  background: #2ee271;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   TOP BAR & NAVIGATION (SHARP DESIGN)
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   TOP BAR: una sola linea que nunca se parte.
+   Los datos secundarios se retiran por prioridad al angostar la pantalla.
+   -------------------------------------------------------------------------- */
+.top-notification-bar {
+  background: #040911;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 38px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.top-bar-facts {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.top-badge {
+  flex-shrink: 0;
+  background: var(--brand-gold);
+  color: #050b14;
+  font-weight: 800;
+  font-size: 0.68rem;
+  padding: 0.18rem 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.top-fact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  letter-spacing: 0.03em;
+}
+
+.top-fact i {
+  color: var(--brand-gold);
+  font-size: 0.85rem;
+}
+
+.top-bar-contact {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.top-bar-contact i {
+  color: var(--brand-gold-light);
+  font-size: 0.9rem;
+}
+
+.top-bar-contact:hover,
+.top-bar-contact:focus-visible {
+  color: var(--brand-gold-light);
+}
+
+/* --------------------------------------------------------------------------
+   NAVBAR: marca a la izquierda, indice al centro, accion a la derecha.
+   -------------------------------------------------------------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(6, 13, 23, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar.scrolled {
+  background: #060d17;
+  border-bottom-color: rgba(197, 160, 89, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 76px;
+}
+
+.brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
+}
+
+.brand-logo-img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 26px;
+  background: var(--border-light);
+  flex-shrink: 0;
+}
+
+.brand-tag {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.09em;
+  line-height: 1.25;
+}
+
+.brand-tag strong {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.nav-primary {
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 1.55rem;
+}
+
+.nav-link {
+  display: block;
+  position: relative;
+  padding: 0.4rem 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--brand-gold);
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--text-primary);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  width: 100%;
+}
+
+/* Seccion en pantalla: el subrayado se queda puesto */
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+.nav-cta {
+  padding: 0.62rem 1.15rem;
+  font-size: 0.8rem;
+}
+
+/* El CTA del panel movil solo existe dentro del panel */
+.nav-panel-cta {
+  display: none;
+}
+
+.mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 42px;
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.mobile-toggle:hover,
+.mobile-toggle[aria-expanded='true'] {
+  border-color: var(--brand-gold);
+  color: var(--brand-gold-light);
+}
+
+/* El ancla no queda escondida debajo de la barra fija */
+section[id],
+.trust-band {
+  scroll-margin-top: 92px;
+}
+
+/* --------------------------------------------------------------------------
+   HERO SECTION (LUXURY GEOMETRIC FRAMES)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  padding: 4.5rem 0 5.5rem 0;
+  background: radial-gradient(circle at 75% 20%, rgba(0, 164, 189, 0.12) 0%, transparent 55%),
+              radial-gradient(circle at 15% 85%, rgba(197, 160, 89, 0.08) 0%, transparent 50%),
+              var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.hero-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+}
+
+.meta-chip.highlight {
+  border-color: var(--border-gold);
+  color: var(--brand-gold-light);
+  background: var(--gold-wash);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.015em;
+}
+
+.hero-title span.accent-gold {
+  color: var(--brand-gold-light);
+}
+
+.hero-description {
+  font-size: 1.12rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  border-left: 2px solid var(--brand-cyan);
+  padding-left: 1.25rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sharp-image-frame {
+  position: relative;
+  border: 1px solid var(--border-light);
+  background: var(--bg-secondary);
+  padding: 8px;
+  box-shadow: var(--shadow-frame);
+}
+
+.sharp-image-frame::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 24px;
+  height: 24px;
+  border-top: 2px solid var(--brand-gold);
+  border-left: 2px solid var(--brand-gold);
+  pointer-events: none;
+}
+
+.sharp-image-frame::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 24px;
+  height: 24px;
+  border-bottom: 2px solid var(--brand-cyan);
+  border-right: 2px solid var(--brand-cyan);
+  pointer-events: none;
+}
+
+.sharp-image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   COUNTDOWN TIMER BAR (SHARP RECTANGULAR)
+   -------------------------------------------------------------------------- */
+.countdown-strip {
+  background: #050b14;
+  border-bottom: 1px solid var(--border-light);
+  padding: 1.5rem 0;
+}
+
+.countdown-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.countdown-label {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.countdown-label .pulse-dot {
+  width: 10px;
+  height: 10px;
+  background: #e53e3e;
+  box-shadow: 0 0 10px #e53e3e;
+}
+
+.countdown-label h3 {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.countdown-label p {
+  font-size: 0.82rem;
+  color: var(--brand-gold-light);
+}
+
+.timer-boxes {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.timer-unit {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  min-width: 72px;
+  padding: 0.5rem 0.65rem;
+  text-align: center;
+}
+
+.timer-number {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--brand-gold-light);
+  line-height: 1;
+  display: block;
+}
+
+.timer-desc {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   THE REALITY CHECK (PARADIGM SHIFT SECTION)
+   "Cocinar vs Gestionar"
+   -------------------------------------------------------------------------- */
+.reality-section {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.reality-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.reality-statement {
+  background: #08111d;
+  border: 1px solid var(--border-light);
+  border-left: 4px solid #e53e3e;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.reality-statement h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  line-height: 1.35;
+}
+
+.reality-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.reality-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.reality-item i {
+  color: #e53e3e;
+  font-size: 1.1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.solution-box {
+  background: linear-gradient(145deg, #0d2238 0%, #081525 100%);
+  border: 1px solid var(--border-cyan);
+  border-left: 4px solid var(--brand-cyan-bright);
+  padding: 2.25rem;
+}
+
+.solution-box h4 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.solution-box p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   PROGRAM BENEFITS (POR QUÉ PARTICIPAR)
+   -------------------------------------------------------------------------- */
+.benefits-section {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 2rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--border-light);
+  transition: var(--transition);
+}
+
+.benefit-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--brand-cyan);
+  transform: translateY(-4px);
+}
+
+.benefit-card:hover::after {
+  background: var(--brand-cyan-bright);
+}
+
+.benefit-num {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ghost-ink);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.benefit-card:hover .benefit-num {
+  color: var(--brand-cyan-bright);
+}
+
+.benefit-card h4 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.benefit-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   WHO IS IT FOR (A QUIÉN ESTÁ DIRIGIDO)
+   -------------------------------------------------------------------------- */
+.target-section {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.target-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--brand-gold);
+  padding: 1.35rem 1.75rem;
+  transition: var(--transition);
+}
+
+.target-card:hover {
+  border-color: var(--brand-gold-light);
+  background: var(--bg-card-hover);
+  transform: translateX(6px);
+}
+
+.target-card h4 {
+  font-size: 1.08rem;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.target-card h4 i {
+  color: var(--brand-gold-light);
+}
+
+.target-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   CURRICULUM / 360° MASTER PROGRAM (LOS 2 BLOQUES - 14 MÓDULOS)
+   -------------------------------------------------------------------------- */
+.curriculum-section {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.curriculum-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.curriculum-tab-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 1.1rem 2.2rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.curriculum-tab-btn span.tab-time {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.curriculum-tab-btn.active {
+  background: var(--tab-active-bg);
+  border-color: var(--brand-cyan);
+  color: var(--tab-active-ink);
+  box-shadow: 0 4px 20px var(--brand-cyan-glow);
+}
+
+.curriculum-tab-btn.active span.tab-time {
+  color: var(--brand-cyan-bright);
+}
+
+.curriculum-content-panel {
+  display: none;
+}
+
+.curriculum-content-panel.active {
+  display: block;
+}
+
+.curriculum-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.module-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 1.85rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.module-box:hover {
+  border-color: var(--brand-gold);
+  background: var(--bg-card-hover);
+}
+
+.module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.75rem;
+}
+
+.module-number {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brand-gold-light);
+  letter-spacing: 0.05em;
+}
+
+.module-tag {
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--wash);
+  padding: 0.2rem 0.5rem;
+}
+
+.module-box h4 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.module-topics {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.module-topics li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.45;
+}
+
+.module-topics li i {
+  color: var(--brand-cyan-bright);
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   THE 3 UNIQUE PILLARS (DIFERENCIAL EXCLUSIVO)
+   Diploma + 1h Asesoría + Agenda de 30 Días
+   -------------------------------------------------------------------------- */
+.pillars-section {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pillar-card-hero {
+  background: linear-gradient(135deg, #091728 0%, #060e19 100%);
+  border: 1px solid var(--border-gold);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  align-items: center;
+}
+
+.pillar-badge {
+  display: inline-block;
+  background: var(--brand-gold);
+  color: #060d17;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.pillar-card-hero h3 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+}
+
+.pillar-card-hero p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.pillar-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pillar-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.pillar-bullets li i {
+  color: var(--brand-gold);
+  font-size: 1.1rem;
+}
+
+.pillars-subgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.subpillar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 2.25rem;
+  transition: var(--transition);
+}
+
+.subpillar-card:hover {
+  border-color: var(--brand-cyan);
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+}
+
+.subpillar-icon {
+  font-size: 2.2rem;
+  color: var(--brand-cyan-bright);
+  margin-bottom: 1.25rem;
+}
+
+.subpillar-card h4 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+  font-weight: 700;
+}
+
+.subpillar-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   PROGRAM DIRECTOR (J. RENEDO MASTERCLASS PROFILE)
+   -------------------------------------------------------------------------- */
+.director-section {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.director-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.director-name {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.director-role {
+  font-size: 1.05rem;
+  color: var(--brand-gold-light);
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+  display: block;
+}
+
+.director-bio-text {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.credentials-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.cred-badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  padding: 0.4rem 0.85rem;
+  font-size: 0.78rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   METHODOLOGY & CASE SCENARIOS
+   -------------------------------------------------------------------------- */
+.methodology-section {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.methodology-framework-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.framework-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 2rem;
+  text-align: center;
+}
+
+.framework-card .f-step {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--brand-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.framework-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.framework-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.questions-container {
+  background: #081321;
+  border: 1px solid var(--border-light);
+  padding: 2.5rem;
+}
+
+.questions-container h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.questions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.question-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 1rem 1.25rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.question-item i {
+  color: var(--brand-cyan-bright);
+}
+
+/* --------------------------------------------------------------------------
+   INSTITUTIONAL ENDORSEMENT / QUIÉN ORGANIZA (UADEN GLOBAL)
+   -------------------------------------------------------------------------- */
+.endorsement-section {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.endorsement-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.stat-counter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.stat-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.stat-box:hover {
+  border-color: var(--brand-gold);
+  background: var(--bg-card-hover);
+}
+
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--brand-gold-light);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* --------------------------------------------------------------------------
+   PRICING & CALCULATOR SECTION
+   -------------------------------------------------------------------------- */
+.pricing-section {
+  padding: 6rem 0;
+  background: radial-gradient(circle at 50% 10%, rgba(197, 160, 89, 0.1) 0%, transparent 60%),
+              var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pricing-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.pricing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 2.5rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.pricing-card.featured {
+  background: var(--surface-featured);
+  border: 2px solid var(--brand-gold);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--brand-gold-glow);
+  transform: translateY(-8px);
+}
+
+.pricing-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--brand-gold);
+  color: #060d17;
+  font-weight: 800;
+  font-size: 0.72rem;
+  padding: 0.35rem 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pricing-header h4 {
+  font-size: 1.25rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.pricing-deadline {
+  font-size: 0.82rem;
+  color: var(--brand-gold-light);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-price-wrap {
+  margin-bottom: 1.75rem;
+}
+
+.pricing-price {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.pricing-currency {
+  font-size: 1rem;
+  color: var(--brand-gold-light);
+  font-weight: 600;
+  margin-left: 0.35rem;
+}
+
+.pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.25rem;
+}
+
+.pricing-features li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.4;
+}
+
+.pricing-features li i {
+  color: var(--brand-cyan-bright);
+  font-size: 0.9rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* INTERACTIVE GROUP DISCOUNT CALCULATOR */
+.calculator-box {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-gold);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.calc-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.calc-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.discount-tiers-strip {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.discount-tier-badge {
+  background: var(--wash);
+  border: 1px solid var(--border-light);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.discount-tier-badge strong {
+  color: var(--brand-gold-light);
+}
+
+.calc-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.calc-btn-step {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.calc-btn-step:hover {
+  background: var(--brand-cyan);
+  border-color: var(--brand-cyan-bright);
+}
+
+.calc-input-number {
+  width: 90px;
+  height: 48px;
+  background: #040911;
+  border: 1px solid var(--border-gold);
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.calc-result-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-cyan);
+  padding: 2rem;
+  text-align: center;
+}
+
+.calc-result-card .calc-subheading {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.calc-total-usd {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--brand-gold-light);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.calc-savings-tag {
+  display: inline-block;
+  background: rgba(37, 211, 102, 0.15);
+  border: 1px solid #25D366;
+  color: #2ee271;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* PAYMENT METHODS ACCREDITATION */
+.payment-methods-strip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 2rem;
+  text-align: center;
+}
+
+.payment-methods-strip h4 {
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+.payment-badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.pay-badge {
+  background: var(--wash);
+  border: 1px solid var(--border-light);
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pay-badge i {
+  color: var(--brand-gold);
+}
+
+/* --------------------------------------------------------------------------
+   FAQ SECTION (ACCORDION)
+   -------------------------------------------------------------------------- */
+.faq-section {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
+}
+
+.faq-item.active {
+  border-color: var(--brand-cyan);
+}
+
+.faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1.35rem 1.75rem;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question i {
+  font-size: 1.2rem;
+  color: var(--brand-cyan-bright);
+  transition: transform 0.25s ease;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+  padding: 0 1.75rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 400px;
+  padding-bottom: 1.5rem;
+  transition: max-height 0.35s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   FINAL CTA BANNER
+   -------------------------------------------------------------------------- */
+.final-cta-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #091e38 0%, #040912 100%);
+  border-bottom: 1px solid var(--border-gold);
+  text-align: center;
+  position: relative;
+}
+
+.final-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.8vw, 2.1rem);
+  font-style: italic;
+  color: var(--brand-gold-light);
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.4;
+}
+
+.final-cta-btn-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER & SOCIAL LINKS (REQUIRED BY USER)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: #03070d;
+  padding: 4.5rem 0 2rem 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-top: 1rem;
+  max-width: 320px;
+}
+
+.footer-column h5 {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+  border-left: 2px solid var(--brand-gold);
+  padding-left: 0.65rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-links a {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.footer-links a:hover {
+  color: var(--brand-gold-light);
+}
+
+/* CLASE EXACTA SOCIAL-LINKS SOLICITADA POR EL USUARIO */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--brand-gold);
+  color: #060d17;
+  border-color: var(--brand-gold-light);
+  transform: translateY(-3px);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid var(--border-light);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   MODAL DE REGISTRO / CONSULTA (ZERO BORDER RADIUS)
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 9, 17, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-card {
+  background: #0a1626;
+  border: 1px solid var(--border-gold);
+  width: 100%;
+  max-width: 580px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: #040911;
+  border: 1px solid var(--border-light);
+  color: #ffffff;
+  font-size: 0.92rem;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--brand-cyan-bright);
+  background: #07111f;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (Zero border radius preserved)
+   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   CAPA HUMANA & PRUEBA DE CREDIBILIDAD
+   Fotografia documental, rostro del director y proceso real de participacion.
+   Mantiene la regla estricta de bordes rectos (border-radius: 0).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   PHOTO PLATE: la fotografia se presenta como evidencia, no como decoracion.
+   Vineta + grano filmico unifican la foto real con los renders del programa.
+   -------------------------------------------------------------------------- */
+.photo-plate {
+  position: relative;
+  border: 1px solid var(--border-light);
+  background: var(--bg-secondary);
+  padding: 8px;
+  box-shadow: var(--shadow-frame);
+}
+
+.photo-plate-shot {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.photo-plate-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Vineta: concentra la mirada en el rostro y asienta la foto en el fondo oscuro */
+.photo-plate-shot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 42%, transparent 38%, rgba(6, 13, 23, 0.5) 100%),
+    linear-gradient(to top, rgba(6, 13, 23, 0.55) 0%, transparent 42%);
+}
+
+/* Grano: textura muy leve que hace que las imagenes se lean como fotografia */
+.photo-plate-shot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.17;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23g)'/></svg>");
+  background-size: 160px 160px;
+}
+
+/* Banda horizontal: para fotos de ancho completo que no deben dominar */
+.photo-plate.plate-band .photo-plate-shot {
+  aspect-ratio: 16 / 7;
+}
+
+.photo-plate.plate-band .photo-plate-shot img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.photo-plate-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 8px;
+  padding: 0.9rem 0.25rem 0.15rem 0.25rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+}
+
+.photo-plate-note i {
+  color: var(--brand-gold);
+  font-size: 0.9rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   TRUST BAND: lo que la institucion se compromete a cumplir.
+   -------------------------------------------------------------------------- */
+.trust-band {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  padding: 2.25rem 0;
+}
+
+.trust-band-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--border-light);
+}
+
+.trust-item:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.trust-item > i {
+  font-size: 1.5rem;
+  color: var(--brand-gold);
+  line-height: 1;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.trust-item strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.trust-item span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   FONDOS FOTOGRAFICOS DE SECCION
+   La foto no compite con el texto: queda detras de un velo profundo.
+   -------------------------------------------------------------------------- */
+.photo-backdrop {
+  position: relative;
+  isolation: isolate;
+}
+
+.photo-backdrop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--backdrop-img);
+  background-size: cover;
+  background-position: var(--backdrop-pos, center);
+  opacity: var(--backdrop-opacity, 0.2);
+  filter: grayscale(0.35) contrast(1.05);
+}
+
+/* Velo que garantiza el contraste del texto sobre la fotografia */
+.photo-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(6, 13, 23, 0.82) 0%, rgba(6, 13, 23, 0.91) 100%);
+}
+
+.photo-backdrop > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.photo-backdrop.reality-section {
+  --backdrop-img: url('../images/kitchen-operations.jpg');
+}
+
+.photo-backdrop.methodology-section {
+  --backdrop-img: url('../images/team-leadership.jpg');
+  --backdrop-opacity: 0.15;
+}
+
+.photo-backdrop.process-section {
+  --backdrop-img: url('../images/hero-restaurant.jpg');
+  --backdrop-pos: center 40%;
+  --backdrop-opacity: 0.12;
+}
+
+.photo-backdrop.final-cta-section {
+  --backdrop-img: url('../images/advisory-session.jpg');
+  --backdrop-pos: center 30%;
+  --backdrop-opacity: 0.17;
+}
+
+/* --------------------------------------------------------------------------
+   DIRECTOR: el retrato manda la seccion.
+   -------------------------------------------------------------------------- */
+/* El retrato fija el ancho de su columna; el texto arranca a la misma altura */
+.director-grid {
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  align-items: start;
+}
+
+.director-visual {
+  position: relative;
+}
+
+.portrait-plate {
+  max-width: 420px;
+}
+
+.portrait-plate .photo-plate-shot::before {
+  background:
+    radial-gradient(ellipse at 50% 32%, transparent 44%, rgba(6, 13, 23, 0.4) 100%),
+    linear-gradient(to top, rgba(6, 13, 23, 0.9) 0%, rgba(6, 13, 23, 0.12) 30%, transparent 52%);
+}
+
+.portrait-nameplate {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  z-index: 3;
+  padding: 1rem 1.15rem;
+  background: rgba(6, 13, 23, 0.7);
+  border-top: 2px solid var(--brand-gold);
+}
+
+.portrait-nameplate-name {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.portrait-nameplate-meta {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--brand-gold-light);
+}
+
+.director-thesis {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--brand-gold);
+  background: rgba(197, 160, 89, 0.06);
+}
+
+.director-thesis p {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--brand-gold-light);
+  margin-bottom: 0.6rem;
+}
+
+.director-thesis cite {
+  font-style: normal;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--text-muted);
+}
+
+/* Ledger de trayectoria: datos verificables en lugar de fotografía genérica */
+.director-ledger {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.ledger-row {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.ledger-row dt {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--brand-gold);
+  padding-top: 0.15rem;
+}
+
+.ledger-row dd {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.director-stage {
+  margin-top: 3.5rem;
+}
+
+/* Recorte cinematográfico: la foto de escenario es una banda, no un bloque */
+.director-stage .photo-plate-shot {
+  aspect-ratio: 21 / 9;
+}
+
+.director-stage .photo-plate-shot img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+}
+
+/* --------------------------------------------------------------------------
+   PROCESO REAL DE PARTICIPACION
+   Los pasos van numerados porque son una secuencia verdadera en el tiempo.
+   -------------------------------------------------------------------------- */
+.process-section {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.process-rail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+}
+
+.process-step {
+  background: var(--bg-card);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: var(--transition);
+}
+
+.process-step:hover {
+  background: var(--bg-card-hover);
+}
+
+.process-step-when {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--brand-cyan-bright);
+}
+
+.process-step h4 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 1.08rem;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.process-step h4 .step-num {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--brand-gold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.process-step p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.process-footnote {
+  margin-top: 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.15rem 1.35rem;
+  border: 1px solid var(--border-cyan);
+  background: rgba(0, 164, 189, 0.06);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.process-footnote i {
+  color: var(--brand-cyan-bright);
+  font-size: 1.2rem;
+  margin-top: 0.05rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   FIRMA DEL DIRECTOR EN EL CIERRE
+   -------------------------------------------------------------------------- */
+.closing-signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0 auto 2.25rem auto;
+  padding: 0.7rem 1.25rem 0.7rem 0.7rem;
+  border: 1px solid var(--border-gold);
+  background: rgba(6, 13, 23, 0.6);
+  text-align: left;
+}
+
+.closing-signature img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  object-position: 50% 16%;
+  flex-shrink: 0;
+  border: 1px solid var(--border-gold);
+}
+
+.closing-signature-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.closing-signature-text strong {
+  font-size: 0.93rem;
+  color: #ffffff;
+}
+
+.closing-signature-text span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   CORRECCIÓN DE DESBORDE: la calculadora de grupos en pantallas angostas
+   -------------------------------------------------------------------------- */
+.calculator-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.discount-tiers-strip {
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   ACCESIBILIDAD: foco visible y respeto por el movimiento reducido
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--brand-cyan-bright);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .reality-grid,
+  .director-grid,
+  .endorsement-grid,
+  .calculator-grid,
+  .pillar-card-hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .benefits-grid,
+  .curriculum-modules-grid,
+  .pricing-cards-grid,
+  .pillars-subgrid,
+  .methodology-framework-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .questions-grid,
+  .stat-counter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DE LA CAPA HUMANA
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .trust-band-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .process-rail {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .portrait-plate {
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .director-stage {
+    margin-top: 2.5rem;
+  }
+
+  .ledger-row {
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+  }
+
+  .calculator-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .trust-band-inner {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .process-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait-nameplate {
+    padding: 0.85rem 1rem;
+  }
+
+  .portrait-nameplate-name {
+    font-size: 1.4rem;
+  }
+
+  .closing-signature {
+    width: 100%;
+  }
+
+  .ledger-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .calculator-box {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .calc-controls {
+    flex-wrap: wrap;
+  }
+}
+
+/* ==========================================================================
+   NAVBAR RESPONSIVE
+   Barra ancha: indice curado de 6 entradas.
+   Barra angosta: panel desplegable con el indice completo.
+   ========================================================================== */
+
+/* En la barra ancha el indice se mantiene corto: las entradas de apoyo
+   viven solo dentro del panel. */
+@media (min-width: 1025px) {
+  .nav-links .nav-extra {
+    display: none;
+  }
+}
+
+/* Margen de maniobra antes de ceder al panel */
+@media (max-width: 1240px) {
+  .nav-links {
+    gap: 1.1rem;
+  }
+
+  .nav-link {
+    font-size: 0.78rem;
+  }
+
+  .nav-cta {
+    padding: 0.58rem 0.95rem;
+    font-size: 0.76rem;
+  }
+
+  /* El logotipo ya dice el nombre: la bajada de texto libera el ancho
+     que necesita el índice para no apretarse. */
+  .brand-tag,
+  .brand-divider {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   PANEL DESPLEGABLE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .nav-inner {
+    height: 68px;
+    gap: 1rem;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .nav-primary {
+    margin: 0;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #060d17;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 2px solid var(--brand-gold);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.65);
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s;
+  }
+
+  .nav-links.mobile-open {
+    max-height: calc(100vh - 106px);
+    overflow-y: auto;
+    visibility: visible;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  /* Filas de toque amplias,
+  con marca de seccion activa al borde */
+  .nav-link {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-left: 3px solid transparent;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible,
+  .nav-link.active {
+    background: rgba(255, 255, 255, 0.04);
+    border-left-color: var(--brand-gold);
+    color: var(--text-primary);
+  }
+
+  .nav-panel-cta {
+    display: block;
+    padding: 1.35rem 1.5rem;
+    background: rgba(197, 160, 89, 0.05);
+  }
+
+  /* La seccion apuntada no queda tapada por la barra mas baja */
+  section[id],
+  .trust-band {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   PANTALLAS ANGOSTAS: la barra superior se reduce a lo esencial
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .top-fact-wide {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .top-badge {
+    display: none;
+  }
+
+  .top-notification-bar {
+    font-size: 0.72rem;
+  }
+
+  .top-bar-inner {
+    height: 34px;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .nav-cta-label {
+    display: none;
+  }
+
+  .nav-cta {
+    padding: 0.58rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .brand-logo-img {
+    height: 30px;
+  }
+}
+
+/* ==========================================================================
+   CAPA 2: RADIOS Y TEMAS DE SECCION
+   Dos decisiones:
+   1. Lo que se toca es blando (pastilla); lo que estructura se queda recto.
+   2. La pagina deja de ser un bloque oscuro: alterna papel, cian y vino.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CAPA INTERACTIVA: pastillas
+   -------------------------------------------------------------------------- */
+.btn,
+.mobile-toggle,
+.calc-btn-step,
+.top-badge,
+.meta-chip,
+.cred-badge,
+.pay-badge,
+.discount-tier-badge,
+.pricing-ribbon,
+.pillar-badge,
+.calc-savings-tag,
+.social-links a,
+.modal-close-btn,
+.f-step,
+.process-step-when {
+  border-radius: var(--radius-pill);
+}
+
+.calc-btn-step,
+.mobile-toggle,
+.social-links a,
+.modal-close-btn {
+  aspect-ratio: 1 / 1;
+}
+
+/* Campos de formulario: blandos pero no pastilla, el texto necesita esquina */
+.form-control,
+.calc-input-number,
+select.form-control {
+  border-radius: var(--radius-sm);
+}
+
+.benefit-card,
+.module-box,
+.subpillar-card,
+.stat-box,
+.faq-item,
+.framework-card,
+.question-item,
+.process-step,
+.timer-unit,
+.reality-statement,
+.solution-box,
+.calc-result-card,
+.director-thesis,
+.process-footnote,
+.closing-signature {
+  border-radius: var(--radius-md);
+}
+
+.pricing-card,
+.pillar-card-hero,
+.calculator-box,
+.questions-container,
+.brochure-callout,
+.modal-box,
+.sharp-image-frame,
+.photo-plate {
+  border-radius: var(--radius-lg);
+}
+
+/* La foto se recorta con el marco */
+.sharp-image-frame img,
+.photo-plate-shot {
+  border-radius: calc(var(--radius-lg) - 8px);
+  overflow: hidden;
+}
+
+/* Las escuadras doradas y cian abrazan la esquina curva en lugar de pelearse */
+.sharp-image-frame::before {
+  border-top-left-radius: var(--radius-lg);
+}
+
+.sharp-image-frame::after {
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+/* El panel del nav cae con las esquinas inferiores curvas */
+@media (max-width: 1024px) {
+  .nav-links {
+    border-bottom-left-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+  }
+
+  .nav-links li:last-child {
+    border-bottom-left-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TEMA PAPEL: las secciones de lectura larga, como el folleto impreso.
+   Los temas solo redefinen tokens; cada seccion conserva su propio fondo.
+   -------------------------------------------------------------------------- */
+.theme-paper {
+  --bg-primary: #f1ece2;
+  --bg-secondary: #e9e2d5;
+  --bg-tertiary: #ded5c4;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fbf9f3;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+
+  --text-primary: #0a1f3c;
+  --text-secondary: #3b4a5e;
+  --text-muted: #55637a;
+
+  --border-light: rgba(10, 31, 60, 0.14);
+  --border-gold: rgba(138, 106, 34, 0.4);
+  --border-cyan: rgba(0, 112, 127, 0.3);
+
+  /* En claro, "light" pasa a ser el tono MAS oscuro: es el que da contraste */
+  --brand-gold: #8a6a22;
+  --brand-gold-light: #6d5118;
+  --brand-gold-glow: rgba(138, 106, 34, 0.18);
+  --brand-cyan: #00707f;
+  --brand-cyan-bright: #005f6c;
+  --brand-cyan-glow: rgba(0, 112, 127, 0.18);
+  --text-accent: #00606d;
+
+  --wash: rgba(10, 31, 60, 0.045);
+  --wash-strong: rgba(10, 31, 60, 0.09);
+  --gold-wash: rgba(138, 106, 34, 0.1);
+  --cyan-wash: rgba(0, 112, 127, 0.08);
+  --ghost-ink: rgba(10, 31, 60, 0.13);
+
+  --surface-sunken: #e6dfd1;
+  --surface-featured: linear-gradient(145deg, #ffffff 0%, #f7f3ea 100%);
+  --tab-active-bg: linear-gradient(135deg, #0f2f57 0%, #091e3a 100%);
+  --tab-active-ink: #ffffff;
+  --tab-active-meta: #6de5f9;
+  --shadow-card: 0 10px 28px rgba(10, 31, 60, 0.1);
+  --shadow-frame: 0 18px 40px rgba(10, 31, 60, 0.18);
+
+  color: var(--text-secondary);
+}
+
+/* En papel la tarjeta se sostiene con sombra, no con borde duro */
+.theme-paper .benefit-card,
+.theme-paper .module-box,
+.theme-paper .stat-box,
+.theme-paper .faq-item,
+.theme-paper .question-item {
+  box-shadow: var(--shadow-card);
+}
+
+/* --------------------------------------------------------------------------
+   TEMA CIAN: el color de marca usado como superficie, no como acento.
+   -------------------------------------------------------------------------- */
+.theme-teal {
+  --bg-primary: #063039;
+  --bg-secondary: #073843;
+  --bg-tertiary: #0a4754;
+  --bg-card: #09404d;
+  --bg-card-hover: #0c4d5d;
+
+  --text-primary: #ffffff;
+  --text-secondary: #cfe4e9;
+  --text-muted: #9cc0c8;
+
+  --border-light: rgba(255, 255, 255, 0.15);
+  --border-cyan: rgba(109, 229, 249, 0.4);
+
+  --brand-cyan-bright: #6de5f9;
+  --wash: rgba(255, 255, 255, 0.05);
+  --wash-strong: rgba(255, 255, 255, 0.1);
+  --ghost-ink: rgba(255, 255, 255, 0.16);
+  --shadow-card: 0 14px 34px rgba(0, 18, 23, 0.5);
+
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   TEMA VINO: la seccion del dinero, en el tono del saco del director.
+   -------------------------------------------------------------------------- */
+.theme-wine {
+  --bg-primary: #24101a;
+  --bg-secondary: #2b1420;
+  --bg-tertiary: #351a28;
+  --bg-card: #2f1724;
+  --bg-card-hover: #3a1d2d;
+
+  --text-primary: #ffffff;
+  --text-secondary: #e5ced5;
+  --text-muted: #b99aa4;
+
+  --border-light: rgba(255, 255, 255, 0.13);
+  --border-gold: rgba(223, 194, 133, 0.45);
+
+  --wash: rgba(255, 255, 255, 0.05);
+  --wash-strong: rgba(255, 255, 255, 0.1);
+  --ghost-ink: rgba(255, 255, 255, 0.16);
+  --surface-sunken: #1d0c14;
+  --surface-featured: linear-gradient(145deg, #3d1f2f 0%, #24101a 100%);
+  --shadow-card: 0 14px 34px rgba(16, 4, 9, 0.55);
+
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   DESCARGA DEL FOLLETO
+   -------------------------------------------------------------------------- */
+.btn-ghost {
+  background: var(--wash);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: var(--wash-strong);
+  border-color: var(--brand-gold);
+  transform: translateY(-2px);
+}
+
+.btn-meta {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.btn-meta::before {
+  content: '·';
+  margin-right: 0.45rem;
+}
+
+.brochure-callout {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  padding: 2rem 2.25rem;
+  background: var(--gold-wash);
+  border: 1px solid var(--border-gold);
+}
+
+.brochure-callout h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.brochure-callout p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 54ch;
+}
+
+.brochure-callout .btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .brochure-callout {
+    padding: 1.6rem 1.4rem;
+  }
+
+  .brochure-callout .btn {
+    width: 100%;
+  }
+
+  .btn-brochure {
+    flex-wrap: wrap;
+  }
+}
+
+/* ==========================================================================
+   AJUSTES TRAS LA REVISION VISUAL
+   ========================================================================== */
+
+/* El horario de la pestaña activa iba en cian oscuro sobre el azul marino
+   de la pastilla activa: ilegible en el tema papel. Token propio, siempre claro. */
+:root {
+  --tab-active-meta: #6de5f9;
+}
+
+.curriculum-tab-btn.active span.tab-time {
+  color: var(--tab-active-meta);
+}
+
+/* La viñeta cuelga en lugar de ser un item flex: el icono, el <strong> y el
+   texto suelto ya no se reparten en columnas y la frase se lee de corrido. */
+.pricing-features li {
+  display: block;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.pricing-features li i {
+  position: absolute;
+  left: 0;
+  top: 0.28em;
+  margin-top: 0;
+}
+
+.closing-signature img {
+  border-radius: 50%;
+}
+
+/* Fichas y marcas pequeñas que quedaron rectas */
+.pill-icon,
+.timer-number,
+.step-num,
+.benefit-num {
+  border-radius: var(--radius-sm);
+}
+
+.pill-icon {
+  border-radius: var(--radius-pill);
+}
+
+/* En el hero el folleto es la tercera opción: pesa menos que las dos de arriba */
+.hero-cta-group .btn-brochure {
+  padding: 0.7rem 1.35rem;
+  font-size: 0.82rem;
+  align-self: flex-start;
+}
+
+/* Los tres CTA del hero se reparten en dos filas en cuanto hay sitio */
+.hero-cta-group {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Las pestañas del programa llevan dos líneas de texto: con radio de pastilla
+   se deforman en óvalo al envolver. Radio de tarjeta, y una por fila cuando la
+   pantalla es angosta. */
+.curriculum-tab-btn {
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .curriculum-tabs-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .curriculum-tab-btn {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* ==========================================================================
+   CAPA 3: SIN MARCOS, CON MOVIMIENTO
+   1. Fuera los marcos rectangulares de los bloques de texto. La jerarquia la
+      hacen el fondo, la sombra y el aire. Las pastillas conservan su contorno.
+   2. Revelado al entrar, carruseles, contadores y micro-respuesta al tacto.
+   ========================================================================== */
+
+:root {
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --shadow-card-hover: 0 18px 44px rgba(0, 0, 0, 0.55);
+}
+
+.theme-paper {
+  --shadow-card-hover: 0 16px 38px rgba(10, 31, 60, 0.16);
+}
+
+.benefit-card,
+.module-box,
+.subpillar-card,
+.stat-box,
+.faq-item,
+.framework-card,
+.question-item,
+.process-step,
+.timer-unit,
+.calc-result-card,
+.calculator-box,
+.questions-container,
+.pricing-card,
+.brochure-callout,
+.closing-signature,
+.process-rail,
+.case-card,
+.photo-plate,
+.sharp-image-frame {
+  border: none;
+}
+
+/* Las barras laterales no son marcos: marcan de que habla el bloque. */
+.reality-statement,
+.solution-box,
+.director-thesis {
+  border: none;
+}
+
+.reality-statement {
+  border-left: 4px solid #e53e3e;
+}
+
+.solution-box {
+  border-left: 4px solid var(--brand-cyan-bright);
+}
+
+.director-thesis {
+  border-left: 3px solid var(--brand-gold);
+}
+
+.process-footnote {
+  border: none;
+  border-left: 3px solid var(--brand-cyan-bright);
+}
+
+/* La tarifa destacada se distingue por el canto superior y la elevacion,
+   no por un recuadro cerrado. */
+.pricing-card.featured {
+  border: none;
+  border-top: 3px solid var(--brand-gold);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.5);
+}
+
+/* Las tarjetas se sostienen con sombra en claro y con superficie en oscuro */
+.benefit-card,
+.module-box,
+.subpillar-card,
+.stat-box,
+.faq-item,
+.framework-card,
+.question-item,
+.pricing-card,
+.case-card,
+.calc-result-card {
+  box-shadow: var(--shadow-card);
+}
+
+/* El contorno aparece solo al apuntar: es respuesta, no decoracion */
+.benefit-card,
+.module-box,
+.subpillar-card,
+.stat-box,
+.case-card {
+  transition: transform 0.22s var(--ease-out-quint),
+              box-shadow 0.22s var(--ease-out-quint),
+              background-color 0.22s ease;
+}
+
+.benefit-card:hover,
+.case-card:hover {
+  box-shadow: 0 0 0 1px var(--brand-cyan), var(--shadow-card-hover);
+}
+
+.module-box:hover,
+.stat-box:hover {
+  box-shadow: 0 0 0 1px var(--brand-gold), var(--shadow-card-hover);
+}
+
+.subpillar-card:hover {
+  box-shadow: 0 0 0 1px var(--brand-cyan-bright), var(--shadow-card-hover);
+}
+
+.faq-item.active {
+  box-shadow: 0 0 0 1px var(--brand-cyan), var(--shadow-card);
+}
+
+/* El marco de foto se queda solo con las escuadras: sin passepartout */
+.sharp-image-frame,
+.photo-plate {
+  padding: 0;
+  background: transparent;
+}
+
+.sharp-image-frame img,
+.photo-plate-shot {
+  border-radius: var(--radius-lg);
+}
+
+.photo-plate-note {
+  padding: 0.9rem 0.25rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. REVELADO AL ENTRAR
+   El HTML arranca visible. Solo se oculta si el guion confirmo que puede
+   volver a mostrarlo: si el observador nunca dispara, nada queda invisible.
+   -------------------------------------------------------------------------- */
+[data-reveal] {
+  transition: opacity 0.6s var(--ease-out-cubic),
+              transform 0.6s var(--ease-out-quint);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+html.js-reveal [data-reveal]:not(.is-in) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+html.js-reveal [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. CARRUSEL
+   Desplazamiento nativo con anclaje: funciona con dedo, rueda y teclado
+   aunque el guion falle. Los botones solo lo empujan.
+   -------------------------------------------------------------------------- */
+.carousel {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.25rem 0 1.5rem 0;
+  /* el recorte de la sombra necesita aire a los lados */
+  margin-inline: -0.25rem;
+  padding-inline: 0.25rem;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* El ancho declarado nunca pasa del 85% del carril: así la tarjeta siguiente
+   siempre asoma y en el móvil no hace falta sobreescribir --slide-w. */
+.carousel-track > * {
+  flex: 0 0 min(var(--slide-w, 320px), 85%);
+  scroll-snap-align: start;
+}
+
+.carousel-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--ghost-ink);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-out-quint), background-color 0.2s ease;
+}
+
+.carousel-dot:hover {
+  background: var(--brand-gold);
+}
+
+.carousel-dot[aria-current='true'] {
+  background: var(--brand-gold);
+  transform: scale(1.5);
+}
+
+/* Posición en texto cuando hay demasiadas páginas para puntos */
+.carousel-count {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.carousel-btn {
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--wash-strong);
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform 0.18s var(--ease-out-quint),
+              background-color 0.18s ease, opacity 0.18s ease;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: var(--brand-gold);
+  color: #140d02;
+}
+
+.carousel-btn:active:not(:disabled) {
+  transform: scale(0.92);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.carousel-hint {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   CASOS QUE SE ANALIZAN
+   -------------------------------------------------------------------------- */
+.cases-block {
+  margin-top: 3.5rem;
+}
+
+.cases-block > h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.cases-block > p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  max-width: 62ch;
+}
+
+.case-card {
+  background: var(--bg-card);
+  padding: 1.6rem 1.5rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.case-card i {
+  font-size: 1.7rem;
+  color: var(--brand-gold-light);
+  line-height: 1;
+}
+
+.case-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.case-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   4. PANELES DEL TEMARIO: cruce suave al cambiar de bloque
+   -------------------------------------------------------------------------- */
+.curriculum-content-panel.active {
+  animation: panel-in 0.4s var(--ease-out-cubic) both;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. MICRO-RESPUESTA AL TACTO
+   -------------------------------------------------------------------------- */
+.btn,
+.curriculum-tab-btn,
+.mobile-toggle,
+.calc-btn-step {
+  transition: transform 0.14s ease-out, background-color 0.22s ease,
+              color 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.btn:active,
+.curriculum-tab-btn:active,
+.mobile-toggle:active,
+.calc-btn-step:active {
+  transform: scale(0.97);
+}
+
+.social-links a {
+  transition: transform 0.2s var(--ease-out-quint), color 0.2s ease,
+              background-color 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+
+/* El punto del contador late para marcar que la tarifa corre */
+.pulse-dot {
+  animation: pulse-dot 1.9s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. BARRA FIJA DE RESERVA EN MOVIL
+   Aparece cuando el hero ya quedo atras y se retira en el pie.
+   -------------------------------------------------------------------------- */
+.sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  background: rgba(6, 13, 23, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(197, 160, 89, 0.45);
+  transform: translateY(110%);
+  transition: transform 0.35s var(--ease-out-quint);
+}
+
+.sticky-cta.is-up {
+  transform: none;
+}
+
+.sticky-cta-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.sticky-cta-text strong {
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.sticky-cta-text span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-gold-light);
+}
+
+.sticky-cta .btn {
+  flex-shrink: 0;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 860px) {
+  .sticky-cta {
+    display: flex;
+  }
+
+  /* sitio para que la barra no tape el final del pie */
+  .site-footer {
+    padding-bottom: 6rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DEL CARRUSEL
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .carousel-track {
+    gap: 0.9rem;
+  }
+
+  .carousel-bar {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .carousel-hint {
+    display: none;
+  }
+
+  .cases-block > h3 {
+    font-size: 1.35rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOVIMIENTO REDUCIDO: se respeta todo lo anterior
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html.js-reveal [data-reveal]:not(.is-in),
+  html.js-reveal [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .carousel-track {
+    scroll-behavior: auto;
+  }
+
+  .curriculum-content-panel.active {
+    animation: none;
+  }
+
+  .pulse-dot {
+    animation: none;
+  }
+
+  .sticky-cta {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   CAPA 4: HERO CON FONDO FOTOGRAFICO
+   El texto ya no se apina en una columna estrecha: el titular manda arriba a
+   la izquierda, los datos duros ocupan la derecha sobre la foto, y lo que se
+   lleva el participante se reparte en una banda de cuatro a todo el ancho.
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* La placa ya trae horneados el desenfoque, la desaturacion y el velo que
+   protege el texto; aqui solo se posiciona y se refuerza el contraste. */
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('../images/hero-backdrop.jpg');
+  background-size: cover;
+  background-position: 68% center;
+  pointer-events: none;
+}
+
+.hero-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* La placa ya viene oscurecida: aquí solo se protege la columna de texto y
+     se deja ver el local en la derecha. */
+  background:
+    linear-gradient(100deg, rgba(5, 11, 20, 0.9) 0%, rgba(5, 11, 20, 0.6) 40%, rgba(5, 11, 20, 0.05) 70%, rgba(5, 11, 20, 0.3) 100%),
+    radial-gradient(circle at 18% 28%, rgba(0, 164, 189, 0.16) 0%, transparent 52%),
+    radial-gradient(circle at 88% 82%, rgba(197, 160, 89, 0.14) 0%, transparent 48%);
+}
+
+.hero-shell {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 3.5rem;
+  align-items: start;
+  padding-top: 4.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.hero-lede {
+  max-width: 44rem;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.6vw, 3.9rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.35rem;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
+}
+
+.hero-description {
+  font-size: 1.14rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 52ch;
+  margin-bottom: 2.25rem;
+  border-left: 2px solid var(--brand-cyan);
+  padding-left: 1.15rem;
+}
+
+.hero-description strong {
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   COLUMNA DERECHA: ficha de la convocatoria
+   -------------------------------------------------------------------------- */
+.hero-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  background: rgba(8, 16, 28, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.hero-facts {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-fact {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero-fact:first-child {
+  padding-top: 0;
+}
+
+.hero-fact dt {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--brand-gold);
+  margin-bottom: 0.3rem;
+}
+
+.hero-fact dd {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.hero-fact abbr {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--text-muted);
+  cursor: help;
+}
+
+/* Quien lo dicta, con la foto pequena a la derecha del titular */
+.hero-speaker {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-top: 0.35rem;
+}
+
+.hero-speaker-photo {
+  width: 84px;
+  height: 104px;
+  object-fit: cover;
+  object-position: 50% 22%;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+}
+
+.hero-speaker-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.hero-speaker-role {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--brand-cyan-bright);
+}
+
+.hero-speaker-text strong {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.hero-speaker-note {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.hero-speaker-link {
+  margin-top: 0.3rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand-gold-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-bottom: 1px solid transparent;
+  align-self: flex-start;
+}
+
+.hero-speaker-link:hover,
+.hero-speaker-link:focus-visible {
+  border-bottom-color: var(--brand-gold-light);
+}
+
+/* --------------------------------------------------------------------------
+   BANDA DE VALOR: cuatro columnas a todo el ancho, al pie del hero
+   -------------------------------------------------------------------------- */
+.hero-value-strip {
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.25rem;
+  padding: 2.25rem 0 3rem 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.hero-value-strip li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero-value-strip i {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--brand-gold);
+}
+
+/* Los dos últimos son el bloque de tecnología: van en cian */
+.hero-value-strip i.text-cyan {
+  color: var(--brand-cyan-bright);
+}
+
+.hero-value-strip h2 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.hero-value-strip p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .hero-shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    padding-top: 3.25rem;
+  }
+
+  .hero-lede {
+    max-width: none;
+  }
+
+  .hero-backdrop {
+    background-position: 72% center;
+  }
+
+  .hero-backdrop::after {
+    background:
+      linear-gradient(180deg, rgba(5, 11, 20, 0.7) 0%, rgba(5, 11, 20, 0.84) 55%, rgba(5, 11, 20, 0.93) 100%),
+      radial-gradient(circle at 20% 15%, rgba(0, 164, 189, 0.16) 0%, transparent 55%);
+  }
+
+  .hero-value-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-shell {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.02rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-dossier {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .hero-value-strip {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Texto algo más ajustado para que el botón principal quepa en una línea */
+  .hero-cta-group .btn {
+    width: 100%;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    padding-inline: 1.1rem;
+  }
+
+  .hero-cta-group .btn-brochure {
+    width: auto;
+  }
+}
+
+/* ==========================================================================
+   CAPA 5: PERFIL DE PARTICIPANTES CON FONDO FOTOGRAFICO
+   Mismo tratamiento que el hero: la foto pasa al fondo, el encabezado manda
+   centrado y los cinco perfiles se reparten a todo el ancho en 3 + 2.
+   ========================================================================== */
+
+.target-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 6rem 0 5.5rem 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.target-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('../images/target-backdrop.jpg');
+  background-size: cover;
+  background-position: center 42%;
+  pointer-events: none;
+}
+
+.target-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(9, 17, 30, 0.78) 0%, rgba(9, 17, 30, 0.42) 34%, rgba(9, 17, 30, 0.86) 100%),
+    radial-gradient(circle at 80% 18%, rgba(197, 160, 89, 0.12) 0%, transparent 48%);
+}
+
+.target-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   REJILLA DE PERFILES: 3 arriba, 2 abajo, de borde a borde
+   -------------------------------------------------------------------------- */
+.target-cards-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.target-cards-grid > li:nth-child(-n + 3) {
+  grid-column: span 2;
+}
+
+.target-cards-grid > li:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+.target-card {
+  /* Sin recuadro: solo la barra dorada que marca el perfil */
+  border: none;
+  border-left: 3px solid var(--brand-gold);
+  background: rgba(13, 27, 46, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 1.6rem 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.target-card:hover {
+  background: rgba(19, 37, 62, 0.9);
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px var(--brand-gold), var(--shadow-card-hover);
+}
+
+.target-card h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.target-card h3 i {
+  color: var(--brand-gold-light);
+  font-size: 1.15rem;
+  line-height: 1.35;
+  flex-shrink: 0;
+}
+
+.target-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   CIERRE: el dato que convierte a todos estos perfiles en un solo cupo
+   -------------------------------------------------------------------------- */
+.target-footnote {
+  margin-top: 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.2rem 1.5rem;
+  border-left: 3px solid var(--brand-cyan-bright);
+  background: var(--cyan-wash);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.target-footnote i {
+  color: var(--brand-cyan-bright);
+  font-size: 1.2rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .target-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .target-cards-grid > li:nth-child(-n + 3),
+  .target-cards-grid > li:nth-child(n + 4) {
+    grid-column: span 1;
+  }
+
+  /* el quinto,
+  solo en su fila,
+  ocupa el ancho completo */
+  .target-cards-grid > li:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  .target-backdrop::after {
+    background:
+      linear-gradient(180deg, rgba(9, 17, 30, 0.8) 0%, rgba(9, 17, 30, 0.6) 30%, rgba(9, 17, 30, 0.9) 100%);
+  }
+}
+
+@media (max-width: 680px) {
+  .target-section {
+    padding: 4rem 0 3.5rem 0;
+  }
+
+  .target-cards-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .target-cards-grid > li:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  .target-card {
+    padding: 1.3rem 1.25rem;
+  }
+
+  .target-footnote {
+    padding: 1.1rem 1.15rem;
+    font-size: 0.9rem;
+  }
+}

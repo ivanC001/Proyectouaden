@@ -1,0 +1,241 @@
+/* ==========================================================================
+   crisis-fx.css
+   Acento rojo/naranja en títulos y destaques + fondos: la pantalla partida del
+   hero y las franjas de color que separan las secciones. Se carga DESPUÉS de
+   editorial.css, así que gana sin tocarlo.
+
+   Regla que se respeta en todo el archivo: nada se mueve solo. El color da la
+   estructura; el movimiento se reserva para lo que responde al puntero.
+   ========================================================================== */
+
+:root {
+  /* Acentos de crisis */
+  --crisis-red: #c1272d;
+  --crisis-red-hover: #a21f24;
+  --crisis-orange: #e8590c;
+  --crisis-orange-hover: #cf4d06;
+  --crisis-ember: #f7903d;
+  --crisis-gold: #ffb703;
+
+  /* Estructura azul. La rotación de matiz ya pasó el verde a azul; esto
+     le sube la saturación para que lea como azul y no como gris azulado. */
+  --primary-navy: #13305e;
+  --secondary-navy: #1b3f72;
+  --accent-teal: #1f5fa8;        /* el acento frío, ahora azul */
+  --accent-teal-light: #2e78c9;
+  --accent-teal-glow: rgba(31, 95, 168, .14);
+  --accent-red: var(--crisis-red);
+  --accent-red-hover: var(--crisis-red-hover);
+  --text-primary: #1c2f4f;
+  --text-secondary: #4d5d78;
+  --border-card: #dde3ec;
+}
+
+/* ==========================================================================
+   0. Azules que editorial.css trae escritos a mano
+   ========================================================================== */
+
+body {
+  color: var(--text-primary);
+}
+
+.top-bar,
+.pillars-section,
+.cert-section,
+.about-uaden-section {
+  background: var(--primary-navy);
+}
+
+.hero-title {
+  color: var(--primary-navy);
+}
+
+.hero-lead {
+  color: var(--text-secondary);
+}
+
+.hero-lead strong,
+.meta-text span {
+  color: var(--text-primary);
+}
+
+.nav-link {
+  color: var(--text-secondary);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent-teal);
+}
+
+.meta-icon {
+  color: var(--accent-teal);
+  background: #e6edf7;
+}
+
+.pillar-title,
+.faculty-name,
+.axis-content h4 {
+  color: var(--primary-navy);
+}
+
+.pillar-desc,
+.axis-content p {
+  color: var(--text-secondary);
+}
+
+.pillar-title i {
+  color: var(--accent-teal) !important;
+}
+
+/* ==========================================================================
+   1. Títulos y destaques
+   ========================================================================== */
+
+/* Palabras resaltadas del H1: degradado rojo -> naranja */
+.hero-title .gradient-text {
+  color: var(--crisis-red); /* fallback si no hay background-clip */
+  background: linear-gradient(100deg, var(--crisis-red) 0%, var(--crisis-orange) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Regla corta bajo cada título de sección: el "resalte" sin gritar */
+.section-title {
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 54px;
+  height: 3px;
+  margin-top: 18px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--crisis-red), var(--crisis-orange));
+}
+
+.text-center .section-title::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Eyebrows sobre fondo claro */
+.hero-subtitle-top,
+.section-badge {
+  color: var(--crisis-orange);
+}
+
+/* Eyebrows sobre fondo oscuro: naranja más cálido para que no vibre */
+.section-badge.badge-white,
+.pillars-section .section-badge,
+.section-story .section-badge,
+.cert-section .section-badge,
+.about-uaden-section .section-badge {
+  color: var(--crisis-ember);
+}
+
+/* Barra lateral de los bloques narrativos */
+.section-story .section-desc {
+  border-left-color: var(--crisis-ember);
+}
+
+/* Cita de apertura de "Por que se formar" */
+.why-lead-quote {
+  color: var(--crisis-red);
+  border-left-color: var(--crisis-red);
+}
+
+/* CTA principal en naranja: es el color del folleto brasileño */
+.btn-primary,
+.btn-teal {
+  background: var(--crisis-orange);
+}
+
+.btn-primary:hover,
+.btn-teal:hover {
+  background: var(--crisis-orange-hover);
+}
+
+.pricing-ribbon,
+.quick-price-badge {
+  background: var(--crisis-red);
+  color: #fff;
+}
+
+
+/* ==========================================================================
+   2. Fondos: la pantalla partida del hero
+   La mitad izquierda es el papel donde se lee; la derecha es el azul de la
+   marca, y la tarjeta del programa se apoya sobre él. Debajo de 992px, donde
+   la tarjeta pasa a estar bajo el texto, el hero vuelve a un solo color.
+   ========================================================================== */
+
+.hero-section {
+  background: #f6f5f0;
+}
+
+@media (min-width: 992px) {
+  .hero-section {
+    background: linear-gradient(90deg, #f6f5f0 0 50%, var(--primary-navy) 50% 100%);
+  }
+
+  /* la sombra plana de la tarjeta era crema: sobre el azul tiene que ser azul */
+  .hero-visual-card {
+    box-shadow: 16px 18px 0 rgba(4, 16, 36, .38);
+  }
+}
+
+/* ==========================================================================
+   3. Franjas: el ritmo de la página
+   Las secciones claras alternan papel y blanco, y cada cambio a fondo oscuro
+   se anuncia con una franja de color de 4px. Nada más: el ritmo lo da el
+   fondo, no una línea entre bloques.
+   ========================================================================== */
+
+.why-section,
+.gallery-section,
+.method-section,
+.audience-section,
+.register-section {
+  background: #f6f5f0;
+}
+
+.authority-bar,
+.axes-section,
+.manual-section,
+.faculty-section,
+.pricing-section,
+.faq-section {
+  background: #ffffff;
+}
+
+.gallery-section {
+  padding: 80px 0;
+}
+
+/* La franja de color sobre cada sección oscura */
+.pillars-section,
+.cert-section,
+.about-uaden-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.pillars-section::before,
+.cert-section::before,
+.about-uaden-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--crisis-red), var(--crisis-orange) 55%, var(--crisis-gold));
+}
+
+.pillars-section > .container,
+.cert-section > .container,
+.about-uaden-section > .container {
+  position: relative;
+  z-index: 1;
+}
