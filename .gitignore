@@ -1,7 +1,5 @@
 **/.private/
 **/wp-config.php
-**/.env
-**/.env.*
 !**/.env.example
 **/wp-content/uploads/registros-pdf/
 **/wp-content/wflogs/
@@ -26,3 +24,7 @@ Thumbs.db
 /preuaden/
 /registro/
 /uadenw/
+
+/deploy-output/
+config.bat
+node_modules
