@@ -2273,6 +2273,24 @@ main > section:not(.hero)::before {
 
 .legal-disclaimer p:last-child { margin-bottom: 0; }
 
+.participation-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 48px;
+  padding-left: 24px;
+  line-height: 1.8;
+}
+.participation-steps li { padding-left: 8px; }
+.participation-steps strong { display: block; color: var(--navy); }
+.connection-note { margin-top: 36px; padding: 28px; background: var(--light, #f3f6f9); border-radius: 12px; }
+.connection-note h3 { font-size: 1.25rem; }
+.connection-note p { margin-bottom: 0; line-height: 1.8; }
+.offer-note { max-width: 75ch; margin: 24px auto; font-size: .95rem; line-height: 1.7; }
+@media (max-width: 640px) {
+  .participation-steps { grid-template-columns: 1fr; gap: 22px; }
+  .connection-note { padding: 22px; }
+}
+
 @media (max-width: 640px) {
   .legal-disclaimer .disclaimer-card { padding: 26px 22px; }
 }

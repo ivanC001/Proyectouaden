@@ -3879,3 +3879,109 @@ html.js-reveal [data-reveal].is-in {
     font-size: 0.9rem;
   }
 }
+
+/* Apertura basada en la referencia: cabecera clara, hero fotográfico y bandas informativas. */
+.restaurant-reference .navbar, .restaurant-reference .navbar.scrolled { background: #fff; border-bottom: 1px solid #e3e7eb; box-shadow: none; backdrop-filter: none; }
+.restaurant-reference .navbar .nav-link { color: #162c40; }
+.restaurant-reference .navbar .btn-primary { background: #edc154; color: #172d40; box-shadow: none; border-color: #edc154; border-radius: 7px; }
+.restaurant-reference .mobile-toggle { color: #172d40; border-color: #cbd3da; }
+.restaurant-reference .hero-section { background: #10232e; }
+.restaurant-reference .hero-backdrop { left: 35%; background-image: url('../images/hero-restaurant.jpg'); background-position: 38% center; }
+.restaurant-reference .hero-backdrop::after { background: linear-gradient(90deg, #10232e 0%, rgba(16,35,46,.5) 19%, rgba(16,35,46,0) 50%); }
+.restaurant-reference .hero-shell { display: block; padding-top: 54px; padding-bottom: 44px; min-height: 470px; }
+.restaurant-reference .hero-lede { max-width: 570px; width: 51%; }
+.restaurant-reference .hero-title { font-size: clamp(2.5rem,4vw,3.5rem); line-height: 1.04; text-shadow: none; margin-bottom: 22px; }
+.restaurant-reference .hero-description { border: 0; padding: 0; font-size: 1rem; line-height: 1.65; color: #f0f3f5; margin-bottom: 24px; }
+.restaurant-reference .hero-meta-strip { gap: 10px; margin-bottom: 20px; }
+.restaurant-reference .meta-chip { font-size: .66rem; padding: 5px 10px; border-radius: 20px; background: #182c38; }
+.restaurant-reference .meta-chip.highlight { background: #244c62; color: #fff; border: 0; }
+.restaurant-reference .hero-cta-group { gap: 10px; }
+.restaurant-reference .hero-cta-group .btn { font-size: .8rem; padding: 12px 18px; border-radius: 6px; box-shadow: none; letter-spacing: 0; text-transform: none; }
+.restaurant-reference .hero-cta-group .btn-primary { background: #edc154; color: #142635; border-color: #edc154; }
+.restaurant-reference .hero-cta-group .btn-outline { background: rgba(12,27,38,.5); }
+.restaurant-reference .hero-cta-group .btn-brochure { border: 0; background: none; padding: 6px 0; justify-content: flex-start; text-decoration: underline; }
+.restaurant-reference .hero-section > .container:last-child { max-width: none; background: #fff; padding: 0; }
+.restaurant-reference .hero-value-strip { max-width: 1192px; margin: 0 auto; padding: 25px 0; border: 0; gap: 30px; }
+.restaurant-reference .hero-value-strip h2 { color: #172f43; font-size: .94rem; }
+.restaurant-reference .hero-value-strip p { color: #52616d; font-size: .8rem; }
+.restaurant-reference .hero-value-strip i, .restaurant-reference .hero-value-strip i.text-cyan { color: #24485e; font-size: 1.5rem; }
+.event-reference { background: #153247; padding: 25px 0; }
+.event-reference .hero-facts { display: grid; grid-template-columns: .8fr 1.2fr 1.4fr 1fr; gap: 35px; }
+.event-reference .hero-fact, .event-reference .hero-fact:first-child { padding: 0; border: 0; }
+.event-reference .hero-fact dt { color: #d5e0e8; text-transform: none; letter-spacing: 0; font-size: .8rem; }
+.event-reference .hero-fact dd { color: #fff; font-size: .85rem; font-weight: 500; }
+.speaker-reference { background: #fff; padding: 30px 0; }
+.speaker-reference-inner { display: grid; grid-template-columns: 1fr 1.3fr; gap: 55px; align-items: center; }
+.speaker-reference .hero-speaker { padding: 0; align-items: center; }
+.speaker-reference .hero-speaker-photo { width: 115px; height: 140px; border-radius: 5px; }
+.speaker-reference .hero-speaker-role { color: #765509; letter-spacing: 0; text-transform: none; }
+.speaker-reference .hero-speaker-text strong { color: #18354a; font-size: 1.6rem; }
+.speaker-reference .hero-speaker-note { color: #52616d; }
+.speaker-reference .hero-speaker-link { color: #18354a; letter-spacing: 0; text-transform: none; }
+.included-reference { background: #f3f5f8; padding: 22px 26px; border-radius: 6px; color: #18354a; }
+.included-reference h2 { font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 22px; }
+.included-reference ul { display: grid; grid-template-columns: repeat(4,1fr); list-style: none; gap: 18px; }
+.included-reference li { font-size: .75rem; line-height: 1.5; }
+.included-reference i { display: block; font-size: 1.6rem; margin-bottom: 8px; }
+@media(max-width:1250px) { .restaurant-reference .hero-value-strip { padding: 25px 24px; } }
+@media(max-width:900px) { .restaurant-reference .hero-lede { width: 60%; } .restaurant-reference .hero-backdrop { left: 25%; } .speaker-reference-inner { gap: 24px; } .included-reference ul { grid-template-columns: 1fr 1fr; } .restaurant-reference .nav-links { background: #fff; } }
+@media(max-width:680px) {
+.restaurant-reference .hero-shell { padding-top: 32px; padding-bottom: 30px; min-height: 0; }
+.restaurant-reference .hero-lede { width: 100%; max-width: none; }
+.restaurant-reference .hero-backdrop { left: 0; background-position: 50% center; opacity: .3; }
+.restaurant-reference .hero-backdrop::after { background: rgba(9,25,36,.45); }
+.restaurant-reference .hero-title { font-size: 2.6rem; }
+.restaurant-reference .hero-cta-group .btn { width: auto; }
+.restaurant-reference .hero-value-strip { grid-template-columns: 1fr 1fr; gap: 24px 20px; }
+.event-reference .hero-facts { grid-template-columns: 1fr 1fr; gap: 24px; }
+.speaker-reference-inner { grid-template-columns: 1fr; gap: 28px; }
+.included-reference ul { grid-template-columns: repeat(4,1fr); gap: 12px; }
+.included-reference { padding: 20px 16px; }
+}
+.restaurant-reference .hero-section > .container:last-child { position: relative; z-index: 2; }
+
+/* Beneficios e información: iconografía destacada e interacciones contenidas. */
+.restaurant-reference .hero-value-strip { gap: 0; padding-top: 38px; padding-bottom: 38px; }
+.restaurant-reference .hero-value-strip li { position: relative; padding: 0 28px; gap: 10px; transition: color 220ms ease; }
+.restaurant-reference .hero-value-strip li:first-child { padding-left: 0; }
+.restaurant-reference .hero-value-strip li:last-child { padding-right: 0; }
+.restaurant-reference .hero-value-strip li + li { border-left: 1px solid #e3e8ec; }
+.restaurant-reference .benefit-icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 16px; background: #edf3f7; margin-bottom: 7px; transition: background-color 250ms, border-radius 350ms cubic-bezier(.16,1,.3,1); }
+.restaurant-reference .hero-value-strip .benefit-icon i { font-size: 30px; color: #234b64; transition: transform 350ms cubic-bezier(.16,1,.3,1), color 250ms; }
+.restaurant-reference .hero-value-strip li:hover .benefit-icon { background: #f9e8b7; border-radius: 22px; }
+.restaurant-reference .hero-value-strip li:hover .benefit-icon i { transform: rotate(-7deg) scale(1.08); color: #775411; }
+.restaurant-reference .hero-value-strip h2 { font-size: 1rem; line-height: 1.4; }
+.restaurant-reference .hero-value-strip p { font-size: .85rem; line-height: 1.7; max-width: 31ch; }
+.event-reference { padding: 32px 0; background: #143247; border-top: 1px solid #25485f; border-bottom: 1px solid #25485f; }
+.event-reference .hero-facts { grid-template-columns: .85fr 1.25fr 1.4fr 1.1fr; gap: 28px; }
+.event-reference .hero-fact { display: grid; grid-template-columns: 40px 1fr; column-gap: 12px; align-content: start; }
+.event-reference .event-icon { grid-row: 1 / 3; display: grid; place-items: center; width: 40px; height: 44px; color: #f0c65c; }
+.event-reference .event-icon i { font-size: 29px; transition: transform 300ms cubic-bezier(.16,1,.3,1); }
+.event-reference .hero-fact:hover .event-icon i { transform: translateY(-3px); }
+.event-reference .hero-fact dt { font-size: .78rem; font-weight: 500; color: #bdcfdc; margin-bottom: 7px; }
+.event-reference .hero-fact dd { font-size: .88rem; line-height: 1.65; }
+@media(max-width:1250px) { .restaurant-reference .hero-value-strip li:first-child { padding-left: 0; } }
+@media(max-width:900px) { .event-reference .hero-facts { grid-template-columns: 1fr 1fr; gap: 26px; } .restaurant-reference .hero-value-strip { grid-template-columns: 1fr 1fr; gap: 30px 0; } .restaurant-reference .hero-value-strip li:nth-child(3) { border-left: 0; padding-left: 0; } }
+@media(max-width:680px) {
+.restaurant-reference .hero-value-strip { padding-top: 28px; padding-bottom: 28px; }
+.restaurant-reference .hero-value-strip li { padding: 0 16px; }
+.restaurant-reference .hero-value-strip li:nth-child(even) { padding-right: 0; }
+.restaurant-reference .benefit-icon { width: 54px; height: 54px; border-radius: 13px; }
+.restaurant-reference .hero-value-strip .benefit-icon i { font-size: 26px; }
+.restaurant-reference .hero-value-strip h2 { font-size: .92rem; }
+.restaurant-reference .hero-value-strip p { font-size: .8rem; }
+.event-reference .hero-fact { grid-template-columns: 1fr; gap: 5px; }
+.event-reference .event-icon { grid-row: auto; place-items: start; height: 36px; }
+}
+@media(prefers-reduced-motion:reduce) { .restaurant-reference .hero-value-strip .benefit-icon, .restaurant-reference .hero-value-strip .benefit-icon i, .event-reference .event-icon i { transition: none; transform: none; } }
+
+/* Ancho fluido: aprovechar pantallas grandes sin márgenes de contenedor fijo. */
+.restaurant-reference { --page-gutter: clamp(20px, 3vw, 64px); }
+.restaurant-reference .container { max-width: none; padding-left: var(--page-gutter); padding-right: var(--page-gutter); }
+.restaurant-reference .hero-section > .container:last-child { padding: 0; }
+.restaurant-reference .hero-value-strip { max-width: none; padding-left: var(--page-gutter); padding-right: var(--page-gutter); }
+.restaurant-reference .hero-lede { max-width: 760px; width: 49%; }
+.restaurant-reference .hero-description { max-width: 62ch; }
+@media(min-width:1600px) { .restaurant-reference .hero-title { font-size: 4rem; } .restaurant-reference .hero-shell { padding-top: 60px; padding-bottom: 50px; } }
+@media(max-width:900px) { .restaurant-reference .hero-lede { width: 60%; } }
+@media(max-width:680px) { .restaurant-reference { --page-gutter: 20px; } .restaurant-reference .hero-lede { width: 100%; } }

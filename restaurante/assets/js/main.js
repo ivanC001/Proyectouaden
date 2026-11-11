@@ -235,8 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // -------------------------------------------------------------------------
   // 4. COUNTDOWN TIMER (EVENT & EARLY BIRD DEADLINE)
   // -------------------------------------------------------------------------
-  // Seminar date: November 16, 2026 08:00:00 EST
-  const targetDate = new Date('2026-11-16T08:00:00-05:00').getTime();
+  // Seminar date: December 2, 2026 08:00:00 EST
+  const targetDate = new Date('2026-12-02T08:00:00-05:00').getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
@@ -638,4 +638,22 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', update);
     apply();
   }
+});
+
+// Una sola secuencia de iconos al entrar en pantalla; sin bucles ni contenido oculto.
+document.addEventListener('DOMContentLoaded', () => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  const strip = document.querySelector('.restaurant-reference .hero-value-strip');
+  if (!strip) return;
+  const observer = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    strip.querySelectorAll('.benefit-icon').forEach((icon, index) => {
+      icon.animate([
+        { clipPath: 'inset(0 100% 0 0 round 16px)', transform: 'rotate(-8deg)' },
+        { clipPath: 'inset(0 0 0 0 round 16px)', transform: 'rotate(0)' }
+      ], { duration: 550, delay: index * 85, easing: 'cubic-bezier(.16,1,.3,1)' });
+    });
+    observer.disconnect();
+  }, { threshold: 0.25 });
+  observer.observe(strip);
 });
