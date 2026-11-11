@@ -39,6 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
       transform: translateX(0);
     }
 
+    .uaden-catalog-toast__open {
+      display: flex; align-items: center; gap: .85rem; flex: 1; min-width: 0;
+      background: transparent; border: 0; padding: 0; color: inherit; text-align: left; cursor: pointer;
+    }
+    .uaden-catalog-toast button:focus-visible { outline: 3px solid #f7bd11; outline-offset: 4px; }
+    .uaden-catalog-toast__close { min-width: 28px; min-height: 44px; }
     .uaden-catalog-toast__icon {
       display: grid;
       flex: 0 0 46px;
@@ -334,6 +340,9 @@ document.addEventListener("DOMContentLoaded", () => {
       line-height: 1.4;
     }
 
+    .global-social-alert:not(.show) { opacity: 0; pointer-events: none; }
+    .global-social-alert.show { opacity: 1; }
+
     @media (max-width: 720px) {
       .uaden-catalog-modal {
         padding: 1rem;
@@ -403,11 +412,13 @@ document.addEventListener("DOMContentLoaded", () => {
   toast.setAttribute("aria-label", "Ver catálogo completo de cursos");
 
   toast.innerHTML = `
-    <span class="uaden-catalog-toast__icon">↓</span>
+    <button class="uaden-catalog-toast__open" type="button">
+    <span class="uaden-catalog-toast__icon" aria-hidden="true">↓</span>
     <span>
       <strong>¿Buscas otra formación?</strong>
       <small>Conoce nuestro catálogo completo de cursos. Haz clic aquí.</small>
     </span>
+    </button>
     <button class="uaden-catalog-toast__close" aria-label="Cerrar aviso">×</button>
   `;
 
@@ -486,6 +497,18 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.append(toast, modal);
 
   function positionCatalogToast() {
+    const socialAlert = document.querySelector(".global-social-alert");
+    const syncSocialAlert = () => {
+      if (!socialAlert) return;
+      if (window.innerWidth <= 720) {
+        socialAlert.style.left = "1rem";
+        socialAlert.style.right = "1rem";
+        socialAlert.style.maxWidth = "none";
+        socialAlert.style.bottom = `${parseFloat(toast.style.bottom || "32") + toast.offsetHeight + 12}px`;
+      } else {
+        for (const property of ["left", "right", "max-width", "bottom"]) socialAlert.style.removeProperty(property);
+      }
+    };
     const candidates = [
       ...document.querySelectorAll(`
         .whatsapp-fab,
@@ -511,6 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const bottomPosition = window.innerHeight - whatsappRect.top + 16;
 
     toast.style.bottom = `${Math.max(32, bottomPosition)}px`;
+    syncSocialAlert();
   }
 
   let previousFocus = null;
@@ -575,6 +599,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   positionCatalogToast();
   window.addEventListener("resize", positionCatalogToast);
+  if ("ResizeObserver" in window) new ResizeObserver(positionCatalogToast).observe(toast);
   setTimeout(positionCatalogToast, 700);
 
   setTimeout(() => {
