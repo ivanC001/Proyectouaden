@@ -1,11 +1,12 @@
+const uadenCatalogAssets = new URL("../", document.currentScript.src);
 function initUadenCatalog() {
   if (document.getElementById("uadenCatalogToast")) return;
 
   const catalogUrl =
-    "/assets/pdf/Catalogo%20de%20Formaciones%20y%20Programas%20de%20Training%202027%20Uaden%20Prime%20%288%29.pdf";
+    new URL("pdf/Catalogo%20de%20Formaciones%20y%20Programas%20de%20Training%202027%20Uaden%20Prime%20%288%29.pdf", uadenCatalogAssets).href;
 
   // Cambia esta ruta solo si tu logo está en otra carpeta.
-  const logoUrl = "/assets/logos/logo-white.png";
+  const logoUrl = new URL("logos/logo-white.png", uadenCatalogAssets).href;
 
   const style = document.createElement("style");
   style.id = "uadenCatalogModalStyles";
