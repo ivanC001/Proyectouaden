@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initUadenCatalog() {
   if (document.getElementById("uadenCatalogToast")) return;
 
   const catalogUrl =
@@ -343,6 +343,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .global-social-alert:not(.show) { opacity: 0; pointer-events: none; }
     .global-social-alert.show { opacity: 1; }
 
+    @media (prefers-reduced-motion: reduce) {
+      .uaden-catalog-toast, .uaden-catalog-modal, .uaden-catalog-modal__box { transition: none; }
+    }
     @media (max-width: 720px) {
       .uaden-catalog-modal {
         padding: 1rem;
@@ -527,6 +530,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!whatsappButton) {
       toast.style.bottom = "2rem";
+      syncSocialAlert();
       return;
     }
 
@@ -558,6 +562,7 @@ document.addEventListener("DOMContentLoaded", () => {
   toast.addEventListener("click", (event) => {
     if (event.target.closest(".uaden-catalog-toast__close")) {
       toast.remove();
+      document.querySelector(".global-social-alert")?.style.removeProperty("bottom");
       return;
     }
 
@@ -605,4 +610,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     toast.classList.add("show");
   }, 7000);
-});
+}
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initUadenCatalog, { once: true });
+else initUadenCatalog();

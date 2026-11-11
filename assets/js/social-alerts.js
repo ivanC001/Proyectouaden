@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initUadenSocialAlerts() {
+  if (document.querySelector(".global-social-alert")) return;
   const registrations = [
     "<strong>Lic. Roberto M.</strong> de México acaba de reservar su cupo.",
     "<strong>Dra. Sofía G.</strong> de Argentina se unió a MUNICIPAL PRO™.",
@@ -60,11 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
       border-radius: 18px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, .45);
       backdrop-filter: blur(16px);
-      transform: translateY(160%);
-      transition: transform .5s cubic-bezier(.18, .89, .32, 1.28);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(24px);
+      transition: transform .4s ease-out, opacity .4s ease-out, visibility .4s;
     }
 
     .global-social-alert.show {
+      opacity: 1; visibility: visible;
       transform: translateY(0);
     }
 
@@ -92,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       color: #38bdf8;
     }
 
+    @media (prefers-reduced-motion: reduce) { .global-social-alert { transition: none; } }
     @media (max-width: 576px) {
       .global-social-alert {
         right: 1rem;
@@ -146,4 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setTimeout(showAlert, 4000);
   setInterval(showAlert, 14000);
-});
+}
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initUadenSocialAlerts, { once: true });
+else initUadenSocialAlerts();

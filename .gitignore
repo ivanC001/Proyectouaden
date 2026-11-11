@@ -28,3 +28,5 @@ Thumbs.db
 /uadenw/
 
 /deploy-output/
+config.bat
+node_modules/
