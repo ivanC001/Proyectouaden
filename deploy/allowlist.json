@@ -1,0 +1,8 @@
+{
+  "mode": "dry-run-only",
+  "extensions": [".html"],
+  "rootFiles": ["index.html"],
+  "directories": ["camaras", "certificacion", "crisis", "crisis2", "crisisbrasil", "disney", "disneyestudiantes", "disneyinstructor", "disneyinstructor6meses", "disneyinstructor6meses11", "education", "empleabilidad", "empresario", "franquicia", "gestionpublica", "gestionpublicacatastrofes", "inmobiliaria", "marketing", "microemprendimiento", "municipio", "municipios2", "ong", "restaurante", "riquezaconocimiento", "speaker"],
+  "remoteRoot": null,
+  "routesApproved": false
+}
