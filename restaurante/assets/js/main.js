@@ -235,8 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // -------------------------------------------------------------------------
   // 4. COUNTDOWN TIMER (EVENT & EARLY BIRD DEADLINE)
   // -------------------------------------------------------------------------
-  // Seminar date: December 2, 2026 08:00:00 EST
-  const targetDate = new Date('2026-12-02T08:00:00-05:00').getTime();
+  // Seminar date: December 7, 2026 08:00:00 EST
+  const targetDate = new Date('2026-12-07T08:00:00-05:00').getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
