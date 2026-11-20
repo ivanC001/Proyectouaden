@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: curriculum module image for an executive marketing seminar landing page
+Primary request: a Latin American entrepreneur completing a twelve-month marketing roadmap from planning to execution
+Scene/backdrop: bright workspace with a long annual calendar sheet, priority cards and resource markers, no readable text
+Subject: professional aged 30 to 45, hands placing the final card while reviewing the full roadmap
+Style/medium: premium editorial photography, photorealistic, natural skin and paper texture, subtle fine grain
+Composition/framing: horizontal 3:2, wide top-down three-quarter view showing the person and the complete planning surface
+Lighting/mood: soft daylight, accomplished, ready to act
+Color palette: deep navy, mineral blue, cool white, restrained cyan accent
+Constraints: no text, no logos, no watermarks, no flags, no brand marks, no artificial floating graphics

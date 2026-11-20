@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: curriculum module image for an executive marketing seminar landing page
+Primary request: a small Latin American marketing team planning an ethical digital campaign with artificial intelligence support
+Scene/backdrop: contemporary creative studio, laptop showing only abstract unlabeled content blocks and campaign shapes, paper funnel diagram without words
+Subject: three professionals aged 25 to 45 collaborating, one person comparing content cards while another points to the plan
+Style/medium: premium editorial photography, photorealistic, natural expressions and realistic material texture, subtle fine grain
+Composition/framing: horizontal 3:2, medium-wide candid scene, clear hierarchy and no visual clutter
+Lighting/mood: soft daylight, energetic but credible
+Color palette: navy, mineral blue, cool neutrals, limited cyan accents
+Constraints: no text, no logos, no watermarks, no flags, no robots, no holograms, no brand marks

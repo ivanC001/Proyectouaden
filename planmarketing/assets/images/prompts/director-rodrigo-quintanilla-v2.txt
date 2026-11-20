@@ -1,0 +1,10 @@
+Use case: identity-preserve
+Asset type: executive portrait for the UADEN Plan de Marketing 2027 landing page
+Primary request: clean and improve the supplied portrait of Rodrigo Quintanilla for a premium university website. Remove every fragment of the original blue panel, cropped text, page layout, and surrounding webpage. Preserve the same real person, facial identity, salt-and-pepper hair and beard, friendly expression, crossed-arm pose, gray blazer, black shirt, and watch with high fidelity. Reconstruct any cropped clothing naturally.
+Scene/backdrop: simple warm light neutral studio background in soft ivory-gray, subtle depth, no graphic elements
+Style/medium: photorealistic professional executive editorial portrait, natural skin texture, refined but not over-retouched
+Composition/framing: vertical portrait, head and upper torso centered with comfortable space around shoulders, no body parts cut awkwardly, suitable for a 4:5 website crop
+Lighting/mood: soft directional studio light, confident, approachable, polished
+Color palette: neutral ivory, soft gray, navy-black clothing accents
+Constraints: identity preservation is the highest priority; keep the subject recognizable and realistic; no text, no logos, no watermark; do not alter age, ethnicity, facial proportions, hairstyle, beard, clothing colors, pose, or expression
+Avoid: artificial plastic skin, beauty-filter look, extra fingers, distorted hands, invented accessories, blue blocks, text remnants, borders, gradients, illustration

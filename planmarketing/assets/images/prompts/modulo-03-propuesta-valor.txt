@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: curriculum module image for an executive marketing seminar landing page
+Primary request: a small leadership team clarifying a value proposition and market positioning with a central message card
+Scene/backdrop: contemporary boardroom wall with neutral sticky notes containing no readable text
+Subject: three diverse Latin American professionals aged 30 to 50, one presenting while two evaluate the proposal
+Style/medium: premium editorial photography, photorealistic, authentic business clothing, realistic skin texture, subtle fine grain
+Composition/framing: horizontal 3:2, medium-wide, clear gesture toward the central card, uncluttered composition
+Lighting/mood: soft window light, decisive, trustworthy
+Color palette: navy tailoring, mineral blue accents, cool paper whites, natural skin tones
+Constraints: no text, no logos, no watermarks, no flags, no visible brand marks, no staged stock-photo smiles

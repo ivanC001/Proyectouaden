@@ -1,7 +1,5 @@
 **/.private/
 **/wp-config.php
-**/.env
-**/.env.*
 !**/.env.example
 **/wp-content/uploads/registros-pdf/
 **/wp-content/wflogs/

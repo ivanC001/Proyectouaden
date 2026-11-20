@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: exclusive landscape image for the UADEN Plan de Marketing 2027 website hero carousel
+Primary request: a Latin American business owner participating attentively in a live online strategy seminar from a refined home office, taking notes beside an open laptop while a professional presenter and a few participants are visible on the screen
+Scene/backdrop: modern warm home office with subtle books, a plant and evening window light; the laptop interface is visible only as clean abstract video-call panes with no readable words
+Subject: one confident adult business owner in the foreground, natural candid posture, notebook and pen, focused expression
+Style/medium: premium editorial business photography, realistic skin and materials, contemporary Latin American professional context
+Composition/framing: wide 3:2 landscape, medium three-quarter angle, subject on the right third and laptop on the left, clear depth and strong visual hierarchy, entirely distinct from a group workshop or flat-lay stationery scene
+Lighting/mood: soft cinematic window light with warm practical lamp, calm concentration, credible and aspirational
+Color palette: UADEN-adjacent deep navy, cool blue, warm ivory and restrained cyan accents
+Constraints: no logos, no watermarks, no readable text, no duplicated people, no generic handshake, no staged stock-photo smile
+Avoid: flat lay, conference room table, paper calendar kit, presentation at a wall, artificial screens, warped hands, excessive bokeh

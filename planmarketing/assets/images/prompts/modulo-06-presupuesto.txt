@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: curriculum module image for an executive marketing seminar landing page
+Primary request: a Latin American business owner reviewing a marketing budget, campaign calendar and performance indicators
+Scene/backdrop: elegant office table with calculator, paper budget columns and simple unlabeled bar charts
+Subject: professional woman aged 35 to 50, realistic candid concentration, checking figures with a pen
+Style/medium: premium editorial photography, photorealistic, detailed paper, metal and fabric textures, subtle fine grain
+Composition/framing: horizontal 3:2, medium close-up with hands and analysis materials prominent
+Lighting/mood: controlled natural light, precise, responsible
+Color palette: deep navy, mineral blue, cool white, restrained warm wood
+Constraints: no readable text, no logos, no watermarks, no flags, no brand marks, no floating data graphics

@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: curriculum module image for an executive marketing seminar landing page
+Primary request: two Latin American entrepreneurs conducting practical market research with customer notes and a simple competitor matrix
+Scene/backdrop: bright meeting table in a contemporary workspace, index cards and paper grids with no readable text
+Subject: one woman and one man aged 30 to 45 comparing observations, candid collaboration
+Style/medium: premium editorial photography, photorealistic, real skin texture, paper grain and fabric detail, subtle fine grain
+Composition/framing: horizontal 3:2, three-quarter overhead perspective that shows hands, faces and the working materials
+Lighting/mood: natural side light, focused, practical
+Color palette: deep navy, mineral blue, cool white, restrained warm accents
+Constraints: no text, no logos, no watermarks, no flags, no visible brand marks, no decorative holograms

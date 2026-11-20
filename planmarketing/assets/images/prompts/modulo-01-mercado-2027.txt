@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: curriculum module image for an executive marketing seminar landing page
+Primary request: a Latin American woman business owner studying changing consumer behavior and 2027 market trends at a clean desk
+Scene/backdrop: modern small-company office, printed trend charts with no readable text, tablet lying flat with abstract chart shapes only
+Subject: confident professional aged 35 to 45, natural candid concentration, hands annotating a market map
+Style/medium: premium editorial photography, photorealistic, realistic skin and fabric texture, subtle fine grain
+Composition/framing: horizontal 3:2, medium shot, clear focal subject and uncluttered edges
+Lighting/mood: soft daylight, analytical, credible
+Color palette: deep navy, mineral blue, cool white, warm natural skin tones
+Constraints: no text, no logos, no watermarks, no flags, no brand marks, no futuristic interface, no exaggerated posing

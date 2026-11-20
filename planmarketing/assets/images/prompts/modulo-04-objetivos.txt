@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: curriculum module image for an executive marketing seminar landing page
+Primary request: a Latin American executive translating annual objectives into quarterly priorities using a large paper planning grid
+Scene/backdrop: bright boardroom table with geometric planning sheets and simple KPI marks, no readable text
+Subject: professional man aged 35 to 50, naturally focused, arranging goal cards into a clear sequence
+Style/medium: premium editorial photography, photorealistic, realistic hands, skin, paper and suit texture, subtle fine grain
+Composition/framing: horizontal 3:2, three-quarter overhead view with face and working hands visible
+Lighting/mood: crisp natural daylight, disciplined, strategic
+Color palette: deep navy, mineral blue, cool white, one restrained cyan detail
+Constraints: no text, no logos, no watermarks, no flags, no brand marks, no futuristic graphics
